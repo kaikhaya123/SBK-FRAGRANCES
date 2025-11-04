@@ -1,0 +1,3404 @@
+(globalThis.TURBOPACK || (globalThis.TURBOPACK = [])).push([typeof document === "object" ? document.currentScript : undefined,
+"[project]/app/components/FeaturedCollections.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>FeaturedCollections
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+;
+function FeaturedCollections() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        className: "py-20 px-4 bg-white",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "max-w-7xl mx-auto bg-white",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                    className: "text-4xl md:text-5xl font-bold text-center mb-14 tracking-wide text-gray-900",
+                    style: {
+                        fontFamily: 'Oswald, Bebas Neue, Montserrat, Arial, sans-serif'
+                    },
+                    children: "Curated Collections"
+                }, void 0, false, {
+                    fileName: "[project]/app/components/FeaturedCollections.js",
+                    lineNumber: 5,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "grid grid-cols-1 md:grid-cols-4 gap-8 mb-10",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex flex-col items-center",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                    src: "/images/1761501637382.jpeg",
+                                    alt: "Velour Essence Eau De Parfum",
+                                    className: "w-full h-80 object-contain bg-white rounded-xl mb-4"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/components/FeaturedCollections.js",
+                                    lineNumber: 8,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "text-lg md:text-xl font-bold text-gray-800 text-center uppercase tracking-[0.18em]",
+                                    style: {
+                                        fontFamily: 'Oswald, Bebas Neue, Montserrat, Arial, sans-serif'
+                                    },
+                                    children: "Velour Essence Eau De Parfum"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/components/FeaturedCollections.js",
+                                    lineNumber: 9,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/components/FeaturedCollections.js",
+                            lineNumber: 7,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex flex-col items-center",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                    src: "/images/1761501593603.jpeg",
+                                    alt: "Elegant Perfume",
+                                    className: "w-full h-80 object-contain bg-white rounded-xl mb-4"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/components/FeaturedCollections.js",
+                                    lineNumber: 12,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "text-lg md:text-xl font-bold text-gray-800 text-center uppercase tracking-[0.18em]",
+                                    style: {
+                                        fontFamily: 'Oswald, Bebas Neue, Montserrat, Arial, sans-serif'
+                                    },
+                                    children: "Elegant Perfume"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/components/FeaturedCollections.js",
+                                    lineNumber: 13,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/components/FeaturedCollections.js",
+                            lineNumber: 11,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex flex-col items-center",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                    src: "/images/1761501618768.jpeg",
+                                    alt: "Silken Essence Eau De Parfum",
+                                    className: "w-full h-80 object-contain bg-white rounded-xl mb-4"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/components/FeaturedCollections.js",
+                                    lineNumber: 16,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "text-lg md:text-xl font-bold text-gray-800 text-center uppercase tracking-[0.18em]",
+                                    style: {
+                                        fontFamily: 'Oswald, Bebas Neue, Montserrat, Arial, sans-serif'
+                                    },
+                                    children: "Silken Essence Eau De Parfum"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/components/FeaturedCollections.js",
+                                    lineNumber: 17,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/components/FeaturedCollections.js",
+                            lineNumber: 15,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex flex-col items-center",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                    src: "/images/Wise Poem.jpg",
+                                    alt: "Velvet Aura Eau De Parfum",
+                                    className: "w-full h-80 object-contain bg-white rounded-xl mb-4"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/components/FeaturedCollections.js",
+                                    lineNumber: 20,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "text-lg md:text-xl font-bold text-gray-800 text-center uppercase tracking-[0.18em]",
+                                    style: {
+                                        fontFamily: 'Oswald, Bebas Neue, Montserrat, Arial, sans-serif'
+                                    },
+                                    children: "Velvet Aura Eau De Parfum"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/components/FeaturedCollections.js",
+                                    lineNumber: 21,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/components/FeaturedCollections.js",
+                            lineNumber: 19,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/components/FeaturedCollections.js",
+                    lineNumber: 6,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex justify-center",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                        href: "/collections",
+                        className: "inline-flex items-center gap-3 px-8 py-3 bg-[#f4f3f2] text-black text-lg font-semibold rounded transition hover:bg-[#4d3222] shadow-md",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                children: "→"
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/FeaturedCollections.js",
+                                lineNumber: 26,
+                                columnNumber: 13
+                            }, this),
+                            " VIEW FULL COLLECTION"
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/components/FeaturedCollections.js",
+                        lineNumber: 25,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/app/components/FeaturedCollections.js",
+                    lineNumber: 24,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/app/components/FeaturedCollections.js",
+            lineNumber: 4,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/app/components/FeaturedCollections.js",
+        lineNumber: 3,
+        columnNumber: 5
+    }, this);
+}
+_c = FeaturedCollections;
+var _c;
+__turbopack_context__.k.register(_c, "FeaturedCollections");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/app/components/BodyPerfumeSection.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>BodyPerfumeSection
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+;
+function BodyPerfumeSection() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        className: "bg-[#f8f3f1] py-20 px-4",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex-1 flex flex-col items-start justify-center",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                            className: "text-4xl md:text-5xl font-bold mb-6 text-gray-900",
+                            style: {
+                                fontFamily: 'Oswald, Bebas Neue, Montserrat, Arial, sans-serif'
+                            },
+                            children: "Body Perfume"
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/BodyPerfumeSection.js",
+                            lineNumber: 7,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "text-lg text-gray-700 mb-8 max-w-md",
+                            children: "Explore our handpicked selection of perfumes and scented products, crafted for elegance and lasting impressions."
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/BodyPerfumeSection.js",
+                            lineNumber: 8,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                            href: "/collections/body-perfume",
+                            className: "inline-flex items-center gap-3 px-8 py-3 bg-[#000000] text-white text-lg font-semibold rounded transition hover:bg-[#4d3222] shadow-md",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    children: "→"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/components/BodyPerfumeSection.js",
+                                    lineNumber: 10,
+                                    columnNumber: 13
+                                }, this),
+                                " EXPLORE MORE"
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/components/BodyPerfumeSection.js",
+                            lineNumber: 9,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/components/BodyPerfumeSection.js",
+                    lineNumber: 6,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex-1 flex items-center justify-center relative",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                            src: "/images/Jomaloc.jpg",
+                            alt: "Body Perfume",
+                            className: "rounded-xl object-cover w-full h-96 bg-[#070707]"
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/BodyPerfumeSection.js",
+                            lineNumber: 15,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            className: "absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/80 rounded-full p-4 shadow-lg hover:bg-black transition",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                width: "32",
+                                height: "32",
+                                fill: "none",
+                                viewBox: "0 0 32 32",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                                        cx: "16",
+                                        cy: "16",
+                                        r: "16",
+                                        fill: "#fff",
+                                        fillOpacity: "0.7"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/components/BodyPerfumeSection.js",
+                                        lineNumber: 22,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("polygon", {
+                                        points: "13,10 24,16 13,22",
+                                        fill: "#f7f5f5ff"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/components/BodyPerfumeSection.js",
+                                        lineNumber: 23,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/components/BodyPerfumeSection.js",
+                                lineNumber: 21,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/BodyPerfumeSection.js",
+                            lineNumber: 20,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/components/BodyPerfumeSection.js",
+                    lineNumber: 14,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/app/components/BodyPerfumeSection.js",
+            lineNumber: 4,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/app/components/BodyPerfumeSection.js",
+        lineNumber: 3,
+        columnNumber: 5
+    }, this);
+}
+_c = BodyPerfumeSection;
+var _c;
+__turbopack_context__.k.register(_c, "BodyPerfumeSection");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/app/components/OurPhilosophy.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>OurPhilosophy
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+;
+;
+function OurPhilosophy() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        className: "bg-peach-50 py-16 flex flex-col md:flex-row items-center justify-center relative overflow-hidden",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "md:w-1/2 px-8 z-10",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                        className: "text-3xl md:text-5xl font-semibold mb-6 text-brown-900 uppercase tracking-widest",
+                        style: {
+                            fontFamily: 'Playfair Display, var(--font-serif, Georgia, Times, serif)',
+                            fontWeight: 700,
+                            letterSpacing: '0.18em',
+                            lineHeight: 1.1
+                        },
+                        children: "OUR PHILOSOPHY"
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/OurPhilosophy.js",
+                        lineNumber: 7,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "text-brown-800 text-lg leading-relaxed",
+                        children: [
+                            "We believe in the magic of fragrance, capable of highlighting your individuality.",
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                                fileName: "[project]/app/components/OurPhilosophy.js",
+                                lineNumber: 19,
+                                columnNumber: 92
+                            }, this),
+                            "Our perfumes are crafted with love for detail and a passion for beauty, so you can truly enjoy every scent you choose."
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/components/OurPhilosophy.js",
+                        lineNumber: 18,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/components/OurPhilosophy.js",
+                lineNumber: 6,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "md:w-1/2 flex justify-center items-center relative mt-8 md:mt-0",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                    src: "/images/pexels-karola-g-4041392.jpg",
+                    alt: "Sillage de Parfum Vanilla Orchid",
+                    className: "w-full max-w-lg md:max-w-xl rounded-xl shadow-2xl object-cover object-center"
+                }, void 0, false, {
+                    fileName: "[project]/app/components/OurPhilosophy.js",
+                    lineNumber: 24,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/app/components/OurPhilosophy.js",
+                lineNumber: 23,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/app/components/OurPhilosophy.js",
+        lineNumber: 5,
+        columnNumber: 5
+    }, this);
+}
+_c = OurPhilosophy;
+var _c;
+__turbopack_context__.k.register(_c, "OurPhilosophy");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/app/components/UniquenessQualitySection.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>UniquenessQualitySection
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+;
+;
+const sections = [
+    {
+        image: "/images/still-life-cosmetic-products.jpg",
+        title: "Uniqueness in Every Note",
+        text: "At SBK Fragrances, each perfume is crafted to reveal a story as unique as you are. Our scents are designed to highlight individuality, blending rare ingredients and creative inspiration to ensure every note is truly one-of-a-kind.",
+        button: "Learn more"
+    },
+    {
+        image: "/images/pexels-shvetsa-5760898.jpg",
+        title: "The Art of Premium Quality",
+        text: "Our perfumes are meticulously created by hand in our laboratory, where passion meets precision. SBK Fragrances uses only the finest ingredients and time-honored techniques, resulting in exceptional quality and lasting impressions in every bottle.",
+        button: "Learn more"
+    },
+    {
+        image: "/images/man-spraying-luxury-perfume-black-background-man-spraying-luxury-perfume-black-background-closeup-212805345.webp",
+        title: "Uniqueness in Every Note",
+        text: "From the first spritz to the lingering finish, SBK Fragrances invites you to experience the magic of a scent that is truly yours. Discover the difference that artistry and dedication make in every fragrance we create.",
+        button: "Learn more"
+    }
+];
+function UniquenessQualitySection() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        className: "flex flex-col gap-12 my-16",
+        children: sections.map((section, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: `w-full flex flex-col md:flex-row ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''} items-center justify-center gap-0 md:gap-8 rounded-lg shadow-lg overflow-hidden`,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "relative w-full md:w-1/2 h-[300px] md:h-[400px]",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                            src: section.image,
+                            alt: section.title,
+                            className: "w-full h-full object-cover object-center md:object-[50%_40%] transition-all duration-300",
+                            style: {
+                                objectPosition: idx === 0 ? 'center 40%' : idx === 1 ? 'center 60%' : 'center'
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/UniquenessQualitySection.js",
+                            lineNumber: 33,
+                            columnNumber: 13
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/UniquenessQualitySection.js",
+                        lineNumber: 32,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "w-full md:w-1/2 flex flex-col justify-center items-start px-6 md:px-12 py-8 md:py-0 bg-white/90",
+                        style: {
+                            fontFamily: 'var(--font-sans, Inter, Arial, sans-serif)'
+                        },
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                className: "text-2xl md:text-3xl font-semibold mb-4 text-gray-900 uppercase tracking-widest",
+                                style: {
+                                    fontFamily: 'Playfair Display, var(--font-serif, Georgia, Times, serif)',
+                                    fontWeight: 600,
+                                    letterSpacing: '0.15em'
+                                },
+                                children: section.title
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/UniquenessQualitySection.js",
+                                lineNumber: 48,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "mb-6 text-base md:text-lg text-gray-700 leading-relaxed font-normal",
+                                children: section.text
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/UniquenessQualitySection.js",
+                                lineNumber: 58,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                className: "bg-black text-white px-6 py-2 rounded shadow hover:bg-gray-800 transition font-medium",
+                                children: section.button
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/UniquenessQualitySection.js",
+                                lineNumber: 59,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/components/UniquenessQualitySection.js",
+                        lineNumber: 47,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, idx, true, {
+                fileName: "[project]/app/components/UniquenessQualitySection.js",
+                lineNumber: 28,
+                columnNumber: 9
+            }, this))
+    }, void 0, false, {
+        fileName: "[project]/app/components/UniquenessQualitySection.js",
+        lineNumber: 26,
+        columnNumber: 5
+    }, this);
+}
+_c = UniquenessQualitySection;
+var _c;
+__turbopack_context__.k.register(_c, "UniquenessQualitySection");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/app/components/OurStory.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>OurStory
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+;
+;
+function OurStory() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        className: "relative w-full h-auto md:h-[500px] flex items-center justify-center overflow-hidden rounded-lg my-16 shadow-lg bg-white",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute inset-0 w-full h-full",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
+                        className: "w-full h-full object-cover object-center grayscale opacity-80",
+                        autoPlay: true,
+                        loop: true,
+                        muted: true,
+                        playsInline: true,
+                        poster: "/images/our-story-bg.jpg",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("source", {
+                                src: "/videos/7034150-uhd_3840_2160_25fps.mp4",
+                                type: "video/mp4"
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/OurStory.js",
+                                lineNumber: 15,
+                                columnNumber: 11
+                            }, this),
+                            "Your browser does not support the video tag."
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/components/OurStory.js",
+                        lineNumber: 7,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent"
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/OurStory.js",
+                        lineNumber: 20,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/components/OurStory.js",
+                lineNumber: 6,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "relative z-10 flex flex-col md:flex-row items-center w-full h-full px-6 md:px-16 py-12 md:py-0",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "w-full md:w-1/2 flex flex-col justify-center h-full",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "max-w-lg text-gray-900",
+                            style: {
+                                fontFamily: 'var(--font-sans, Inter, Arial, sans-serif)'
+                            },
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                    className: "text-4xl md:text-6xl font-semibold mb-6 uppercase tracking-widest",
+                                    style: {
+                                        fontFamily: 'Playfair Display, var(--font-serif, Georgia, Times, serif)',
+                                        fontWeight: 700,
+                                        letterSpacing: '0.18em',
+                                        lineHeight: 1.1
+                                    },
+                                    children: "Our Story"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/components/OurStory.js",
+                                    lineNumber: 25,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-base md:text-lg leading-relaxed font-normal",
+                                    children: "SBK Fragrances was born from a passion for individuality and the art of scent. Our journey began with a vision to create perfumes that not only highlight your unique character but also elevate everyday moments into something extraordinary. Each fragrance is meticulously crafted, blending rare ingredients and modern elegance to deliver a premium, memorable experience. Discover the story behind every bottle and join us in celebrating the beauty of self-expression."
+                                }, void 0, false, {
+                                    fileName: "[project]/app/components/OurStory.js",
+                                    lineNumber: 36,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/components/OurStory.js",
+                            lineNumber: 24,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/OurStory.js",
+                        lineNumber: 23,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "hidden md:block md:w-1/2"
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/OurStory.js",
+                        lineNumber: 41,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/components/OurStory.js",
+                lineNumber: 22,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/app/components/OurStory.js",
+        lineNumber: 5,
+        columnNumber: 5
+    }, this);
+}
+_c = OurStory;
+var _c;
+__turbopack_context__.k.register(_c, "OurStory");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/app/components/VideoShowcaseSection.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>VideoShowcaseSection
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+;
+;
+function VideoShowcaseSection() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        className: "w-full bg-black flex flex-col items-center justify-center overflow-hidden my-12 md:my-20",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "w-full h-[60vh] md:h-[90vh] relative flex items-center justify-center",
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
+                className: "w-full h-full object-cover object-center",
+                src: "/videos/4154241-uhd_4096_2160_25fps.mp4",
+                autoPlay: true,
+                loop: true,
+                muted: true,
+                playsInline: true,
+                poster: "/images/1761501680588.jpeg"
+            }, void 0, false, {
+                fileName: "[project]/app/components/VideoShowcaseSection.js",
+                lineNumber: 7,
+                columnNumber: 9
+            }, this)
+        }, void 0, false, {
+            fileName: "[project]/app/components/VideoShowcaseSection.js",
+            lineNumber: 6,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/app/components/VideoShowcaseSection.js",
+        lineNumber: 5,
+        columnNumber: 5
+    }, this);
+}
+_c = VideoShowcaseSection;
+var _c;
+__turbopack_context__.k.register(_c, "VideoShowcaseSection");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/app/components/ShopNowSection.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>ShopNowSection
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
+;
+;
+;
+function ShopNowSection() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        className: "relative w-full h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden my-12 md:my-20",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                src: "/images/pexels-zeyneb-alishova-190703179-11383178.jpg",
+                alt: "Shop SBK Fragrances",
+                className: "absolute inset-0 w-full h-full object-cover object-center opacity-80"
+            }, void 0, false, {
+                fileName: "[project]/app/components/ShopNowSection.js",
+                lineNumber: 7,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute inset-0 bg-black/70"
+            }, void 0, false, {
+                fileName: "[project]/app/components/ShopNowSection.js",
+                lineNumber: 12,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "relative z-10 flex flex-col md:flex-row items-center justify-between w-full h-full px-4 md:px-16",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex-1 flex flex-col justify-center items-start h-full text-left",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: "text-base md:text-lg text-white font-medium mb-2 tracking-wide uppercase opacity-90",
+                            children: "Be The Best of You"
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/ShopNowSection.js",
+                            lineNumber: 15,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                            className: "text-3xl md:text-5xl font-bold text-white mb-4 leading-tight drop-shadow-lg",
+                            style: {
+                                fontFamily: 'var(--font-sans, Inter, Arial, sans-serif)'
+                            },
+                            children: [
+                                "Become More Confident & ",
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                                    fileName: "[project]/app/components/ShopNowSection.js",
+                                    lineNumber: 17,
+                                    columnNumber: 37
+                                }, this),
+                                "Show Your Better Self"
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/components/ShopNowSection.js",
+                            lineNumber: 16,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "text-white text-base md:text-lg mb-6 max-w-xl opacity-90",
+                            children: "Explore our exclusive collection of SBK Fragrances, crafted to highlight your individuality and elevate every moment. Find the perfect scent that matches your unique style and confidence."
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/ShopNowSection.js",
+                            lineNumber: 20,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            href: "/shop",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                className: "border border-white text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-white hover:text-black transition",
+                                children: "Shop Now"
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/ShopNowSection.js",
+                                lineNumber: 24,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/ShopNowSection.js",
+                            lineNumber: 23,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/components/ShopNowSection.js",
+                    lineNumber: 14,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/app/components/ShopNowSection.js",
+                lineNumber: 13,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/app/components/ShopNowSection.js",
+        lineNumber: 6,
+        columnNumber: 5
+    }, this);
+}
+_c = ShopNowSection;
+var _c;
+__turbopack_context__.k.register(_c, "ShopNowSection");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/app/components/WhyChooseUs.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>WhyChooseUs
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+;
+;
+function WhyChooseUs() {
+    // ...existing code...
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        className: "bg-white-100 py-20 px-4",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "max-w-6xl mx-auto flex flex-col md:flex-row items-center",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "w-full md:w-1/2 mb-10 md:mb-0",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                            className: "text-4xl md:text-5xl font-bold mb-8 text-gray-900",
+                            children: "Why Choose Us"
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/WhyChooseUs.js",
+                            lineNumber: 12,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "grid grid-cols-2 gap-x-10 gap-y-8",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "text-3xl font-bold text-gray-700 mb-2",
+                                            children: "01"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/WhyChooseUs.js",
+                                            lineNumber: 15,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "font-semibold text-lg text-gray-900 mb-1",
+                                            children: "Quality Products"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/WhyChooseUs.js",
+                                            lineNumber: 16,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "text-gray-500 text-sm",
+                                            children: "We sell good quality products that meet the highest standards for our customers."
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/WhyChooseUs.js",
+                                            lineNumber: 17,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/components/WhyChooseUs.js",
+                                    lineNumber: 14,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "text-3xl font-bold text-gray-700 mb-2",
+                                            children: "02"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/WhyChooseUs.js",
+                                            lineNumber: 20,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "font-semibold text-lg text-gray-900 mb-1",
+                                            children: "Distributor Opportunity"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/WhyChooseUs.js",
+                                            lineNumber: 21,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "text-gray-500 text-sm",
+                                            children: "We offer the stock price for distributors who want to start their own business and grow with us."
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/WhyChooseUs.js",
+                                            lineNumber: 22,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/components/WhyChooseUs.js",
+                                    lineNumber: 19,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "text-3xl font-bold text-gray-700 mb-2",
+                                            children: "03"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/WhyChooseUs.js",
+                                            lineNumber: 25,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "font-semibold text-lg text-gray-900 mb-1",
+                                            children: "Wide Selection of Scents"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/WhyChooseUs.js",
+                                            lineNumber: 26,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "text-gray-500 text-sm",
+                                            children: "Discover a diverse range of fragrances to suit every style, mood, and occasion."
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/WhyChooseUs.js",
+                                            lineNumber: 27,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/components/WhyChooseUs.js",
+                                    lineNumber: 24,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "text-3xl font-bold text-gray-700 mb-2",
+                                            children: "04"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/WhyChooseUs.js",
+                                            lineNumber: 30,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "font-semibold text-lg text-gray-900 mb-1",
+                                            children: "Trusted Quality & Authenticity"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/WhyChooseUs.js",
+                                            lineNumber: 31,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "text-gray-500 text-sm",
+                                            children: "All our perfumes are genuine, high-quality, and sourced from reputable brands and suppliers."
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/WhyChooseUs.js",
+                                            lineNumber: 32,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/components/WhyChooseUs.js",
+                                    lineNumber: 29,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/components/WhyChooseUs.js",
+                            lineNumber: 13,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/components/WhyChooseUs.js",
+                    lineNumber: 11,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "w-full md:w-5/12 flex items-center justify-center min-h-[24rem] md:ml-8",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "relative w-full max-w-xl h-[30rem] flex items-center justify-center",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                src: "/images/ssstik.io_1762179824470.jpeg",
+                                alt: "Why Choose Us",
+                                className: "object-cover w-full h-full",
+                                style: {
+                                    objectPosition: 'center',
+                                    clipPath: 'polygon(0 0, 100% 0, 100% 85%, 80% 100%, 0 100%)'
+                                }
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/WhyChooseUs.js",
+                                lineNumber: 38,
+                                columnNumber: 15
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "absolute inset-0 pointer-events-none",
+                                style: {
+                                    clipPath: 'polygon(0 0, 100% 0, 100% 85%, 80% 100%, 0 100%)',
+                                    background: 'linear-gradient(90deg, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0.08) 100%)'
+                                }
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/WhyChooseUs.js",
+                                lineNumber: 44,
+                                columnNumber: 15
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/components/WhyChooseUs.js",
+                        lineNumber: 37,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/app/components/WhyChooseUs.js",
+                    lineNumber: 36,
+                    columnNumber: 11
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/app/components/WhyChooseUs.js",
+            lineNumber: 10,
+            columnNumber: 3
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/app/components/WhyChooseUs.js",
+        lineNumber: 9,
+        columnNumber: 5
+    }, this);
+}
+_c = WhyChooseUs;
+var _c;
+__turbopack_context__.k.register(_c, "WhyChooseUs");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/app/components/Testimonials.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>Testimonials
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+;
+const testimonials = [
+    {
+        name: "Aisha M.",
+        quote: "Absolutely in love with Amber Nights! Fast delivery and beautiful packaging.",
+        video: "/videos/3428863531774445170.mp4"
+    },
+    {
+        name: "Sipho K.",
+        quote: "The scent lasts all day. Will definitely order again!",
+        video: "/videos/testimonial2.mp4"
+    },
+    {
+        name: "Nomsa D.",
+        quote: "Great service and expert advice. Found my new signature scent!",
+        video: "/videos/testimonial3.mp4"
+    }
+];
+function Testimonials() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        className: "bg-white py-20 px-4",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "max-w-5xl mx-auto text-center mb-10",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                        className: "text-4xl md:text-5xl font-bold mb-4 text-gray-900",
+                        children: "Hear From Our Customers"
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/Testimonials.js",
+                        lineNumber: 23,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "text-lg text-gray-600 mb-8",
+                        children: "Real stories and experiences from our happy customers."
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/Testimonials.js",
+                        lineNumber: 24,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/components/Testimonials.js",
+                lineNumber: 22,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto",
+                children: testimonials.map((t, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "bg-gray-50 rounded-2xl shadow-lg p-6 flex flex-col items-center",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "w-full h-64 mb-4 rounded-xl overflow-hidden relative group",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
+                                        src: t.video,
+                                        className: "object-cover w-full h-full",
+                                        autoPlay: false,
+                                        loop: true,
+                                        muted: true,
+                                        playsInline: true,
+                                        poster: "/images/video-thumb.jpg",
+                                        onMouseOver: (e)=>e.target.play(),
+                                        onMouseOut: (e)=>e.target.pause()
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/components/Testimonials.js",
+                                        lineNumber: 30,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "absolute inset-0 flex items-center justify-center pointer-events-none group-hover:hidden",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "bg-black/60 text-white px-4 py-2 rounded-full text-lg font-semibold",
+                                            children: "▶"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/Testimonials.js",
+                                            lineNumber: 42,
+                                            columnNumber: 17
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/components/Testimonials.js",
+                                        lineNumber: 41,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/components/Testimonials.js",
+                                lineNumber: 29,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("blockquote", {
+                                className: "italic text-gray-700 mb-2",
+                                children: [
+                                    "“",
+                                    t.quote,
+                                    "”"
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/components/Testimonials.js",
+                                lineNumber: 45,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "font-semibold text-gray-900",
+                                children: t.name
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/Testimonials.js",
+                                lineNumber: 46,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, idx, true, {
+                        fileName: "[project]/app/components/Testimonials.js",
+                        lineNumber: 28,
+                        columnNumber: 11
+                    }, this))
+            }, void 0, false, {
+                fileName: "[project]/app/components/Testimonials.js",
+                lineNumber: 26,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "text-center mt-10",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                    className: "bg-gradient-to-r from-blue-500 to-green-400 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition",
+                    children: "Share Your Experience"
+                }, void 0, false, {
+                    fileName: "[project]/app/components/Testimonials.js",
+                    lineNumber: 51,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/app/components/Testimonials.js",
+                lineNumber: 50,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/app/components/Testimonials.js",
+        lineNumber: 21,
+        columnNumber: 5
+    }, this);
+}
+_c = Testimonials;
+var _c;
+__turbopack_context__.k.register(_c, "Testimonials");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/app/components/InstagramFeed.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>InstagramFeed
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+;
+function InstagramFeed() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        className: "container mx-auto py-16",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                className: "text-2xl md:text-3xl font-bold text-center mb-10",
+                children: "Follow Us on Instagram"
+            }, void 0, false, {
+                fileName: "[project]/app/components/InstagramFeed.js",
+                lineNumber: 4,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex flex-wrap justify-center gap-4",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                        src: "/insta1.jpg",
+                        alt: "Instagram 1",
+                        className: "w-32 h-32 object-cover rounded-xl"
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/InstagramFeed.js",
+                        lineNumber: 7,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                        src: "/insta2.jpg",
+                        alt: "Instagram 2",
+                        className: "w-32 h-32 object-cover rounded-xl"
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/InstagramFeed.js",
+                        lineNumber: 8,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                        src: "/insta3.jpg",
+                        alt: "Instagram 3",
+                        className: "w-32 h-32 object-cover rounded-xl"
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/InstagramFeed.js",
+                        lineNumber: 9,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                        src: "/insta4.jpg",
+                        alt: "Instagram 4",
+                        className: "w-32 h-32 object-cover rounded-xl"
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/InstagramFeed.js",
+                        lineNumber: 10,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/components/InstagramFeed.js",
+                lineNumber: 5,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "text-center mt-6",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                    href: "https://instagram.com",
+                    target: "_blank",
+                    rel: "noopener",
+                    className: "text-pink-600 font-semibold underline",
+                    children: "@sbkfragrances"
+                }, void 0, false, {
+                    fileName: "[project]/app/components/InstagramFeed.js",
+                    lineNumber: 13,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/app/components/InstagramFeed.js",
+                lineNumber: 12,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/app/components/InstagramFeed.js",
+        lineNumber: 3,
+        columnNumber: 5
+    }, this);
+}
+_c = InstagramFeed;
+var _c;
+__turbopack_context__.k.register(_c, "InstagramFeed");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/app/components/Navbar.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+// Placeholder for Navbar component
+__turbopack_context__.s([
+    "Navbar",
+    ()=>Navbar
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+;
+function Navbar() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute top-6 left-8 z-50 select-none pointer-events-auto",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                    href: "/",
+                    className: "flex items-center",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                        src: "/images/Elegant_SBK_Fragrance_Logo_Design-removebg-preview.png",
+                        alt: "SBK Fragrance Logo",
+                        className: "h-16 md:h-20 w-auto object-contain"
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/Navbar.js",
+                        lineNumber: 8,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/app/components/Navbar.js",
+                    lineNumber: 7,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/app/components/Navbar.js",
+                lineNumber: 6,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute top-8 left-1/2 transform -translate-x-1/2 z-40 w-full max-w-5xl flex flex-row items-center justify-center select-none pointer-events-auto",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
+                    className: "flex flex-row gap-6 md:gap-10 text-white text-sm md:text-base font-bold uppercase tracking-[0.18em] bg-transparent px-6 py-2 rounded-xl",
+                    style: {
+                        fontFamily: 'Oswald, Bebas Neue, Montserrat, Arial, sans-serif'
+                    },
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                            href: "/",
+                            className: "hover:text-black-300 transition",
+                            children: "Home"
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/Navbar.js",
+                            lineNumber: 14,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                            href: "/shop",
+                            className: "hover:text-black-300 transition",
+                            children: "Shop"
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/Navbar.js",
+                            lineNumber: 15,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                            href: "/collections",
+                            className: "hover:text-black-300 transition",
+                            children: "Collections"
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/Navbar.js",
+                            lineNumber: 16,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                            href: "/about",
+                            className: "hover:text-black-300 transition",
+                            children: "About"
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/Navbar.js",
+                            lineNumber: 17,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                            href: "/contact",
+                            className: "hover:text-black-300 transition",
+                            children: "Contact"
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/Navbar.js",
+                            lineNumber: 18,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/components/Navbar.js",
+                    lineNumber: 13,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/app/components/Navbar.js",
+                lineNumber: 12,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true);
+}
+_c = Navbar;
+var _c;
+__turbopack_context__.k.register(_c, "Navbar");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/app/components/HeroSplit.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>HeroSplit
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Navbar$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/components/Navbar.js [app-client] (ecmascript)");
+"use client";
+;
+;
+function HeroSplit() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        className: "relative w-full h-[110vh] flex overflow-hidden p-0 m-0",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Navbar$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Navbar"], {}, void 0, false, {
+                fileName: "[project]/app/components/HeroSplit.js",
+                lineNumber: 9,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex-1 min-w-0 min-h-0 relative flex items-end justify-center h-full",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                        src: "/images/Floral Elegance_ My Way Perfume.png",
+                        className: "absolute inset-0 w-full h-full object-cover",
+                        style: {
+                            objectPosition: "60% 40%"
+                        },
+                        alt: "For Her"
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/HeroSplit.js",
+                        lineNumber: 12,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "absolute bottom-8 left-8 text-white text-xl md:text-2xl font-bold uppercase tracking-[0.18em] drop-shadow-lg",
+                        style: {
+                            fontFamily: "Oswald, Bebas Neue, Montserrat, Arial, sans-serif"
+                        },
+                        children: "For Her"
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/HeroSplit.js",
+                        lineNumber: 18,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/components/HeroSplit.js",
+                lineNumber: 11,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex-1 min-w-0 min-h-0 relative flex items-end justify-center h-full",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                        src: "/images/SBK Frangrance1.png",
+                        className: "absolute inset-0 w-full h-full object-cover object-center",
+                        alt: "For Him"
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/HeroSplit.js",
+                        lineNumber: 24,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "absolute bottom-8 right-8 text-white text-xl md:text-2xl font-bold uppercase tracking-[0.18em] drop-shadow-lg",
+                        style: {
+                            fontFamily: "Oswald, Bebas Neue, Montserrat, Arial, sans-serif"
+                        },
+                        children: "For Him"
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/HeroSplit.js",
+                        lineNumber: 29,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/components/HeroSplit.js",
+                lineNumber: 23,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                    className: "text-5xl md:text-7xl font-extrabold uppercase tracking-[0.18em] text-white text-center leading-tight",
+                    style: {
+                        fontFamily: "Oswald, Bebas Neue, Montserrat, Arial, sans-serif",
+                        textShadow: "0 4px 24px rgba(0,0,0,0.45)"
+                    },
+                    children: [
+                        "Indulge",
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                            fileName: "[project]/app/components/HeroSplit.js",
+                            lineNumber: 36,
+                            columnNumber: 18
+                        }, this),
+                        "Your Senses"
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/components/HeroSplit.js",
+                    lineNumber: 35,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/app/components/HeroSplit.js",
+                lineNumber: 34,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/app/components/HeroSplit.js",
+        lineNumber: 8,
+        columnNumber: 5
+    }, this);
+}
+_c = HeroSplit;
+var _c;
+__turbopack_context__.k.register(_c, "HeroSplit");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/app/page.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+const e = new Error("Could not parse module '[project]/app/page.js'\n\nExpected '>', got 'div'");
+e.code = 'MODULE_UNPARSABLE';
+throw e;
+}),
+"[project]/node_modules/next/dist/compiled/react/cjs/react-jsx-dev-runtime.development.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/**
+ * @license React
+ * react-jsx-dev-runtime.development.js
+ *
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+"use strict";
+"production" !== ("TURBOPACK compile-time value", "development") && function() {
+    function getComponentNameFromType(type) {
+        if (null == type) return null;
+        if ("function" === typeof type) return type.$$typeof === REACT_CLIENT_REFERENCE ? null : type.displayName || type.name || null;
+        if ("string" === typeof type) return type;
+        switch(type){
+            case REACT_FRAGMENT_TYPE:
+                return "Fragment";
+            case REACT_PROFILER_TYPE:
+                return "Profiler";
+            case REACT_STRICT_MODE_TYPE:
+                return "StrictMode";
+            case REACT_SUSPENSE_TYPE:
+                return "Suspense";
+            case REACT_SUSPENSE_LIST_TYPE:
+                return "SuspenseList";
+            case REACT_ACTIVITY_TYPE:
+                return "Activity";
+            case REACT_VIEW_TRANSITION_TYPE:
+                return "ViewTransition";
+        }
+        if ("object" === typeof type) switch("number" === typeof type.tag && console.error("Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."), type.$$typeof){
+            case REACT_PORTAL_TYPE:
+                return "Portal";
+            case REACT_CONTEXT_TYPE:
+                return type.displayName || "Context";
+            case REACT_CONSUMER_TYPE:
+                return (type._context.displayName || "Context") + ".Consumer";
+            case REACT_FORWARD_REF_TYPE:
+                var innerType = type.render;
+                type = type.displayName;
+                type || (type = innerType.displayName || innerType.name || "", type = "" !== type ? "ForwardRef(" + type + ")" : "ForwardRef");
+                return type;
+            case REACT_MEMO_TYPE:
+                return innerType = type.displayName || null, null !== innerType ? innerType : getComponentNameFromType(type.type) || "Memo";
+            case REACT_LAZY_TYPE:
+                innerType = type._payload;
+                type = type._init;
+                try {
+                    return getComponentNameFromType(type(innerType));
+                } catch (x) {}
+        }
+        return null;
+    }
+    function testStringCoercion(value) {
+        return "" + value;
+    }
+    function checkKeyStringCoercion(value) {
+        try {
+            testStringCoercion(value);
+            var JSCompiler_inline_result = !1;
+        } catch (e) {
+            JSCompiler_inline_result = !0;
+        }
+        if (JSCompiler_inline_result) {
+            JSCompiler_inline_result = console;
+            var JSCompiler_temp_const = JSCompiler_inline_result.error;
+            var JSCompiler_inline_result$jscomp$0 = "function" === typeof Symbol && Symbol.toStringTag && value[Symbol.toStringTag] || value.constructor.name || "Object";
+            JSCompiler_temp_const.call(JSCompiler_inline_result, "The provided key is an unsupported type %s. This value must be coerced to a string before using it here.", JSCompiler_inline_result$jscomp$0);
+            return testStringCoercion(value);
+        }
+    }
+    function getTaskName(type) {
+        if (type === REACT_FRAGMENT_TYPE) return "<>";
+        if ("object" === typeof type && null !== type && type.$$typeof === REACT_LAZY_TYPE) return "<...>";
+        try {
+            var name = getComponentNameFromType(type);
+            return name ? "<" + name + ">" : "<...>";
+        } catch (x) {
+            return "<...>";
+        }
+    }
+    function getOwner() {
+        var dispatcher = ReactSharedInternals.A;
+        return null === dispatcher ? null : dispatcher.getOwner();
+    }
+    function UnknownOwner() {
+        return Error("react-stack-top-frame");
+    }
+    function hasValidKey(config) {
+        if (hasOwnProperty.call(config, "key")) {
+            var getter = Object.getOwnPropertyDescriptor(config, "key").get;
+            if (getter && getter.isReactWarning) return !1;
+        }
+        return void 0 !== config.key;
+    }
+    function defineKeyPropWarningGetter(props, displayName) {
+        function warnAboutAccessingKey() {
+            specialPropKeyWarningShown || (specialPropKeyWarningShown = !0, console.error("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://react.dev/link/special-props)", displayName));
+        }
+        warnAboutAccessingKey.isReactWarning = !0;
+        Object.defineProperty(props, "key", {
+            get: warnAboutAccessingKey,
+            configurable: !0
+        });
+    }
+    function elementRefGetterWithDeprecationWarning() {
+        var componentName = getComponentNameFromType(this.type);
+        didWarnAboutElementRef[componentName] || (didWarnAboutElementRef[componentName] = !0, console.error("Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."));
+        componentName = this.props.ref;
+        return void 0 !== componentName ? componentName : null;
+    }
+    function ReactElement(type, key, props, owner, debugStack, debugTask) {
+        var refProp = props.ref;
+        type = {
+            $$typeof: REACT_ELEMENT_TYPE,
+            type: type,
+            key: key,
+            props: props,
+            _owner: owner
+        };
+        null !== (void 0 !== refProp ? refProp : null) ? Object.defineProperty(type, "ref", {
+            enumerable: !1,
+            get: elementRefGetterWithDeprecationWarning
+        }) : Object.defineProperty(type, "ref", {
+            enumerable: !1,
+            value: null
+        });
+        type._store = {};
+        Object.defineProperty(type._store, "validated", {
+            configurable: !1,
+            enumerable: !1,
+            writable: !0,
+            value: 0
+        });
+        Object.defineProperty(type, "_debugInfo", {
+            configurable: !1,
+            enumerable: !1,
+            writable: !0,
+            value: null
+        });
+        Object.defineProperty(type, "_debugStack", {
+            configurable: !1,
+            enumerable: !1,
+            writable: !0,
+            value: debugStack
+        });
+        Object.defineProperty(type, "_debugTask", {
+            configurable: !1,
+            enumerable: !1,
+            writable: !0,
+            value: debugTask
+        });
+        Object.freeze && (Object.freeze(type.props), Object.freeze(type));
+        return type;
+    }
+    function jsxDEVImpl(type, config, maybeKey, isStaticChildren, debugStack, debugTask) {
+        var children = config.children;
+        if (void 0 !== children) if (isStaticChildren) if (isArrayImpl(children)) {
+            for(isStaticChildren = 0; isStaticChildren < children.length; isStaticChildren++)validateChildKeys(children[isStaticChildren]);
+            Object.freeze && Object.freeze(children);
+        } else console.error("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");
+        else validateChildKeys(children);
+        if (hasOwnProperty.call(config, "key")) {
+            children = getComponentNameFromType(type);
+            var keys = Object.keys(config).filter(function(k) {
+                return "key" !== k;
+            });
+            isStaticChildren = 0 < keys.length ? "{key: someKey, " + keys.join(": ..., ") + ": ...}" : "{key: someKey}";
+            didWarnAboutKeySpread[children + isStaticChildren] || (keys = 0 < keys.length ? "{" + keys.join(": ..., ") + ": ...}" : "{}", console.error('A props object containing a "key" prop is being spread into JSX:\n  let props = %s;\n  <%s {...props} />\nReact keys must be passed directly to JSX without using spread:\n  let props = %s;\n  <%s key={someKey} {...props} />', isStaticChildren, children, keys, children), didWarnAboutKeySpread[children + isStaticChildren] = !0);
+        }
+        children = null;
+        void 0 !== maybeKey && (checkKeyStringCoercion(maybeKey), children = "" + maybeKey);
+        hasValidKey(config) && (checkKeyStringCoercion(config.key), children = "" + config.key);
+        if ("key" in config) {
+            maybeKey = {};
+            for(var propName in config)"key" !== propName && (maybeKey[propName] = config[propName]);
+        } else maybeKey = config;
+        children && defineKeyPropWarningGetter(maybeKey, "function" === typeof type ? type.displayName || type.name || "Unknown" : type);
+        return ReactElement(type, children, maybeKey, getOwner(), debugStack, debugTask);
+    }
+    function validateChildKeys(node) {
+        isValidElement(node) ? node._store && (node._store.validated = 1) : "object" === typeof node && null !== node && node.$$typeof === REACT_LAZY_TYPE && ("fulfilled" === node._payload.status ? isValidElement(node._payload.value) && node._payload.value._store && (node._payload.value._store.validated = 1) : node._store && (node._store.validated = 1));
+    }
+    function isValidElement(object) {
+        return "object" === typeof object && null !== object && object.$$typeof === REACT_ELEMENT_TYPE;
+    }
+    var React = __turbopack_context__.r("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_ACTIVITY_TYPE = Symbol.for("react.activity"), REACT_VIEW_TRANSITION_TYPE = Symbol.for("react.view_transition"), REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ReactSharedInternals = React.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, hasOwnProperty = Object.prototype.hasOwnProperty, isArrayImpl = Array.isArray, createTask = console.createTask ? console.createTask : function() {
+        return null;
+    };
+    React = {
+        react_stack_bottom_frame: function(callStackForError) {
+            return callStackForError();
+        }
+    };
+    var specialPropKeyWarningShown;
+    var didWarnAboutElementRef = {};
+    var unknownOwnerDebugStack = React.react_stack_bottom_frame.bind(React, UnknownOwner)();
+    var unknownOwnerDebugTask = createTask(getTaskName(UnknownOwner));
+    var didWarnAboutKeySpread = {};
+    exports.Fragment = REACT_FRAGMENT_TYPE;
+    exports.jsxDEV = function(type, config, maybeKey, isStaticChildren) {
+        var trackActualOwner = 1e4 > ReactSharedInternals.recentlyCreatedOwnerStacks++;
+        if (trackActualOwner) {
+            var previousStackTraceLimit = Error.stackTraceLimit;
+            Error.stackTraceLimit = 10;
+            var debugStackDEV = Error("react-stack-top-frame");
+            Error.stackTraceLimit = previousStackTraceLimit;
+        } else debugStackDEV = unknownOwnerDebugStack;
+        return jsxDEVImpl(type, config, maybeKey, isStaticChildren, debugStackDEV, trackActualOwner ? createTask(getTaskName(type)) : unknownOwnerDebugTask);
+    };
+}();
+}),
+"[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+'use strict';
+if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+;
+else {
+    module.exports = __turbopack_context__.r("[project]/node_modules/next/dist/compiled/react/cjs/react-jsx-dev-runtime.development.js [app-client] (ecmascript)");
+}
+}),
+"[project]/node_modules/aos/dist/aos.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+!function(e, t) {
+    ("TURBOPACK compile-time truthy", 1) ? module.exports = t() : "TURBOPACK unreachable";
+}(/*TURBOPACK member replacement*/ __turbopack_context__.e, function() {
+    return function(e) {
+        function t(o) {
+            if (n[o]) return n[o].exports;
+            var i = n[o] = {
+                exports: {},
+                id: o,
+                loaded: !1
+            };
+            return e[o].call(i.exports, i, i.exports, t), i.loaded = !0, i.exports;
+        }
+        var n = {};
+        return t.m = e, t.c = n, t.p = "dist/", t(0);
+    }([
+        function(e, t, n) {
+            "use strict";
+            function o(e) {
+                return e && e.__esModule ? e : {
+                    default: e
+                };
+            }
+            var i = Object.assign || function(e) {
+                for(var t = 1; t < arguments.length; t++){
+                    var n = arguments[t];
+                    for(var o in n)Object.prototype.hasOwnProperty.call(n, o) && (e[o] = n[o]);
+                }
+                return e;
+            }, r = n(1), a = (o(r), n(6)), u = o(a), c = n(7), s = o(c), f = n(8), d = o(f), l = n(9), p = o(l), m = n(10), b = o(m), v = n(11), y = o(v), g = n(14), h = o(g), w = [], k = !1, x = {
+                offset: 120,
+                delay: 0,
+                easing: "ease",
+                duration: 400,
+                disable: !1,
+                once: !1,
+                startEvent: "DOMContentLoaded",
+                throttleDelay: 99,
+                debounceDelay: 50,
+                disableMutationObserver: !1
+            }, j = function() {
+                var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
+                if (e && (k = !0), k) return w = (0, y.default)(w, x), (0, b.default)(w, x.once), w;
+            }, O = function() {
+                w = (0, h.default)(), j();
+            }, M = function() {
+                w.forEach(function(e, t) {
+                    e.node.removeAttribute("data-aos"), e.node.removeAttribute("data-aos-easing"), e.node.removeAttribute("data-aos-duration"), e.node.removeAttribute("data-aos-delay");
+                });
+            }, S = function(e) {
+                return e === !0 || "mobile" === e && p.default.mobile() || "phone" === e && p.default.phone() || "tablet" === e && p.default.tablet() || "function" == typeof e && e() === !0;
+            }, _ = function(e) {
+                x = i(x, e), w = (0, h.default)();
+                var t = document.all && !window.atob;
+                return S(x.disable) || t ? M() : (x.disableMutationObserver || d.default.isSupported() || (console.info('\n      aos: MutationObserver is not supported on this browser,\n      code mutations observing has been disabled.\n      You may have to call "refreshHard()" by yourself.\n    '), x.disableMutationObserver = !0), document.querySelector("body").setAttribute("data-aos-easing", x.easing), document.querySelector("body").setAttribute("data-aos-duration", x.duration), document.querySelector("body").setAttribute("data-aos-delay", x.delay), "DOMContentLoaded" === x.startEvent && [
+                    "complete",
+                    "interactive"
+                ].indexOf(document.readyState) > -1 ? j(!0) : "load" === x.startEvent ? window.addEventListener(x.startEvent, function() {
+                    j(!0);
+                }) : document.addEventListener(x.startEvent, function() {
+                    j(!0);
+                }), window.addEventListener("resize", (0, s.default)(j, x.debounceDelay, !0)), window.addEventListener("orientationchange", (0, s.default)(j, x.debounceDelay, !0)), window.addEventListener("scroll", (0, u.default)(function() {
+                    (0, b.default)(w, x.once);
+                }, x.throttleDelay)), x.disableMutationObserver || d.default.ready("[data-aos]", O), w);
+            };
+            e.exports = {
+                init: _,
+                refresh: j,
+                refreshHard: O
+            };
+        },
+        function(e, t) {},
+        ,
+        ,
+        ,
+        ,
+        function(e, t) {
+            (function(t) {
+                "use strict";
+                function n(e, t, n) {
+                    function o(t) {
+                        var n = b, o = v;
+                        return b = v = void 0, k = t, g = e.apply(o, n);
+                    }
+                    function r(e) {
+                        return k = e, h = setTimeout(f, t), M ? o(e) : g;
+                    }
+                    function a(e) {
+                        var n = e - w, o = e - k, i = t - n;
+                        return S ? j(i, y - o) : i;
+                    }
+                    function c(e) {
+                        var n = e - w, o = e - k;
+                        return void 0 === w || n >= t || n < 0 || S && o >= y;
+                    }
+                    function f() {
+                        var e = O();
+                        return c(e) ? d(e) : void (h = setTimeout(f, a(e)));
+                    }
+                    function d(e) {
+                        return h = void 0, _ && b ? o(e) : (b = v = void 0, g);
+                    }
+                    function l() {
+                        void 0 !== h && clearTimeout(h), k = 0, b = w = v = h = void 0;
+                    }
+                    function p() {
+                        return void 0 === h ? g : d(O());
+                    }
+                    function m() {
+                        var e = O(), n = c(e);
+                        if (b = arguments, v = this, w = e, n) {
+                            if (void 0 === h) return r(w);
+                            if (S) return h = setTimeout(f, t), o(w);
+                        }
+                        return void 0 === h && (h = setTimeout(f, t)), g;
+                    }
+                    var b, v, y, g, h, w, k = 0, M = !1, S = !1, _ = !0;
+                    if ("function" != typeof e) throw new TypeError(s);
+                    return t = u(t) || 0, i(n) && (M = !!n.leading, S = "maxWait" in n, y = S ? x(u(n.maxWait) || 0, t) : y, _ = "trailing" in n ? !!n.trailing : _), m.cancel = l, m.flush = p, m;
+                }
+                function o(e, t, o) {
+                    var r = !0, a = !0;
+                    if ("function" != typeof e) throw new TypeError(s);
+                    return i(o) && (r = "leading" in o ? !!o.leading : r, a = "trailing" in o ? !!o.trailing : a), n(e, t, {
+                        leading: r,
+                        maxWait: t,
+                        trailing: a
+                    });
+                }
+                function i(e) {
+                    var t = "undefined" == typeof e ? "undefined" : c(e);
+                    return !!e && ("object" == t || "function" == t);
+                }
+                function r(e) {
+                    return !!e && "object" == ("undefined" == typeof e ? "undefined" : c(e));
+                }
+                function a(e) {
+                    return "symbol" == ("undefined" == typeof e ? "undefined" : c(e)) || r(e) && k.call(e) == d;
+                }
+                function u(e) {
+                    if ("number" == typeof e) return e;
+                    if (a(e)) return f;
+                    if (i(e)) {
+                        var t = "function" == typeof e.valueOf ? e.valueOf() : e;
+                        e = i(t) ? t + "" : t;
+                    }
+                    if ("string" != typeof e) return 0 === e ? e : +e;
+                    e = e.replace(l, "");
+                    var n = m.test(e);
+                    return n || b.test(e) ? v(e.slice(2), n ? 2 : 8) : p.test(e) ? f : +e;
+                }
+                var c = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+                    return typeof e;
+                } : function(e) {
+                    return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e;
+                }, s = "Expected a function", f = NaN, d = "[object Symbol]", l = /^\s+|\s+$/g, p = /^[-+]0x[0-9a-f]+$/i, m = /^0b[01]+$/i, b = /^0o[0-7]+$/i, v = parseInt, y = "object" == ("undefined" == typeof t ? "undefined" : c(t)) && t && t.Object === Object && t, g = "object" == ("undefined" == typeof self ? "undefined" : c(self)) && self && self.Object === Object && self, h = y || g || Function("return this")(), w = Object.prototype, k = w.toString, x = Math.max, j = Math.min, O = function() {
+                    return h.Date.now();
+                };
+                e.exports = o;
+            }).call(t, function() {
+                return this;
+            }());
+        },
+        function(e, t) {
+            (function(t) {
+                "use strict";
+                function n(e, t, n) {
+                    function i(t) {
+                        var n = b, o = v;
+                        return b = v = void 0, O = t, g = e.apply(o, n);
+                    }
+                    function r(e) {
+                        return O = e, h = setTimeout(f, t), M ? i(e) : g;
+                    }
+                    function u(e) {
+                        var n = e - w, o = e - O, i = t - n;
+                        return S ? x(i, y - o) : i;
+                    }
+                    function s(e) {
+                        var n = e - w, o = e - O;
+                        return void 0 === w || n >= t || n < 0 || S && o >= y;
+                    }
+                    function f() {
+                        var e = j();
+                        return s(e) ? d(e) : void (h = setTimeout(f, u(e)));
+                    }
+                    function d(e) {
+                        return h = void 0, _ && b ? i(e) : (b = v = void 0, g);
+                    }
+                    function l() {
+                        void 0 !== h && clearTimeout(h), O = 0, b = w = v = h = void 0;
+                    }
+                    function p() {
+                        return void 0 === h ? g : d(j());
+                    }
+                    function m() {
+                        var e = j(), n = s(e);
+                        if (b = arguments, v = this, w = e, n) {
+                            if (void 0 === h) return r(w);
+                            if (S) return h = setTimeout(f, t), i(w);
+                        }
+                        return void 0 === h && (h = setTimeout(f, t)), g;
+                    }
+                    var b, v, y, g, h, w, O = 0, M = !1, S = !1, _ = !0;
+                    if ("function" != typeof e) throw new TypeError(c);
+                    return t = a(t) || 0, o(n) && (M = !!n.leading, S = "maxWait" in n, y = S ? k(a(n.maxWait) || 0, t) : y, _ = "trailing" in n ? !!n.trailing : _), m.cancel = l, m.flush = p, m;
+                }
+                function o(e) {
+                    var t = "undefined" == typeof e ? "undefined" : u(e);
+                    return !!e && ("object" == t || "function" == t);
+                }
+                function i(e) {
+                    return !!e && "object" == ("undefined" == typeof e ? "undefined" : u(e));
+                }
+                function r(e) {
+                    return "symbol" == ("undefined" == typeof e ? "undefined" : u(e)) || i(e) && w.call(e) == f;
+                }
+                function a(e) {
+                    if ("number" == typeof e) return e;
+                    if (r(e)) return s;
+                    if (o(e)) {
+                        var t = "function" == typeof e.valueOf ? e.valueOf() : e;
+                        e = o(t) ? t + "" : t;
+                    }
+                    if ("string" != typeof e) return 0 === e ? e : +e;
+                    e = e.replace(d, "");
+                    var n = p.test(e);
+                    return n || m.test(e) ? b(e.slice(2), n ? 2 : 8) : l.test(e) ? s : +e;
+                }
+                var u = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+                    return typeof e;
+                } : function(e) {
+                    return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e;
+                }, c = "Expected a function", s = NaN, f = "[object Symbol]", d = /^\s+|\s+$/g, l = /^[-+]0x[0-9a-f]+$/i, p = /^0b[01]+$/i, m = /^0o[0-7]+$/i, b = parseInt, v = "object" == ("undefined" == typeof t ? "undefined" : u(t)) && t && t.Object === Object && t, y = "object" == ("undefined" == typeof self ? "undefined" : u(self)) && self && self.Object === Object && self, g = v || y || Function("return this")(), h = Object.prototype, w = h.toString, k = Math.max, x = Math.min, j = function() {
+                    return g.Date.now();
+                };
+                e.exports = n;
+            }).call(t, function() {
+                return this;
+            }());
+        },
+        function(e, t) {
+            "use strict";
+            function n(e) {
+                var t = void 0, o = void 0, i = void 0;
+                for(t = 0; t < e.length; t += 1){
+                    if (o = e[t], o.dataset && o.dataset.aos) return !0;
+                    if (i = o.children && n(o.children)) return !0;
+                }
+                return !1;
+            }
+            function o() {
+                return window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+            }
+            function i() {
+                return !!o();
+            }
+            function r(e, t) {
+                var n = window.document, i = o(), r = new i(a);
+                u = t, r.observe(n.documentElement, {
+                    childList: !0,
+                    subtree: !0,
+                    removedNodes: !0
+                });
+            }
+            function a(e) {
+                e && e.forEach(function(e) {
+                    var t = Array.prototype.slice.call(e.addedNodes), o = Array.prototype.slice.call(e.removedNodes), i = t.concat(o);
+                    if (n(i)) return u();
+                });
+            }
+            Object.defineProperty(t, "__esModule", {
+                value: !0
+            });
+            var u = function() {};
+            t.default = {
+                isSupported: i,
+                ready: r
+            };
+        },
+        function(e, t) {
+            "use strict";
+            function n(e, t) {
+                if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
+            }
+            function o() {
+                return navigator.userAgent || navigator.vendor || window.opera || "";
+            }
+            Object.defineProperty(t, "__esModule", {
+                value: !0
+            });
+            var i = function() {
+                function e(e, t) {
+                    for(var n = 0; n < t.length; n++){
+                        var o = t[n];
+                        o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, o.key, o);
+                    }
+                }
+                return function(t, n, o) {
+                    return n && e(t.prototype, n), o && e(t, o), t;
+                };
+            }(), r = /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i, a = /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i, u = /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i, c = /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i, s = function() {
+                function e() {
+                    n(this, e);
+                }
+                return i(e, [
+                    {
+                        key: "phone",
+                        value: function() {
+                            var e = o();
+                            return !(!r.test(e) && !a.test(e.substr(0, 4)));
+                        }
+                    },
+                    {
+                        key: "mobile",
+                        value: function() {
+                            var e = o();
+                            return !(!u.test(e) && !c.test(e.substr(0, 4)));
+                        }
+                    },
+                    {
+                        key: "tablet",
+                        value: function() {
+                            return this.mobile() && !this.phone();
+                        }
+                    }
+                ]), e;
+            }();
+            t.default = new s;
+        },
+        function(e, t) {
+            "use strict";
+            Object.defineProperty(t, "__esModule", {
+                value: !0
+            });
+            var n = function(e, t, n) {
+                var o = e.node.getAttribute("data-aos-once");
+                t > e.position ? e.node.classList.add("aos-animate") : "undefined" != typeof o && ("false" === o || !n && "true" !== o) && e.node.classList.remove("aos-animate");
+            }, o = function(e, t) {
+                var o = window.pageYOffset, i = window.innerHeight;
+                e.forEach(function(e, r) {
+                    n(e, i + o, t);
+                });
+            };
+            t.default = o;
+        },
+        function(e, t, n) {
+            "use strict";
+            function o(e) {
+                return e && e.__esModule ? e : {
+                    default: e
+                };
+            }
+            Object.defineProperty(t, "__esModule", {
+                value: !0
+            });
+            var i = n(12), r = o(i), a = function(e, t) {
+                return e.forEach(function(e, n) {
+                    e.node.classList.add("aos-init"), e.position = (0, r.default)(e.node, t.offset);
+                }), e;
+            };
+            t.default = a;
+        },
+        function(e, t, n) {
+            "use strict";
+            function o(e) {
+                return e && e.__esModule ? e : {
+                    default: e
+                };
+            }
+            Object.defineProperty(t, "__esModule", {
+                value: !0
+            });
+            var i = n(13), r = o(i), a = function(e, t) {
+                var n = 0, o = 0, i = window.innerHeight, a = {
+                    offset: e.getAttribute("data-aos-offset"),
+                    anchor: e.getAttribute("data-aos-anchor"),
+                    anchorPlacement: e.getAttribute("data-aos-anchor-placement")
+                };
+                switch(a.offset && !isNaN(a.offset) && (o = parseInt(a.offset)), a.anchor && document.querySelectorAll(a.anchor) && (e = document.querySelectorAll(a.anchor)[0]), n = (0, r.default)(e).top, a.anchorPlacement){
+                    case "top-bottom":
+                        break;
+                    case "center-bottom":
+                        n += e.offsetHeight / 2;
+                        break;
+                    case "bottom-bottom":
+                        n += e.offsetHeight;
+                        break;
+                    case "top-center":
+                        n += i / 2;
+                        break;
+                    case "bottom-center":
+                        n += i / 2 + e.offsetHeight;
+                        break;
+                    case "center-center":
+                        n += i / 2 + e.offsetHeight / 2;
+                        break;
+                    case "top-top":
+                        n += i;
+                        break;
+                    case "bottom-top":
+                        n += e.offsetHeight + i;
+                        break;
+                    case "center-top":
+                        n += e.offsetHeight / 2 + i;
+                }
+                return a.anchorPlacement || a.offset || isNaN(t) || (o = t), n + o;
+            };
+            t.default = a;
+        },
+        function(e, t) {
+            "use strict";
+            Object.defineProperty(t, "__esModule", {
+                value: !0
+            });
+            var n = function(e) {
+                for(var t = 0, n = 0; e && !isNaN(e.offsetLeft) && !isNaN(e.offsetTop);)t += e.offsetLeft - ("BODY" != e.tagName ? e.scrollLeft : 0), n += e.offsetTop - ("BODY" != e.tagName ? e.scrollTop : 0), e = e.offsetParent;
+                return {
+                    top: n,
+                    left: t
+                };
+            };
+            t.default = n;
+        },
+        function(e, t) {
+            "use strict";
+            Object.defineProperty(t, "__esModule", {
+                value: !0
+            });
+            var n = function(e) {
+                return e = e || document.querySelectorAll("[data-aos]"), Array.prototype.map.call(e, function(e) {
+                    return {
+                        node: e
+                    };
+                });
+            };
+            t.default = n;
+        }
+    ]);
+});
+}),
+"[project]/node_modules/next/dist/client/components/noop-head.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "default", {
+    enumerable: true,
+    get: function() {
+        return NoopHead;
+    }
+});
+function NoopHead() {
+    return null;
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=noop-head.js.map
+}),
+"[project]/node_modules/next/dist/shared/lib/router/utils/querystring.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    assign: null,
+    searchParamsToUrlQuery: null,
+    urlQueryToSearchParams: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    assign: function() {
+        return assign;
+    },
+    searchParamsToUrlQuery: function() {
+        return searchParamsToUrlQuery;
+    },
+    urlQueryToSearchParams: function() {
+        return urlQueryToSearchParams;
+    }
+});
+function searchParamsToUrlQuery(searchParams) {
+    const query = {};
+    for (const [key, value] of searchParams.entries()){
+        const existing = query[key];
+        if (typeof existing === 'undefined') {
+            query[key] = value;
+        } else if (Array.isArray(existing)) {
+            existing.push(value);
+        } else {
+            query[key] = [
+                existing,
+                value
+            ];
+        }
+    }
+    return query;
+}
+function stringifyUrlQueryParam(param) {
+    if (typeof param === 'string') {
+        return param;
+    }
+    if (typeof param === 'number' && !isNaN(param) || typeof param === 'boolean') {
+        return String(param);
+    } else {
+        return '';
+    }
+}
+function urlQueryToSearchParams(query) {
+    const searchParams = new URLSearchParams();
+    for (const [key, value] of Object.entries(query)){
+        if (Array.isArray(value)) {
+            for (const item of value){
+                searchParams.append(key, stringifyUrlQueryParam(item));
+            }
+        } else {
+            searchParams.set(key, stringifyUrlQueryParam(value));
+        }
+    }
+    return searchParams;
+}
+function assign(target, ...searchParamsList) {
+    for (const searchParams of searchParamsList){
+        for (const key of searchParams.keys()){
+            target.delete(key);
+        }
+        for (const [key, value] of searchParams.entries()){
+            target.append(key, value);
+        }
+    }
+    return target;
+} //# sourceMappingURL=querystring.js.map
+}),
+"[project]/node_modules/next/dist/shared/lib/router/utils/format-url.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+// Format function modified from nodejs
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    formatUrl: null,
+    formatWithValidation: null,
+    urlObjectKeys: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    formatUrl: function() {
+        return formatUrl;
+    },
+    formatWithValidation: function() {
+        return formatWithValidation;
+    },
+    urlObjectKeys: function() {
+        return urlObjectKeys;
+    }
+});
+const _interop_require_wildcard = __turbopack_context__.r("[project]/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [app-client] (ecmascript)");
+const _querystring = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/node_modules/next/dist/shared/lib/router/utils/querystring.js [app-client] (ecmascript)"));
+const slashedProtocols = /https?|ftp|gopher|file/;
+function formatUrl(urlObj) {
+    let { auth, hostname } = urlObj;
+    let protocol = urlObj.protocol || '';
+    let pathname = urlObj.pathname || '';
+    let hash = urlObj.hash || '';
+    let query = urlObj.query || '';
+    let host = false;
+    auth = auth ? encodeURIComponent(auth).replace(/%3A/i, ':') + '@' : '';
+    if (urlObj.host) {
+        host = auth + urlObj.host;
+    } else if (hostname) {
+        host = auth + (~hostname.indexOf(':') ? `[${hostname}]` : hostname);
+        if (urlObj.port) {
+            host += ':' + urlObj.port;
+        }
+    }
+    if (query && typeof query === 'object') {
+        query = String(_querystring.urlQueryToSearchParams(query));
+    }
+    let search = urlObj.search || query && `?${query}` || '';
+    if (protocol && !protocol.endsWith(':')) protocol += ':';
+    if (urlObj.slashes || (!protocol || slashedProtocols.test(protocol)) && host !== false) {
+        host = '//' + (host || '');
+        if (pathname && pathname[0] !== '/') pathname = '/' + pathname;
+    } else if (!host) {
+        host = '';
+    }
+    if (hash && hash[0] !== '#') hash = '#' + hash;
+    if (search && search[0] !== '?') search = '?' + search;
+    pathname = pathname.replace(/[?#]/g, encodeURIComponent);
+    search = search.replace('#', '%23');
+    return `${protocol}${host}${pathname}${search}${hash}`;
+}
+const urlObjectKeys = [
+    'auth',
+    'hash',
+    'host',
+    'hostname',
+    'href',
+    'path',
+    'pathname',
+    'port',
+    'protocol',
+    'query',
+    'search',
+    'slashes'
+];
+function formatWithValidation(url) {
+    if ("TURBOPACK compile-time truthy", 1) {
+        if (url !== null && typeof url === 'object') {
+            Object.keys(url).forEach((key)=>{
+                if (!urlObjectKeys.includes(key)) {
+                    console.warn(`Unknown key passed via urlObject into url.format: ${key}`);
+                }
+            });
+        }
+    }
+    return formatUrl(url);
+} //# sourceMappingURL=format-url.js.map
+}),
+"[project]/node_modules/next/dist/client/use-merged-ref.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "useMergedRef", {
+    enumerable: true,
+    get: function() {
+        return useMergedRef;
+    }
+});
+const _react = __turbopack_context__.r("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+function useMergedRef(refA, refB) {
+    const cleanupA = (0, _react.useRef)(null);
+    const cleanupB = (0, _react.useRef)(null);
+    // NOTE: In theory, we could skip the wrapping if only one of the refs is non-null.
+    // (this happens often if the user doesn't pass a ref to Link/Form/Image)
+    // But this can cause us to leak a cleanup-ref into user code (previously via `<Link legacyBehavior>`),
+    // and the user might pass that ref into ref-merging library that doesn't support cleanup refs
+    // (because it hasn't been updated for React 19)
+    // which can then cause things to blow up, because a cleanup-returning ref gets called with `null`.
+    // So in practice, it's safer to be defensive and always wrap the ref, even on React 19.
+    return (0, _react.useCallback)((current)=>{
+        if (current === null) {
+            const cleanupFnA = cleanupA.current;
+            if (cleanupFnA) {
+                cleanupA.current = null;
+                cleanupFnA();
+            }
+            const cleanupFnB = cleanupB.current;
+            if (cleanupFnB) {
+                cleanupB.current = null;
+                cleanupFnB();
+            }
+        } else {
+            if (refA) {
+                cleanupA.current = applyRef(refA, current);
+            }
+            if (refB) {
+                cleanupB.current = applyRef(refB, current);
+            }
+        }
+    }, [
+        refA,
+        refB
+    ]);
+}
+function applyRef(refA, current) {
+    if (typeof refA === 'function') {
+        const cleanup = refA(current);
+        if (typeof cleanup === 'function') {
+            return cleanup;
+        } else {
+            return ()=>refA(null);
+        }
+    } else {
+        refA.current = current;
+        return ()=>{
+            refA.current = null;
+        };
+    }
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=use-merged-ref.js.map
+}),
+"[project]/node_modules/next/dist/shared/lib/utils.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    DecodeError: null,
+    MiddlewareNotFoundError: null,
+    MissingStaticPage: null,
+    NormalizeError: null,
+    PageNotFoundError: null,
+    SP: null,
+    ST: null,
+    WEB_VITALS: null,
+    execOnce: null,
+    getDisplayName: null,
+    getLocationOrigin: null,
+    getURL: null,
+    isAbsoluteUrl: null,
+    isResSent: null,
+    loadGetInitialProps: null,
+    normalizeRepeatedSlashes: null,
+    stringifyError: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    DecodeError: function() {
+        return DecodeError;
+    },
+    MiddlewareNotFoundError: function() {
+        return MiddlewareNotFoundError;
+    },
+    MissingStaticPage: function() {
+        return MissingStaticPage;
+    },
+    NormalizeError: function() {
+        return NormalizeError;
+    },
+    PageNotFoundError: function() {
+        return PageNotFoundError;
+    },
+    SP: function() {
+        return SP;
+    },
+    ST: function() {
+        return ST;
+    },
+    WEB_VITALS: function() {
+        return WEB_VITALS;
+    },
+    execOnce: function() {
+        return execOnce;
+    },
+    getDisplayName: function() {
+        return getDisplayName;
+    },
+    getLocationOrigin: function() {
+        return getLocationOrigin;
+    },
+    getURL: function() {
+        return getURL;
+    },
+    isAbsoluteUrl: function() {
+        return isAbsoluteUrl;
+    },
+    isResSent: function() {
+        return isResSent;
+    },
+    loadGetInitialProps: function() {
+        return loadGetInitialProps;
+    },
+    normalizeRepeatedSlashes: function() {
+        return normalizeRepeatedSlashes;
+    },
+    stringifyError: function() {
+        return stringifyError;
+    }
+});
+const WEB_VITALS = [
+    'CLS',
+    'FCP',
+    'FID',
+    'INP',
+    'LCP',
+    'TTFB'
+];
+function execOnce(fn) {
+    let used = false;
+    let result;
+    return (...args)=>{
+        if (!used) {
+            used = true;
+            result = fn(...args);
+        }
+        return result;
+    };
+}
+// Scheme: https://tools.ietf.org/html/rfc3986#section-3.1
+// Absolute URL: https://tools.ietf.org/html/rfc3986#section-4.3
+const ABSOLUTE_URL_REGEX = /^[a-zA-Z][a-zA-Z\d+\-.]*?:/;
+const isAbsoluteUrl = (url)=>ABSOLUTE_URL_REGEX.test(url);
+function getLocationOrigin() {
+    const { protocol, hostname, port } = window.location;
+    return `${protocol}//${hostname}${port ? ':' + port : ''}`;
+}
+function getURL() {
+    const { href } = window.location;
+    const origin = getLocationOrigin();
+    return href.substring(origin.length);
+}
+function getDisplayName(Component) {
+    return typeof Component === 'string' ? Component : Component.displayName || Component.name || 'Unknown';
+}
+function isResSent(res) {
+    return res.finished || res.headersSent;
+}
+function normalizeRepeatedSlashes(url) {
+    const urlParts = url.split('?');
+    const urlNoQuery = urlParts[0];
+    return urlNoQuery // first we replace any non-encoded backslashes with forward
+    // then normalize repeated forward slashes
+    .replace(/\\/g, '/').replace(/\/\/+/g, '/') + (urlParts[1] ? `?${urlParts.slice(1).join('?')}` : '');
+}
+async function loadGetInitialProps(App, ctx) {
+    if ("TURBOPACK compile-time truthy", 1) {
+        if (App.prototype?.getInitialProps) {
+            const message = `"${getDisplayName(App)}.getInitialProps()" is defined as an instance method - visit https://nextjs.org/docs/messages/get-initial-props-as-an-instance-method for more information.`;
+            throw Object.defineProperty(new Error(message), "__NEXT_ERROR_CODE", {
+                value: "E394",
+                enumerable: false,
+                configurable: true
+            });
+        }
+    }
+    // when called from _app `ctx` is nested in `ctx`
+    const res = ctx.res || ctx.ctx && ctx.ctx.res;
+    if (!App.getInitialProps) {
+        if (ctx.ctx && ctx.Component) {
+            // @ts-ignore pageProps default
+            return {
+                pageProps: await loadGetInitialProps(ctx.Component, ctx.ctx)
+            };
+        }
+        return {};
+    }
+    const props = await App.getInitialProps(ctx);
+    if (res && isResSent(res)) {
+        return props;
+    }
+    if (!props) {
+        const message = `"${getDisplayName(App)}.getInitialProps()" should resolve to an object. But found "${props}" instead.`;
+        throw Object.defineProperty(new Error(message), "__NEXT_ERROR_CODE", {
+            value: "E394",
+            enumerable: false,
+            configurable: true
+        });
+    }
+    if ("TURBOPACK compile-time truthy", 1) {
+        if (Object.keys(props).length === 0 && !ctx.ctx) {
+            console.warn(`${getDisplayName(App)} returned an empty object from \`getInitialProps\`. This de-optimizes and prevents automatic static optimization. https://nextjs.org/docs/messages/empty-object-getInitialProps`);
+        }
+    }
+    return props;
+}
+const SP = typeof performance !== 'undefined';
+const ST = SP && [
+    'mark',
+    'measure',
+    'getEntriesByName'
+].every((method)=>typeof performance[method] === 'function');
+class DecodeError extends Error {
+}
+class NormalizeError extends Error {
+}
+class PageNotFoundError extends Error {
+    constructor(page){
+        super();
+        this.code = 'ENOENT';
+        this.name = 'PageNotFoundError';
+        this.message = `Cannot find module for page: ${page}`;
+    }
+}
+class MissingStaticPage extends Error {
+    constructor(page, message){
+        super();
+        this.message = `Failed to load static file for page: ${page} ${message}`;
+    }
+}
+class MiddlewareNotFoundError extends Error {
+    constructor(){
+        super();
+        this.code = 'ENOENT';
+        this.message = `Cannot find the middleware module`;
+    }
+}
+function stringifyError(error) {
+    return JSON.stringify({
+        message: error.message,
+        stack: error.stack
+    });
+} //# sourceMappingURL=utils.js.map
+}),
+"[project]/node_modules/next/dist/shared/lib/router/utils/is-local-url.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "isLocalURL", {
+    enumerable: true,
+    get: function() {
+        return isLocalURL;
+    }
+});
+const _utils = __turbopack_context__.r("[project]/node_modules/next/dist/shared/lib/utils.js [app-client] (ecmascript)");
+const _hasbasepath = __turbopack_context__.r("[project]/node_modules/next/dist/client/has-base-path.js [app-client] (ecmascript)");
+function isLocalURL(url) {
+    // prevent a hydration mismatch on href for url with anchor refs
+    if (!(0, _utils.isAbsoluteUrl)(url)) return true;
+    try {
+        // absolute urls can be local if they are on the same origin
+        const locationOrigin = (0, _utils.getLocationOrigin)();
+        const resolved = new URL(url, locationOrigin);
+        return resolved.origin === locationOrigin && (0, _hasbasepath.hasBasePath)(resolved.pathname);
+    } catch (_) {
+        return false;
+    }
+} //# sourceMappingURL=is-local-url.js.map
+}),
+"[project]/node_modules/next/dist/shared/lib/utils/error-once.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "errorOnce", {
+    enumerable: true,
+    get: function() {
+        return errorOnce;
+    }
+});
+let errorOnce = (_)=>{};
+if ("TURBOPACK compile-time truthy", 1) {
+    const errors = new Set();
+    errorOnce = (msg)=>{
+        if (!errors.has(msg)) {
+            console.error(msg);
+        }
+        errors.add(msg);
+    };
+} //# sourceMappingURL=error-once.js.map
+}),
+"[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+'use client';
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    default: null,
+    useLinkStatus: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    /**
+ * A React component that extends the HTML `<a>` element to provide
+ * [prefetching](https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating#2-prefetching)
+ * and client-side navigation. This is the primary way to navigate between routes in Next.js.
+ *
+ * @remarks
+ * - Prefetching is only enabled in production.
+ *
+ * @see https://nextjs.org/docs/app/api-reference/components/link
+ */ default: function() {
+        return LinkComponent;
+    },
+    useLinkStatus: function() {
+        return useLinkStatus;
+    }
+});
+const _interop_require_wildcard = __turbopack_context__.r("[project]/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [app-client] (ecmascript)");
+const _jsxruntime = __turbopack_context__.r("[project]/node_modules/next/dist/compiled/react/jsx-runtime.js [app-client] (ecmascript)");
+const _react = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
+const _formaturl = __turbopack_context__.r("[project]/node_modules/next/dist/shared/lib/router/utils/format-url.js [app-client] (ecmascript)");
+const _approutercontextsharedruntime = __turbopack_context__.r("[project]/node_modules/next/dist/shared/lib/app-router-context.shared-runtime.js [app-client] (ecmascript)");
+const _usemergedref = __turbopack_context__.r("[project]/node_modules/next/dist/client/use-merged-ref.js [app-client] (ecmascript)");
+const _utils = __turbopack_context__.r("[project]/node_modules/next/dist/shared/lib/utils.js [app-client] (ecmascript)");
+const _addbasepath = __turbopack_context__.r("[project]/node_modules/next/dist/client/add-base-path.js [app-client] (ecmascript)");
+const _warnonce = __turbopack_context__.r("[project]/node_modules/next/dist/shared/lib/utils/warn-once.js [app-client] (ecmascript)");
+const _links = __turbopack_context__.r("[project]/node_modules/next/dist/client/components/links.js [app-client] (ecmascript)");
+const _islocalurl = __turbopack_context__.r("[project]/node_modules/next/dist/shared/lib/router/utils/is-local-url.js [app-client] (ecmascript)");
+const _segmentcache = __turbopack_context__.r("[project]/node_modules/next/dist/client/components/segment-cache.js [app-client] (ecmascript)");
+const _erroronce = __turbopack_context__.r("[project]/node_modules/next/dist/shared/lib/utils/error-once.js [app-client] (ecmascript)");
+function isModifiedEvent(event) {
+    const eventTarget = event.currentTarget;
+    const target = eventTarget.getAttribute('target');
+    return target && target !== '_self' || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || // triggers resource download
+    event.nativeEvent && event.nativeEvent.which === 2;
+}
+function linkClicked(e, href, as, linkInstanceRef, replace, scroll, onNavigate) {
+    if (typeof window !== 'undefined') {
+        const { nodeName } = e.currentTarget;
+        // anchors inside an svg have a lowercase nodeName
+        const isAnchorNodeName = nodeName.toUpperCase() === 'A';
+        if (isAnchorNodeName && isModifiedEvent(e) || e.currentTarget.hasAttribute('download')) {
+            // ignore click for browser’s default behavior
+            return;
+        }
+        if (!(0, _islocalurl.isLocalURL)(href)) {
+            if (replace) {
+                // browser default behavior does not replace the history state
+                // so we need to do it manually
+                e.preventDefault();
+                location.replace(href);
+            }
+            // ignore click for browser’s default behavior
+            return;
+        }
+        e.preventDefault();
+        if (onNavigate) {
+            let isDefaultPrevented = false;
+            onNavigate({
+                preventDefault: ()=>{
+                    isDefaultPrevented = true;
+                }
+            });
+            if (isDefaultPrevented) {
+                return;
+            }
+        }
+        const { dispatchNavigateAction } = __turbopack_context__.r("[project]/node_modules/next/dist/client/components/app-router-instance.js [app-client] (ecmascript)");
+        _react.default.startTransition(()=>{
+            dispatchNavigateAction(as || href, replace ? 'replace' : 'push', scroll ?? true, linkInstanceRef.current);
+        });
+    }
+}
+function formatStringOrUrl(urlObjOrString) {
+    if (typeof urlObjOrString === 'string') {
+        return urlObjOrString;
+    }
+    return (0, _formaturl.formatUrl)(urlObjOrString);
+}
+function LinkComponent(props) {
+    const [linkStatus, setOptimisticLinkStatus] = (0, _react.useOptimistic)(_links.IDLE_LINK_STATUS);
+    let children;
+    const linkInstanceRef = (0, _react.useRef)(null);
+    const { href: hrefProp, as: asProp, children: childrenProp, prefetch: prefetchProp = null, passHref, replace, shallow, scroll, onClick, onMouseEnter: onMouseEnterProp, onTouchStart: onTouchStartProp, legacyBehavior = false, onNavigate, ref: forwardedRef, unstable_dynamicOnHover, ...restProps } = props;
+    children = childrenProp;
+    if (legacyBehavior && (typeof children === 'string' || typeof children === 'number')) {
+        children = /*#__PURE__*/ (0, _jsxruntime.jsx)("a", {
+            children: children
+        });
+    }
+    const router = _react.default.useContext(_approutercontextsharedruntime.AppRouterContext);
+    const prefetchEnabled = prefetchProp !== false;
+    const fetchStrategy = prefetchProp !== false ? getFetchStrategyFromPrefetchProp(prefetchProp) : _segmentcache.FetchStrategy.PPR;
+    if ("TURBOPACK compile-time truthy", 1) {
+        function createPropError(args) {
+            return Object.defineProperty(new Error(`Failed prop type: The prop \`${args.key}\` expects a ${args.expected} in \`<Link>\`, but got \`${args.actual}\` instead.` + (typeof window !== 'undefined' ? "\nOpen your browser's console to view the Component stack trace." : '')), "__NEXT_ERROR_CODE", {
+                value: "E319",
+                enumerable: false,
+                configurable: true
+            });
+        }
+        // TypeScript trick for type-guarding:
+        const requiredPropsGuard = {
+            href: true
+        };
+        const requiredProps = Object.keys(requiredPropsGuard);
+        requiredProps.forEach((key)=>{
+            if (key === 'href') {
+                if (props[key] == null || typeof props[key] !== 'string' && typeof props[key] !== 'object') {
+                    throw createPropError({
+                        key,
+                        expected: '`string` or `object`',
+                        actual: props[key] === null ? 'null' : typeof props[key]
+                    });
+                }
+            } else {
+                // TypeScript trick for type-guarding:
+                const _ = key;
+            }
+        });
+        // TypeScript trick for type-guarding:
+        const optionalPropsGuard = {
+            as: true,
+            replace: true,
+            scroll: true,
+            shallow: true,
+            passHref: true,
+            prefetch: true,
+            unstable_dynamicOnHover: true,
+            onClick: true,
+            onMouseEnter: true,
+            onTouchStart: true,
+            legacyBehavior: true,
+            onNavigate: true
+        };
+        const optionalProps = Object.keys(optionalPropsGuard);
+        optionalProps.forEach((key)=>{
+            const valType = typeof props[key];
+            if (key === 'as') {
+                if (props[key] && valType !== 'string' && valType !== 'object') {
+                    throw createPropError({
+                        key,
+                        expected: '`string` or `object`',
+                        actual: valType
+                    });
+                }
+            } else if (key === 'onClick' || key === 'onMouseEnter' || key === 'onTouchStart' || key === 'onNavigate') {
+                if (props[key] && valType !== 'function') {
+                    throw createPropError({
+                        key,
+                        expected: '`function`',
+                        actual: valType
+                    });
+                }
+            } else if (key === 'replace' || key === 'scroll' || key === 'shallow' || key === 'passHref' || key === 'legacyBehavior' || key === 'unstable_dynamicOnHover') {
+                if (props[key] != null && valType !== 'boolean') {
+                    throw createPropError({
+                        key,
+                        expected: '`boolean`',
+                        actual: valType
+                    });
+                }
+            } else if (key === 'prefetch') {
+                if (props[key] != null && valType !== 'boolean' && props[key] !== 'auto' && props[key] !== 'unstable_forceStale') {
+                    throw createPropError({
+                        key,
+                        expected: '`boolean | "auto" | "unstable_forceStale"`',
+                        actual: valType
+                    });
+                }
+            } else {
+                // TypeScript trick for type-guarding:
+                const _ = key;
+            }
+        });
+    }
+    if ("TURBOPACK compile-time truthy", 1) {
+        if (props.locale) {
+            (0, _warnonce.warnOnce)('The `locale` prop is not supported in `next/link` while using the `app` router. Read more about app router internalization: https://nextjs.org/docs/app/building-your-application/routing/internationalization');
+        }
+        if (!asProp) {
+            let href;
+            if (typeof hrefProp === 'string') {
+                href = hrefProp;
+            } else if (typeof hrefProp === 'object' && typeof hrefProp.pathname === 'string') {
+                href = hrefProp.pathname;
+            }
+            if (href) {
+                const hasDynamicSegment = href.split('/').some((segment)=>segment.startsWith('[') && segment.endsWith(']'));
+                if (hasDynamicSegment) {
+                    throw Object.defineProperty(new Error(`Dynamic href \`${href}\` found in <Link> while using the \`/app\` router, this is not supported. Read more: https://nextjs.org/docs/messages/app-dir-dynamic-href`), "__NEXT_ERROR_CODE", {
+                        value: "E267",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+            }
+        }
+    }
+    const { href, as } = _react.default.useMemo({
+        "LinkComponent.useMemo": ()=>{
+            const resolvedHref = formatStringOrUrl(hrefProp);
+            return {
+                href: resolvedHref,
+                as: asProp ? formatStringOrUrl(asProp) : resolvedHref
+            };
+        }
+    }["LinkComponent.useMemo"], [
+        hrefProp,
+        asProp
+    ]);
+    // This will return the first child, if multiple are provided it will throw an error
+    let child;
+    if (legacyBehavior) {
+        if (children?.$$typeof === Symbol.for('react.lazy')) {
+            throw Object.defineProperty(new Error(`\`<Link legacyBehavior>\` received a direct child that is either a Server Component, or JSX that was loaded with React.lazy(). This is not supported. Either remove legacyBehavior, or make the direct child a Client Component that renders the Link's \`<a>\` tag.`), "__NEXT_ERROR_CODE", {
+                value: "E863",
+                enumerable: false,
+                configurable: true
+            });
+        }
+        if ("TURBOPACK compile-time truthy", 1) {
+            if (onClick) {
+                console.warn(`"onClick" was passed to <Link> with \`href\` of \`${hrefProp}\` but "legacyBehavior" was set. The legacy behavior requires onClick be set on the child of next/link`);
+            }
+            if (onMouseEnterProp) {
+                console.warn(`"onMouseEnter" was passed to <Link> with \`href\` of \`${hrefProp}\` but "legacyBehavior" was set. The legacy behavior requires onMouseEnter be set on the child of next/link`);
+            }
+            try {
+                child = _react.default.Children.only(children);
+            } catch (err) {
+                if (!children) {
+                    throw Object.defineProperty(new Error(`No children were passed to <Link> with \`href\` of \`${hrefProp}\` but one child is required https://nextjs.org/docs/messages/link-no-children`), "__NEXT_ERROR_CODE", {
+                        value: "E320",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+                throw Object.defineProperty(new Error(`Multiple children were passed to <Link> with \`href\` of \`${hrefProp}\` but only one child is supported https://nextjs.org/docs/messages/link-multiple-children` + (typeof window !== 'undefined' ? " \nOpen your browser's console to view the Component stack trace." : '')), "__NEXT_ERROR_CODE", {
+                    value: "E266",
+                    enumerable: false,
+                    configurable: true
+                });
+            }
+        } else //TURBOPACK unreachable
+        ;
+    } else {
+        if ("TURBOPACK compile-time truthy", 1) {
+            if (children?.type === 'a') {
+                throw Object.defineProperty(new Error('Invalid <Link> with <a> child. Please remove <a> or use <Link legacyBehavior>.\nLearn more: https://nextjs.org/docs/messages/invalid-new-link-with-extra-anchor'), "__NEXT_ERROR_CODE", {
+                    value: "E209",
+                    enumerable: false,
+                    configurable: true
+                });
+            }
+        }
+    }
+    const childRef = legacyBehavior ? child && typeof child === 'object' && child.ref : forwardedRef;
+    // Use a callback ref to attach an IntersectionObserver to the anchor tag on
+    // mount. In the future we will also use this to keep track of all the
+    // currently mounted <Link> instances, e.g. so we can re-prefetch them after
+    // a revalidation or refresh.
+    const observeLinkVisibilityOnMount = _react.default.useCallback({
+        "LinkComponent.useCallback[observeLinkVisibilityOnMount]": (element)=>{
+            if (router !== null) {
+                linkInstanceRef.current = (0, _links.mountLinkInstance)(element, href, router, fetchStrategy, prefetchEnabled, setOptimisticLinkStatus);
+            }
+            return ({
+                "LinkComponent.useCallback[observeLinkVisibilityOnMount]": ()=>{
+                    if (linkInstanceRef.current) {
+                        (0, _links.unmountLinkForCurrentNavigation)(linkInstanceRef.current);
+                        linkInstanceRef.current = null;
+                    }
+                    (0, _links.unmountPrefetchableInstance)(element);
+                }
+            })["LinkComponent.useCallback[observeLinkVisibilityOnMount]"];
+        }
+    }["LinkComponent.useCallback[observeLinkVisibilityOnMount]"], [
+        prefetchEnabled,
+        href,
+        router,
+        fetchStrategy,
+        setOptimisticLinkStatus
+    ]);
+    const mergedRef = (0, _usemergedref.useMergedRef)(observeLinkVisibilityOnMount, childRef);
+    const childProps = {
+        ref: mergedRef,
+        onClick (e) {
+            if ("TURBOPACK compile-time truthy", 1) {
+                if (!e) {
+                    throw Object.defineProperty(new Error(`Component rendered inside next/link has to pass click event to "onClick" prop.`), "__NEXT_ERROR_CODE", {
+                        value: "E312",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+            }
+            if (!legacyBehavior && typeof onClick === 'function') {
+                onClick(e);
+            }
+            if (legacyBehavior && child.props && typeof child.props.onClick === 'function') {
+                child.props.onClick(e);
+            }
+            if (!router) {
+                return;
+            }
+            if (e.defaultPrevented) {
+                return;
+            }
+            linkClicked(e, href, as, linkInstanceRef, replace, scroll, onNavigate);
+        },
+        onMouseEnter (e) {
+            if (!legacyBehavior && typeof onMouseEnterProp === 'function') {
+                onMouseEnterProp(e);
+            }
+            if (legacyBehavior && child.props && typeof child.props.onMouseEnter === 'function') {
+                child.props.onMouseEnter(e);
+            }
+            if (!router) {
+                return;
+            }
+            if ("TURBOPACK compile-time truthy", 1) {
+                return;
+            }
+            //TURBOPACK unreachable
+            ;
+            const upgradeToDynamicPrefetch = undefined;
+        },
+        onTouchStart: ("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : function onTouchStart(e) {
+            if (!legacyBehavior && typeof onTouchStartProp === 'function') {
+                onTouchStartProp(e);
+            }
+            if (legacyBehavior && child.props && typeof child.props.onTouchStart === 'function') {
+                child.props.onTouchStart(e);
+            }
+            if (!router) {
+                return;
+            }
+            if (!prefetchEnabled) {
+                return;
+            }
+            const upgradeToDynamicPrefetch = unstable_dynamicOnHover === true;
+            (0, _links.onNavigationIntent)(e.currentTarget, upgradeToDynamicPrefetch);
+        }
+    };
+    // If the url is absolute, we can bypass the logic to prepend the basePath.
+    if ((0, _utils.isAbsoluteUrl)(as)) {
+        childProps.href = as;
+    } else if (!legacyBehavior || passHref || child.type === 'a' && !('href' in child.props)) {
+        childProps.href = (0, _addbasepath.addBasePath)(as);
+    }
+    let link;
+    if (legacyBehavior) {
+        if ("TURBOPACK compile-time truthy", 1) {
+            (0, _erroronce.errorOnce)('`legacyBehavior` is deprecated and will be removed in a future ' + 'release. A codemod is available to upgrade your components:\n\n' + 'npx @next/codemod@latest new-link .\n\n' + 'Learn more: https://nextjs.org/docs/app/building-your-application/upgrading/codemods#remove-a-tags-from-link-components');
+        }
+        link = /*#__PURE__*/ _react.default.cloneElement(child, childProps);
+    } else {
+        link = /*#__PURE__*/ (0, _jsxruntime.jsx)("a", {
+            ...restProps,
+            ...childProps,
+            children: children
+        });
+    }
+    return /*#__PURE__*/ (0, _jsxruntime.jsx)(LinkStatusContext.Provider, {
+        value: linkStatus,
+        children: link
+    });
+}
+const LinkStatusContext = /*#__PURE__*/ (0, _react.createContext)(_links.IDLE_LINK_STATUS);
+const useLinkStatus = ()=>{
+    return (0, _react.useContext)(LinkStatusContext);
+};
+function getFetchStrategyFromPrefetchProp(prefetchProp) {
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    else {
+        return prefetchProp === null || prefetchProp === 'auto' ? _segmentcache.FetchStrategy.PPR : // (although invalid values should've been filtered out by prop validation in dev)
+        _segmentcache.FetchStrategy.Full;
+    }
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=link.js.map
+}),
+"[project]/node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-bailout-to-csr.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "BailoutToCSR", {
+    enumerable: true,
+    get: function() {
+        return BailoutToCSR;
+    }
+});
+const _bailouttocsr = __turbopack_context__.r("[project]/node_modules/next/dist/shared/lib/lazy-dynamic/bailout-to-csr.js [app-client] (ecmascript)");
+function BailoutToCSR({ reason, children }) {
+    if (typeof window === 'undefined') {
+        throw Object.defineProperty(new _bailouttocsr.BailoutToCSRError(reason), "__NEXT_ERROR_CODE", {
+            value: "E394",
+            enumerable: false,
+            configurable: true
+        });
+    }
+    return children;
+} //# sourceMappingURL=dynamic-bailout-to-csr.js.map
+}),
+"[project]/node_modules/next/dist/shared/lib/encode-uri-path.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "encodeURIPath", {
+    enumerable: true,
+    get: function() {
+        return encodeURIPath;
+    }
+});
+function encodeURIPath(file) {
+    return file.split('/').map((p)=>encodeURIComponent(p)).join('/');
+} //# sourceMappingURL=encode-uri-path.js.map
+}),
+"[project]/node_modules/next/dist/shared/lib/lazy-dynamic/preload-chunks.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+'use client';
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "PreloadChunks", {
+    enumerable: true,
+    get: function() {
+        return PreloadChunks;
+    }
+});
+const _jsxruntime = __turbopack_context__.r("[project]/node_modules/next/dist/compiled/react/jsx-runtime.js [app-client] (ecmascript)");
+const _reactdom = __turbopack_context__.r("[project]/node_modules/next/dist/compiled/react-dom/index.js [app-client] (ecmascript)");
+const _workasyncstorageexternal = __turbopack_context__.r("[project]/node_modules/next/dist/server/app-render/work-async-storage.external.js [app-client] (ecmascript)");
+const _encodeuripath = __turbopack_context__.r("[project]/node_modules/next/dist/shared/lib/encode-uri-path.js [app-client] (ecmascript)");
+function PreloadChunks({ moduleIds }) {
+    // Early return in client compilation and only load requestStore on server side
+    if (typeof window !== 'undefined') {
+        return null;
+    }
+    const workStore = _workasyncstorageexternal.workAsyncStorage.getStore();
+    if (workStore === undefined) {
+        return null;
+    }
+    const allFiles = [];
+    // Search the current dynamic call unique key id in react loadable manifest,
+    // and find the corresponding CSS files to preload
+    if (workStore.reactLoadableManifest && moduleIds) {
+        const manifest = workStore.reactLoadableManifest;
+        for (const key of moduleIds){
+            if (!manifest[key]) continue;
+            const chunks = manifest[key].files;
+            allFiles.push(...chunks);
+        }
+    }
+    if (allFiles.length === 0) {
+        return null;
+    }
+    const dplId = ("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : '';
+    return /*#__PURE__*/ (0, _jsxruntime.jsx)(_jsxruntime.Fragment, {
+        children: allFiles.map((chunk)=>{
+            const href = `${workStore.assetPrefix}/_next/${(0, _encodeuripath.encodeURIPath)(chunk)}${dplId}`;
+            const isCss = chunk.endsWith('.css');
+            // If it's stylesheet we use `precedence` o help hoist with React Float.
+            // For stylesheets we actually need to render the CSS because nothing else is going to do it so it needs to be part of the component tree.
+            // The `preload` for stylesheet is not optional.
+            if (isCss) {
+                return /*#__PURE__*/ (0, _jsxruntime.jsx)("link", {
+                    // @ts-ignore
+                    precedence: "dynamic",
+                    href: href,
+                    rel: "stylesheet",
+                    as: "style",
+                    nonce: workStore.nonce
+                }, chunk);
+            } else {
+                // If it's script we use ReactDOM.preload to preload the resources
+                (0, _reactdom.preload)(href, {
+                    as: 'script',
+                    fetchPriority: 'low',
+                    nonce: workStore.nonce
+                });
+                return null;
+            }
+        })
+    });
+} //# sourceMappingURL=preload-chunks.js.map
+}),
+"[project]/node_modules/next/dist/shared/lib/lazy-dynamic/loadable.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "default", {
+    enumerable: true,
+    get: function() {
+        return _default;
+    }
+});
+const _jsxruntime = __turbopack_context__.r("[project]/node_modules/next/dist/compiled/react/jsx-runtime.js [app-client] (ecmascript)");
+const _react = __turbopack_context__.r("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+const _dynamicbailouttocsr = __turbopack_context__.r("[project]/node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-bailout-to-csr.js [app-client] (ecmascript)");
+const _preloadchunks = __turbopack_context__.r("[project]/node_modules/next/dist/shared/lib/lazy-dynamic/preload-chunks.js [app-client] (ecmascript)");
+// Normalize loader to return the module as form { default: Component } for `React.lazy`.
+// Also for backward compatible since next/dynamic allows to resolve a component directly with loader
+// Client component reference proxy need to be converted to a module.
+function convertModule(mod) {
+    // Check "default" prop before accessing it, as it could be client reference proxy that could break it reference.
+    // Cases:
+    // mod: { default: Component }
+    // mod: Component
+    // mod: { default: proxy(Component) }
+    // mod: proxy(Component)
+    const hasDefault = mod && 'default' in mod;
+    return {
+        default: hasDefault ? mod.default : mod
+    };
+}
+const defaultOptions = {
+    loader: ()=>Promise.resolve(convertModule(()=>null)),
+    loading: null,
+    ssr: true
+};
+function Loadable(options) {
+    const opts = {
+        ...defaultOptions,
+        ...options
+    };
+    const Lazy = /*#__PURE__*/ (0, _react.lazy)(()=>opts.loader().then(convertModule));
+    const Loading = opts.loading;
+    function LoadableComponent(props) {
+        const fallbackElement = Loading ? /*#__PURE__*/ (0, _jsxruntime.jsx)(Loading, {
+            isLoading: true,
+            pastDelay: true,
+            error: null
+        }) : null;
+        // If it's non-SSR or provided a loading component, wrap it in a suspense boundary
+        const hasSuspenseBoundary = !opts.ssr || !!opts.loading;
+        const Wrap = hasSuspenseBoundary ? _react.Suspense : _react.Fragment;
+        const wrapProps = hasSuspenseBoundary ? {
+            fallback: fallbackElement
+        } : {};
+        const children = opts.ssr ? /*#__PURE__*/ (0, _jsxruntime.jsxs)(_jsxruntime.Fragment, {
+            children: [
+                typeof window === 'undefined' ? /*#__PURE__*/ (0, _jsxruntime.jsx)(_preloadchunks.PreloadChunks, {
+                    moduleIds: opts.modules
+                }) : null,
+                /*#__PURE__*/ (0, _jsxruntime.jsx)(Lazy, {
+                    ...props
+                })
+            ]
+        }) : /*#__PURE__*/ (0, _jsxruntime.jsx)(_dynamicbailouttocsr.BailoutToCSR, {
+            reason: "next/dynamic",
+            children: /*#__PURE__*/ (0, _jsxruntime.jsx)(Lazy, {
+                ...props
+            })
+        });
+        return /*#__PURE__*/ (0, _jsxruntime.jsx)(Wrap, {
+            ...wrapProps,
+            children: children
+        });
+    }
+    LoadableComponent.displayName = 'LoadableComponent';
+    return LoadableComponent;
+}
+const _default = Loadable; //# sourceMappingURL=loadable.js.map
+}),
+"[project]/node_modules/next/dist/shared/lib/app-dynamic.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "default", {
+    enumerable: true,
+    get: function() {
+        return dynamic;
+    }
+});
+const _interop_require_default = __turbopack_context__.r("[project]/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
+const _loadable = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/node_modules/next/dist/shared/lib/lazy-dynamic/loadable.js [app-client] (ecmascript)"));
+function dynamic(dynamicOptions, options) {
+    const loadableOptions = {};
+    if (typeof dynamicOptions === 'function') {
+        loadableOptions.loader = dynamicOptions;
+    }
+    const mergedOptions = {
+        ...loadableOptions,
+        ...options
+    };
+    return (0, _loadable.default)({
+        ...mergedOptions,
+        modules: mergedOptions.loadableGenerated?.modules
+    });
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=app-dynamic.js.map
+}),
+]);
+
+//# sourceMappingURL=_1721b333._.js.map

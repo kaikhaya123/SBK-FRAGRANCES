@@ -1,0 +1,11 @@
+{
+  "[project]/node_modules/framer-motion/dist/es/index.mjs [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/node_modules/framer-motion/dist/es/index.mjs [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/node_modules_framer-motion_dist_es_e57c273c._.js",
+      "static/chunks/node_modules_motion-dom_dist_es_a4a3f8fc._.js",
+      "static/chunks/node_modules_motion-utils_dist_es_6d57bd26._.js",
+      "static/chunks/node_modules_framer-motion_dist_es_index_mjs_677e67f1._.js"
+    ]
+  }
+}
