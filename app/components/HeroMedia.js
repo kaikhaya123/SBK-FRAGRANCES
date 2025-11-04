@@ -14,7 +14,7 @@ export default function HeroMedia() {
       >
         <video
           className="object-cover w-full h-full"
-          src="/fragrance-video.mp4"
+          src="/videos/3430375345205055803.mp4"
           autoPlay
           loop
           muted

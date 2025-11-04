@@ -6,13 +6,13 @@ export default function VideoShowcase() {
       <div className="w-full h-[60vh] md:h-[90vh] relative flex items-center justify-center">
         <video
           className="w-full h-full object-cover object-center"
-          src="/videos/sbk-fragrance-showcase.mp4" // Place your video in public/videos/
+          src="/videos/3425215671228978914.mp4"
           autoPlay
           loop
           muted
           playsInline
           controls
-          poster="/images/1761501680588.jpeg" // Optional poster image
+          poster="/images/1761501680588.jpeg"
         />
         {/* Optionally add overlay text or branding here */}
       </div>

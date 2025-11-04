@@ -21,19 +21,16 @@ export function Navbar() {
         <span className="block w-6 h-0.5 bg-black mb-1 rounded" />
         <span className="block w-6 h-0.5 bg-black rounded" />
       </button>
-      {/* Side menu overlay */}
-      {/* Animated sidebar menu */}
-      <div className={
-        `fixed inset-0 z-40 pointer-events-none ${menuOpen ? 'block' : 'hidden'}`
-      }>
+      {/* Side menu overlay and sidebar always rendered for animation */}
+      <div className="fixed inset-0 z-40">
         {/* Overlay */}
         <div
-          className={`absolute inset-0 bg-black/40 transition-opacity duration-300 pointer-events-auto ${menuOpen ? 'opacity-100' : 'opacity-0'}`}
+          className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
           onClick={() => setMenuOpen(false)}
         />
         {/* Sidebar */}
         <nav
-          className={`fixed top-0 left-0 h-full w-64 bg-white/80 backdrop-blur-lg z-50 flex flex-col pt-20 px-8 gap-8 transform transition-transform duration-300 pointer-events-auto
+          className={`fixed top-0 left-0 h-full w-64 bg-white/80 backdrop-blur-lg z-50 flex flex-col pt-20 px-8 gap-8 transform transition-transform duration-300
             ${menuOpen ? 'translate-x-0' : '-translate-x-full'}`}
           style={{fontFamily: 'Oswald, Bebas Neue, Montserrat, Arial, sans-serif', boxShadow: 'none', border: 'none'}}
         >

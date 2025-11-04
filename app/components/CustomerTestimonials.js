@@ -4,17 +4,17 @@ const testimonials = [
   {
     name: "Thando M.",
     quote: "The scents are amazing and last all day! Highly recommend SBK Fragrances.",
-    video: "/videos/testimonial1.mp4"
+    video: "/videos/3428863531774445170.mp4"
   },
   {
     name: "Sipho K.",
     quote: "Fast delivery and great customer service. I love my new perfume!",
-    video: "/videos/testimonial2.mp4"
+    video: "/videos/3546983994718847387 (online-video-cutter.com).mp4"
   },
   {
     name: "Lerato S.",
     quote: "Wide selection and genuine products. SBK is my go-to fragrance shop.",
-    video: "/videos/testimonial3.mp4"
+    video: "/videos/3570183652509216099.mp4"
   }
 ];
 
@@ -47,15 +47,18 @@ export default function CustomerTestimonials() {
             </div>
           </div>
         </div>
-        <div className="w-full md:w-7/12 flex justify-center">
-          <video
-            src={testimonials[0].video}
-            className="rounded-3xl shadow-2xl object-cover w-full max-w-2xl h-[32rem] border-4 border-gray-300"
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
+        <div className="w-full md:w-7/12 flex flex-col md:flex-row justify-center gap-6">
+          {testimonials.map((testimonial, idx) => (
+            <video
+              key={idx}
+              src={testimonial.video}
+              className="rounded-3xl shadow-2xl object-cover w-full max-w-xs h-[20rem] border-4 border-gray-300"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          ))}
         </div>
       </div>
     </section>
