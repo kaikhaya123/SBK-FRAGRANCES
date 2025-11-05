@@ -4,6 +4,17 @@ function VideoWithFallback({ src, poster, alt }) {
   const [error, setError] = useState(false);
   const videoRef = useRef(null);
 
+  // Try to autoplay on mount
+  React.useEffect(() => {
+    const video = videoRef.current;
+    if (video && !error) {
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {});
+      }
+    }
+  }, [error]);
+
   if (error) {
     return (
       <img
@@ -17,22 +28,12 @@ function VideoWithFallback({ src, poster, alt }) {
     <video
       ref={videoRef}
       className="object-cover w-full h-full"
-      autoPlay={false}
+      autoPlay
       loop
       muted
       playsInline
       poster={poster}
       onError={() => setError(true)}
-      onMouseOver={e => {
-        if (e.target.paused) {
-          e.target.play().catch(() => {});
-        }
-      }}
-      onMouseOut={e => {
-        if (!e.target.paused) {
-          e.target.pause();
-        }
-      }}
     >
       <source src={src} type="video/mp4" />
       Sorry, your browser does not support embedded videos.
@@ -42,19 +43,19 @@ function VideoWithFallback({ src, poster, alt }) {
 
 const testimonials = [
   {
-    name: "Aisha M.",
+    name: "",
     quote: "Absolutely in love with Amber Nights! Fast delivery and beautiful packaging.",
     video: "/videos/3428863531774445170.mp4"
   },
   {
-    name: "Sanele M.",
+    name: "",
     quote: "The scent lasts all day. Especially the Gentlemen perfume!",
     video: "/videos/3546983089663586688.mp4"
   },
   {
-    name: "Nomsa D.",
+    name: "",
     quote: "Great service and expert advice. Found my new signature scent!",
-    video: "/videos/testimonial3.mp4"
+    video: "/videos/3690166990828639792.mp4"
   }
 ];
 const imageTestimonials = [
