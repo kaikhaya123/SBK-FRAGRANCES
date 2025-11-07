@@ -1,12 +1,17 @@
 
 "use client";
 import React from "react";
+import { Playfair_Display } from 'next/font/google';
+import { Cormorant_Garamond } from 'next/font/google';
+
+const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' });
+const cormorant = Cormorant_Garamond({ subsets: ['latin'], variable: '--font-cormorant' });
 
 export default function About() {
   return (
-    <div className="w-full min-h-screen bg-white flex flex-col items-center justify-start">
+    <div className={`w-full min-h-screen bg-white flex flex-col items-center justify-start ${playfair.variable} ${cormorant.variable}`}>
       {/* Modern Hero Section */}
-      <section className="relative w-full h-[420px] md:h-[520px] lg:h-[600px] flex items-center justify-center overflow-hidden mb-0">
+      <section className="relative w-full h-[520px] md:h-[75vh] lg:h-[85vh] flex items-center justify-center overflow-hidden mb-0">
         <img
           src="/images/pexels-obenkural-18490314.jpg"
           alt="SBK Fragrance storefront"
@@ -14,11 +19,11 @@ export default function About() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-transparent z-10" />
         <div className="relative z-20 flex flex-col items-center justify-center w-full h-full text-center px-4">
-          <h1 className="text-white text-4xl md:text-6xl font-serif font-bold tracking-wide drop-shadow-lg mb-4 animate-fade-in-up">
-            The Essence of SBK Fragrance
+          <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-playfair font-bold tracking-tight drop-shadow-lg mb-6 animate-fade-in-up leading-tight">
+            The Essence of<br />SBK Fragrance
           </h1>
-          <p className="text-white text-lg md:text-2xl font-light max-w-2xl mx-auto drop-shadow-md animate-fade-in-up delay-150">
-            Where luxury, artistry, and self-expression meet. Discover our story, our passion, and the journey behind every scent.
+          <p className="text-white text-lg md:text-xl font-cormorant font-light max-w-2xl mx-auto drop-shadow-md animate-fade-in-up delay-150 tracking-wide">
+            Where luxury, artistry, and self-expression meet.<br />Discover our story, our passion, and the journey behind every scent.
           </p>
         </div>
         {/* Scroll Indicator */}
@@ -29,7 +34,7 @@ export default function About() {
       </section>
 
       {/* Our Brand Section - Sleek Modern Layout */}
-      <section className="w-full max-w-6xl mx-auto flex flex-col md:flex-row items-stretch my-16 md:my-20 min-h-[380px] md:min-h-[440px] lg:min-h-[520px]">
+      <section className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-stretch my-24 md:my-32 min-h-[480px] md:min-h-[540px] lg:min-h-[620px] px-4">
         {/* Side Image - Full Height, Sleek */}
         <div className="md:w-1/2 w-full relative overflow-hidden flex items-stretch rounded-l-2xl shadow-xl">
           <img
@@ -38,22 +43,25 @@ export default function About() {
             className="w-full h-full object-cover object-center transition-transform duration-500 scale-100 hover:scale-105"
             style={{ minHeight: '380px', maxHeight: '520px', borderRadius: '1.25rem 0 0 1.25rem' }}
           />
-          <div className="absolute bottom-6 left-6 bg-black/60 px-4 py-2 rounded-lg shadow-lg">
-            <span className="text-white text-3xl md:text-4xl font-serif font-bold tracking-widest drop-shadow-lg"></span>
+          <div className="absolute bottom-8 left-8 bg-black/50 backdrop-blur-sm px-6 py-3 rounded-xl">
+            <span className="text-white text-3xl md:text-4xl font-playfair font-bold tracking-wider drop-shadow-lg"></span>
           </div>
         </div>
         {/* Crisp, Borderless Text Content */}
-        <div className="md:w-1/2 w-full flex flex-col justify-center bg-white px-6 md:px-12 py-10 md:py-0 rounded-r-2xl">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-[#49523a] tracking-wide uppercase">Our Brand</h2>
-          <p className="text-gray-900 text-lg md:text-xl font-light mb-6 leading-relaxed">
-            SBK Fragrance is a modern fragrance house founded on the belief that scent is a true form of self-expression and luxury. Our perfumes are crafted with care, using high-quality ingredients and innovative techniques to create unique, memorable experiences for every customer. Each fragrance tells a story—timeless, elegant, and designed to inspire confidence.
+        <div className="md:w-1/2 w-full flex flex-col justify-center bg-white px-8 md:px-16 py-12 md:py-0 rounded-r-2xl">
+          <span className="text-black/60 font-cormorant text-xl mb-4 uppercase tracking-widest">Our Legacy</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-8 text-black tracking-tight leading-tight">Our<br />Brand Story</h2>
+          <p className="text-black text-xl md:text-2xl font-cormorant mb-8 leading-relaxed">
+            SBK Fragrance is a modern fragrance house founded on the belief that scent is a true form of self-expression and luxury. Our perfumes are crafted with care, using high-quality ingredients and innovative techniques to create unique, memorable experiences for every customer.
           </p>
-          <p className="text-gray-700 text-base md:text-lg mb-8">
+          <p className="text-black/80 text-lg md:text-xl font-cormorant mb-10 leading-relaxed">
             We are committed to quality, authenticity, and sustainability. Our collections are cruelty-free, thoughtfully packaged, and made to leave a lasting impression—on you and the world around you.
           </p>
-          <a href="/shop" className="inline-flex items-center text-[#49523a] font-semibold hover:underline text-lg group">
-            Read More
-            <span className="ml-2 group-hover:translate-x-1 transition-transform"></span>
+          <a href="/shop" className="inline-flex items-center text-black font-cormorant text-xl group border border-black px-8 py-3 hover:bg-black hover:text-white transition-all duration-300">
+            Explore Our Collections
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-3 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </a>
         </div>
       </section>
@@ -71,22 +79,23 @@ export default function About() {
         </div>
         {/* Founder Story Content - Middle Aligned, Black Text, Borderless */}
         <div className="md:w-1/2 w-full flex flex-col justify-center items-center px-6 md:px-12 py-10 md:py-0 bg-transparent">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-2 text-black tracking-wide uppercase text-center">Founder’s Story</h2>
-          <div className="flex flex-col items-center justify-center mb-6">
-            <span className="font-signature text-2xl text-black text-center">Ayanda Ntsele</span>
-            <span className="text-gray-700 text-sm text-center">— Founder & Visionary</span>
+          <span className="text-black/60 font-cormorant text-xl mb-4 uppercase tracking-widest text-center">The Vision</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-6 text-black tracking-tight leading-tight text-center">Founder's Story</h2>
+          <div className="flex flex-col items-center justify-center mb-8">
+            <span className="font-playfair text-3xl text-black text-center mb-2">Ayanda Ntsele</span>
+            <span className="text-black/70 text-lg font-cormorant tracking-widest uppercase">— Founder & Visionary</span>
           </div>
-          <blockquote className="text-black text-lg md:text-xl font-light italic mb-6 leading-relaxed text-center max-w-xl">
+          <blockquote className="text-black text-2xl md:text-3xl font-cormorant italic mb-8 leading-relaxed text-center max-w-2xl px-6">
             "I believe fragrance is more than a scent—it's a memory, a statement, a legacy. SBK Fragrance was born from my passion to make luxury accessible, authentic, and unforgettable."
           </blockquote>
-          <p className="text-black text-base md:text-lg mb-4 text-center max-w-xl">
+          <p className="text-gray-800 text-lg md:text-xl font-cormorant mb-6 text-center max-w-2xl px-6">
             Ayanda Ntsele, a visionary entrepreneur, founded SBK Fragrance in 2023 with a mission to redefine luxury and self-expression. Driven by a love for premium scents and a commitment to quality, Ayanda has shaped SBK into a brand that inspires confidence and leaves a lasting impression.
           </p>
-          <ul className="flex flex-wrap gap-4 mb-6 justify-center">
-            <li className="bg-[#f7f5f1] px-4 py-2 rounded-lg text-black font-medium text-sm">Quality & Innovation</li>
-            <li className="bg-[#f7f5f1] px-4 py-2 rounded-lg text-black font-medium text-sm">Transparency</li>
-            <li className="bg-[#f7f5f1] px-4 py-2 rounded-lg text-black font-medium text-sm">Accessible Luxury</li>
-            <li className="bg-[#f7f5f1] px-4 py-2 rounded-lg text-black font-medium text-sm">Continuous Growth</li>
+          <ul className="flex flex-wrap gap-6 mb-10 justify-center">
+            <li className="border border-black px-6 py-3 rounded-none text-black font-cormorant text-lg tracking-wide uppercase hover:bg-black hover:text-white transition-colors duration-300">Quality & Innovation</li>
+            <li className="border border-black px-6 py-3 rounded-none text-black font-cormorant text-lg tracking-wide uppercase hover:bg-black hover:text-white transition-colors duration-300">Transparency</li>
+            <li className="border border-black px-6 py-3 rounded-none text-black font-cormorant text-lg tracking-wide uppercase hover:bg-black hover:text-white transition-colors duration-300">Accessible Luxury</li>
+            <li className="border border-black px-6 py-3 rounded-none text-black font-cormorant text-lg tracking-wide uppercase hover:bg-black hover:text-white transition-colors duration-300">Continuous Growth</li>
           </ul>
           <div className="flex items-center gap-3 mt-2 justify-center">
             <span className="font-signature text-2xl text-black"></span>
@@ -114,8 +123,9 @@ export default function About() {
         <div className="relative z-10 flex flex-col items-center justify-center w-full min-h-[520px] animate-fade-in-up" style={{animation: 'fade-in-up 1.2s 0.5s cubic-bezier(0.4,0,0.2,1) forwards', opacity: 0}}>
           <div className="flex flex-col justify-center h-full w-full md:items-end md:justify-center md:pr-[160px] lg:pr-[220px]">
             <div className="bg-white bg-opacity-95 rounded-xl shadow-none px-8 py-12 max-w-lg w-full mx-auto md:mx-0 text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6 tracking-wide text-[#000000]">About SBK Fragrance</h1>
-              <p className="text-gray-900 text-base md:text-lg font-light mb-4 font-sans">
+              <span className="text-[#49523a]/60 font-cormorant text-xl mb-4 uppercase tracking-widest block">Our Journey</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-8 tracking-tight text-[#49523a] leading-tight">About SBK<br />Fragrance</h1>
+              <p className="text-gray-800 text-xl md:text-2xl font-cormorant mb-6 leading-relaxed">
                 Founded in 2023, SBK Fragrance has quickly grown into a leading manufacturer and supplier of premium fragrances and skin care products. What began with a passion for creating scents that go beyond fragrance—making a true statement—has evolved into a trusted brand known for quality, elegance, and innovation.
               </p>
               <p className="text-gray-900 text-base md:text-lg font-light mb-4 font-sans">
@@ -125,10 +135,10 @@ export default function About() {
                 Backed by the support of our growing community, we remain committed to offering timeless yet trend-forward collections that combine luxury with accessibility. At SBK Fragrance, quality meets perfection—and every bottle tells a story of passion, trust, and refinement.
               </p>
               {/* Contact block */}
-              <div className="w-full max-w-2xl mt-6 xs:mt-8 sm:mt-10 text-left text-xs xs:text-sm md:text-base text-black-700 font-sans mx-auto md:mx-0">
-                <h3 className="font-semibold mb-1 xs:mb-2 font-serif text-[#070707] text-lg md:text-xl">Contact</h3>
-                <p className="mb-1">Phone: <a href="tel:0681660115" className="text-gray-900 font-medium">068 166 0115</a></p>
-                <p className="mb-1">Address: <span className="font-medium">232 Effingham Road, Durban North, KZN 4051, South Africa</span></p>
+              <div className="w-full max-w-2xl mt-12 text-left font-cormorant mx-auto md:mx-0 border-t border-black/20 pt-8">
+                <h3 className="font-playfair text-2xl md:text-3xl text-black mb-4">Get in Touch</h3>
+                <p className="mb-3 text-lg text-black/80">Phone: <a href="tel:0681660115" className="text-black font-semibold hover:text-black/80 transition-colors">068 166 0115</a></p>
+                <p className="mb-3 text-lg text-black/80">Address: <span className="text-black font-semibold">232 Effingham Road, Durban North, KZN 4051, South Africa</span></p>
               </div>
             </div>
           </div>

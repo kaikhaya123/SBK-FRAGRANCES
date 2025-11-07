@@ -5,7 +5,7 @@ export default function ShopNowSection() {
   return (
     <section className="relative w-full h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden my-12 md:my-20">
       <img
-        src="/images/pexels-zeyneb-alishova-190703179-11383178.jpg" // Replace with your actual image path
+  src="/images/webp/pexels-zeyneb-alishova-190703179-11383178.webp" // Replace with your actual image path
         alt="Shop SBK Fragrances"
         className="absolute inset-0 w-full h-full object-cover object-center opacity-80"
       />

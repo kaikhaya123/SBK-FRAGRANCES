@@ -1,4 +1,8 @@
+"use client";
+
+import OptimizedImg from "./OptimizedImg";
 import React, { useRef, useState } from "react";
+import Masonry from "./Masonry";
 
 function VideoWithFallback({ src, poster, alt }) {
   const [error, setError] = useState(false);
@@ -16,13 +20,15 @@ function VideoWithFallback({ src, poster, alt }) {
   }, [error]);
 
   if (error) {
-    return (
-      <img
-        src={poster}
-        alt={alt}
-        className="object-cover w-full h-full"
-      />
-    );
+      return (
+        <OptimizedImg
+          src={poster.replace('.jpg', '.webp').replace('.jpeg', '.webp')}
+          alt={alt}
+          width={400}
+          height={400}
+          className="object-cover w-full h-full"
+        />
+      );
   }
   return (
     <video
@@ -34,6 +40,7 @@ function VideoWithFallback({ src, poster, alt }) {
       playsInline
       poster={poster}
       onError={() => setError(true)}
+      loading="lazy"
     >
       <source src={src} type="video/mp4" />
       Sorry, your browser does not support embedded videos.
@@ -59,50 +66,95 @@ const testimonials = [
   }
 ];
 const imageTestimonials = [
-  { image: "/images/ssstik.io_1762181265941.jpeg" },
-  { image: "/images/ssstik.io_1762180691415.jpeg" },
-  { image: "/images/ssstik.io_1762189144483.jpeg" },
-  { image: "/images/ssstik.io_1762191817591.jpeg" },
-  { image: "/images/ssstik.io_1762191439675_3.jpeg" },
-  { image: "/images/ssstik.io_1762191179050_2.jpeg" }
+  { image: "/images/webp/ssstik.io_1762181265941.webp" },
+  { image: "/images/webp/ssstik.io_1762180691415.webp" },
+  { image: "/images/webp/ssstik.io_1762189144483.webp" },
+  { image: "/images/webp/ssstik.io_1762191817591.webp" },
+  { image: "/images/webp/ssstik.io_1762191439675_3.webp" },
+  { image: "/images/webp/ssstik.io_1762191179050_2.webp" }
 ];
 export default function Testimonials() {
 
   return (
-    <section className="bg-white py-20 px-4">
-      <div className="max-w-5xl mx-auto text-center mb-10">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Hear From Our Customers</h2>
-        <p className="text-lg text-gray-600 mb-8">Real stories and experiences from our happy customers.</p>
+    <section className="relative py-24 md:py-32 overflow-hidden">
+      {/* Luxury Background Elements */}
+      <div className="absolute inset-0 bg-[#faf9f6]">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#4d3222]/5 to-transparent"/>
+        <div className="absolute inset-0 bg-[url('/images/pattern.png')] bg-repeat opacity-5"/>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        {testimonials.map((t, idx) => (
-          <div key={idx} className="bg-white-50 rounded-2xl shadow-lg p-6 flex flex-col items-center">
-            <div className="w-full h-64 mb-4 rounded-xl overflow-hidden relative group">
-              <VideoWithFallback src={t.video} poster="/images/video-thumb.jpg" alt={t.name + ' testimonial'} />
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:hidden">
-                <span className="bg-black/60 text-white px-4 py-2 rounded-full text-lg font-semibold">▶</span>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* Elegant Header Section */}
+        <div className="text-center mb-16 md:mb-24">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-[#000000] to-[#000000] bg-clip-text text-transparent">
+            Hear What Our Customers Say
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            Discover the captivating stories of those who have embraced our fragrances
+          </p>
+        </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto">
+          {testimonials.map((t, idx) => (
+            <div 
+              key={idx} 
+              className="group relative bg-white rounded-2xl overflow-hidden transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+            >
+              {/* Video Container */}
+              <div className="aspect-[9/16] relative overflow-hidden">
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"/>
+                <VideoWithFallback src={t.video} poster="/images/webp/ssstik.io_1762181265941.webp" alt={t.name + ' testimonial'} />
+                
+                {/* Play Button Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-100 group-hover:opacity-0 transition-opacity duration-500">
+                  <span className="w-16 h-16 flex items-center justify-center rounded-full bg-white/90 text-[#4d3222] shadow-lg transform transition-transform group-hover:scale-110">
+                    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+
+              {/* Quote Section */}
+              <div className="p-6 bg-white">
+                <blockquote className="relative">
+                  <span className="absolute top-0 left-0 text-4xl text-[#4d3222]/20">"</span>
+                  <p className="text-gray-700 pl-6 pt-2">{t.quote}</p>
+                </blockquote>
               </div>
             </div>
-            <blockquote className="italic text-gray-700 mb-2">“{t.quote}”</blockquote>
-            <div className="font-semibold text-gray-900">{t.name}</div>
-          </div>
-        ))}
-      </div>
-      {/* Image testimonials row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-12">
-          {imageTestimonials.map((t, idx) => (
-            <div key={idx} className="bg-gray-50 rounded-2xl shadow-lg flex items-stretch">
-              <img
-                src={t.image}
-                alt={t.name + ' testimonial'}
-                className="object-cover w-full h-full rounded-2xl"
-                style={{ aspectRatio: '1/1', minHeight: '16rem', maxHeight: '24rem' }}
-              />
-            </div>
           ))}
+      </div>
+      {/* Image Testimonials Gallery */}
+        <div className="mt-16 md:mt-24">
+          <Masonry
+            items={imageTestimonials.map((t, idx) => ({
+              id: String(idx + 1),
+              img: t.image,
+              url: "#",
+              height: 300 + Math.random() * 300, // Random heights between 300-600px for visual interest
+            }))}
+            ease="power3.out"
+            duration={0.6}
+            stagger={0.05}
+            animateFrom="bottom"
+            scaleOnHover={true}
+            hoverScale={0.95}
+            blurToFocus={true}
+            colorShiftOnHover={true}
+          />
         </div>
-      <div className="text-center mt-10">
-        <button className="bg-gradient-to-r from-black-500 to-black-400 text-black px-8 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition">Share Your Experience</button>
+      {/* Elegant CTA Section */}
+        <div className="text-center mt-16 md:mt-24">
+          <a 
+            href="/reviews#review-form" 
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#ffffff] to-[#000000] text-white rounded-full hover:shadow-lg transform transition-all duration-300 hover:-translate-y-0.5"
+          >
+            <span className="text-lg font-medium">Share Your Story</span>
+            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
+"use client";
 import React, { useEffect, useRef } from "react";
-// ...existing code...
 
 
 export default function WhyChooseUs() {
@@ -36,7 +36,7 @@ export default function WhyChooseUs() {
           <div className="w-full md:w-5/12 flex items-center justify-center min-h-[24rem] md:ml-8">
             <div className="relative w-full max-w-xl h-[30rem] flex items-center justify-center">
               <img
-                src="/images/ssstik.io_1762179824470.jpeg"
+                src="/images/webp/ssstik.io_1762179824470.webp"
                 alt="Why Choose Us"
                 className="object-cover w-full h-full"
                 style={{objectPosition: 'center', clipPath: 'polygon(0 0, 100% 0, 100% 85%, 80% 100%, 0 100%)'}}

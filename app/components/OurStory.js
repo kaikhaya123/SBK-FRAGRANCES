@@ -1,16 +1,39 @@
-import React from 'react';
+"use client";
+
+import React, { useRef, useEffect } from 'react';
 
 export default function OurStory() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
+    };
+    const observer = new window.IntersectionObserver(handleIntersection, { threshold: 0.5 });
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="relative w-full h-auto md:h-[500px] flex items-center justify-center overflow-hidden rounded-lg my-16 shadow-lg bg-white">
       <div className="absolute inset-0 w-full h-full">
         <video
+          ref={videoRef}
           className="w-full h-full object-cover object-center grayscale opacity-80"
           autoPlay
           loop
           muted
           playsInline
-          poster="/images/our-story-bg.jpg"
+          poster="/images/webp/ssstik.io_1762181265941.webp"
+          loading="lazy"
         >
           <source src="/videos/7034150-uhd_3840_2160_25fps.mp4" type="video/mp4" />
           {/* Optionally add a WebM source for better browser support */}

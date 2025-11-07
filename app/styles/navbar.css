@@ -1,0 +1,84 @@
+/* Base nav text styles */
+.nav-text {
+  display: inline-block;
+  position: relative;
+  font-family: 'Oswald', 'Montserrat', sans-serif;
+  letter-spacing: 0.18em;
+  transform: none;
+  transition: color 0.3s ease;
+}
+
+/* Desktop hover effect */
+@media (min-width: 640px) {
+  .nav-text::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+  }
+
+  a:hover .nav-text::after {
+    width: 100%;
+  }
+}
+
+/* Mobile styles */
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  transition: color 0.3s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mobile-nav-link:active {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Mobile dropdown styles */
+.mobile-dropdown {
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.mobile-dropdown-content {
+  padding-left: 1rem;
+}
+
+/* Mobile menu animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile menu backdrop */
+.mobile-menu-backdrop {
+  animation: fadeIn 0.3s ease;
+}
+
+/* Mobile menu container */
+.mobile-menu {
+  animation: slideIn 0.3s ease;
+}

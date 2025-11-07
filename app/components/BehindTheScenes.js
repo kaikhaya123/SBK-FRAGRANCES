@@ -9,7 +9,7 @@ export default function BehindTheScenes() {
       <div className="flex flex-col md:flex-row gap-12 items-center justify-center">
         <div className="md:w-1/2 w-full flex justify-center">
           <img
-            src="/images/behind-the-scenes.jpg"
+            src="/images/webp/behind-the-scenes.webp"
             alt="Behind the scenes at SBK Fragrances"
             className="rounded-2xl shadow-lg w-96 h-96 object-cover border-4 border-black"
             style={{ fontFamily: 'inherit' }}

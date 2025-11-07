@@ -22,7 +22,7 @@ export default function OurPhilosophy() {
       </div>
       <div className="md:w-1/2 flex justify-center items-center relative mt-8 md:mt-0">
         <img
-          src="/images/pexels-karola-g-4041392.jpg"
+          src="/images/webp/pexels-karola-g-4041392.webp"
           alt="Sillage de Parfum Vanilla Orchid"
           className="w-full max-w-lg md:max-w-xl rounded-xl shadow-2xl object-cover object-center"
         />

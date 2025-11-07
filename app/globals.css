@@ -1,12 +1,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600;700&family=Inter:wght@400;600;700&display=swap');
 
-body {
-  font-family: 'Montserrat', 'Poppins', 'Inter', Arial, sans-serif;
-}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', 'Poppins', 'Inter', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fullpage.js custom styles */
+#fp-nav ul li a span {
+  background: theme('colors.gray.800');
+}
+
+#fp-nav ul li .fp-tooltip {
+  color: theme('colors.gray.800');
+}
+
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section-content.animate-fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animation utilities */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Responsive behavior */
+@media (max-width: 800px) {
+  .section {
+    height: auto !important;
+  }
+  
+  .section-content {
+    opacity: 1;
+    transform: none;
+  }
 }

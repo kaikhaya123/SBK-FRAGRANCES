@@ -1,72 +1,179 @@
 
+"use client";
 
+import React, { useRef, useEffect, useState } from "react";
+import OptimizedImg from "./OptimizedImg";
 
-
-// Local MP4 video files for autoplay and full control
-const tiktokImages = [
+const tiktokContent = [
   {
-    src: "/images/ssstik.io_1762337981863.jpeg",
-    alt: "Amber Nights testimonial"
+    type: 'video',
+    src: "/videos/ssstik.io_@sbk_fragrances_1762514013750.mp4",
+    thumbnail: "/images/webp/ssstik.io_1762337981863.webp",
+    alt: "Amber Nights testimonial",
+    title: "Gentlemen Fragrance",
+    views: "10.5K"
   },
   {
-    src: "/images/ssstik.io_1762180691415.jpeg",
-    alt: "Gentlemen perfume testimonial"
+    type: 'video',
+    src: "/videos/ssstik.io_@sbk_fragrances_1762514530635.mp4",
+    alt: "Gentlemen perfume testimonial",
+    title: "Perfume Collection",
+    views: "8.2K"
   },
   {
-    src: "/images/ssstik.io_1762189144483.jpeg",
-    alt: "Signature scent testimonial"
+    type: 'video',
+    src: "/videos/ssstik.io_@sbk_fragrances_1762513790609.mp4",
+    alt: "Signature scent testimonial",
+    title: "Signature Collection",
+    views: "12.3K"
   }
 ];
 
-import React from "react";
-
 export default function TiktokFeed() {
-  // Responsive asymmetric grid: large video left, two stacked right (desktop), single column (mobile)
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
+    };
+    const observer = new window.IntersectionObserver(handleIntersection, { threshold: 0.5 });
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="w-full py-16 md:py-24 bg-transparent">
-      <h2 className="text-3xl md:text-5xl font-bold text-center mb-10 md:mb-14">Follow Us on TikTok</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-3 md:grid-rows-2 gap-4 md:gap-6 max-w-6xl mx-auto">
-        {/* Large video left (spans 2 rows on desktop) */}
-          <div className="relative shadow-2xl bg-transparent overflow-hidden row-span-2 col-span-1 md:row-span-2 md:col-span-2 aspect-[4/5] md:aspect-[4/3] flex items-center justify-center">
-            <video
-              src="/videos/Sbk_fragrances (@sbk_fragrances)_5.mp4"
-              className="w-full h-full object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-            title="Amber Nights testimonial"
-          />
-          <span className="absolute bottom-4 right-4 bg-white/90 rounded-full p-2 shadow-lg hover:scale-110 transition-transform">
-            <img src="/images/4138198.png" alt="TikTok Icon" className="w-10 h-10 object-contain" />
+    <section className="w-full py-20 md:py-32 bg-gradient-to-b from-black/5 to-transparent relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-[url('/images/pattern.png')] bg-repeat opacity-20"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* Heading Section */}
+        <div className="text-center mb-20">
+          <span className="block text-sm font-medium tracking-[0.4em] text-gray-500 mb-4" style={{fontFamily: 'Montserrat, sans-serif'}}>
+            DISCOVER OUR ESSENCE
           </span>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#020202] to-[#000000] bg-clip-text text-transparent tracking-wider"
+              style={{fontFamily: 'Oswald, sans-serif', letterSpacing: '0.05em'}}>
+            FOLLOW US ON TIKTOK
+          </h2>
+          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light"
+             style={{fontFamily: 'Montserrat, sans-serif'}}>
+            Discover the artistry of perfumery through our captivating content
+          </p>
+          <div className="w-24 h-[1px] bg-gradient-to-r from-black/40 via-black/20 to-transparent mx-auto mt-8"></div>
         </div>
-        {/* Top right image */}
-          <div className="relative shadow-2xl bg-transparent overflow-hidden row-span-1 col-span-1 aspect-[4/5] md:aspect-[4/3] flex items-center justify-center">
-            <img
-              src={tiktokImages[1].src}
-              alt={tiktokImages[1].alt}
-              className="w-full h-full object-cover"
-          />
-          <span className="absolute bottom-4 right-4 bg-white/90 rounded-full p-2 shadow-lg hover:scale-110 transition-transform">
-            <img src="/images/4138198.png" alt="TikTok Icon" className="w-10 h-10 object-contain" />
-          </span>
+
+        {/* TikTok Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+          {tiktokContent.map((content, index) => (
+            <div
+              key={index}
+              className="group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:-translate-y-2 w-full max-w-md mx-auto"
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              {/* Content Container */}
+              <div className="aspect-[9/16] relative overflow-hidden bg-gray-900 w-full">
+                {content.type === 'video' ? (
+                  <video
+                    ref={index === 0 ? videoRef : null}
+                    src={content.src}
+                    className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    loading="lazy"
+                  />
+                ) : (
+                  <OptimizedImg
+                    src={content.src}
+                    alt={content.alt}
+                    width={500}
+                    height={889}
+                    className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                  />
+                )}
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                {/* Content Info */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                  <h3 className="text-white text-xl font-semibold mb-2 tracking-wide" style={{fontFamily: 'Oswald, sans-serif'}}>
+                    {content.title}
+                  </h3>
+                  <div className="flex items-center space-x-4">
+                    <span className="text-white/90 text-sm flex items-center tracking-wider" style={{fontFamily: 'Montserrat, sans-serif'}}>
+                      <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778C2 8.769 2 12 2 12s0 3.231.437 4.796a2.506 2.506 0 0 0 1.767 1.766C5.736 18.993 12 19 12 19s6.264.007 7.831-.404a2.506 2.506 0 0 0 1.767-1.766C22 15.231 22 12 22 12s0-3.231-.437-4.796Z" />
+                      </svg>
+                      {content.views} views
+                    </span>
+                  </div>
+                </div>
+
+                {/* Stylized TikTok Icon Corner Design */}
+                <div className="absolute top-0 right-0 overflow-hidden">
+                  {/* Decorative corner accent */}
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-black/40 to-transparent transform rotate-45 translate-x-12 -translate-y-12" />
+                  
+                  {/* TikTok Icon with hover effects */}
+                  <div className="relative z-10 m-4 group-hover:scale-110 transform transition-all duration-500">
+                    <div className="relative">
+                      {/* Animated glow effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#4d3222]/20 to-[#8b6b56]/20 blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      
+                      {/* Musical note decoration */}
+                      <div className="absolute -top-1 -right-1 w-2 h-2 bg-white/80 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" />
+                      
+                      {/* TikTok Icon */}
+                      <OptimizedImg
+                        src="/images/4138198.png"
+                        alt="TikTok Icon"
+                        width={28}
+                        height={28}
+                        className="w-7 h-7 object-contain filter drop-shadow-lg contrast-125 group-hover:brightness-110 transition-all duration-500"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-        {/* Bottom right image */}
-          <div className="relative shadow-2xl bg-transparent overflow-hidden row-span-1 col-span-1 aspect-[4/5] md:aspect-[4/3] flex items-center justify-center">
-            <img
-              src={tiktokImages[2].src}
-              alt={tiktokImages[2].alt}
-              className="w-full h-full object-cover"
-          />
-          <span className="absolute bottom-4 right-4 bg-white/90 rounded-full p-2 shadow-lg hover:scale-110 transition-transform">
-            <img src="/images/4138198.png" alt="TikTok Icon" className="w-10 h-10 object-contain" />
-          </span>
+
+        {/* CTA Section */}
+        <div className="text-center mt-16">
+          <a
+            href="https://www.tiktok.com/@sbk_fragrances"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-10 py-4 bg-black text-white rounded-full hover:bg-gray-900 transition-all duration-300 group hover:shadow-lg hover:-translate-y-0.5"
+          >
+            <span className="mr-3 text-lg tracking-wider font-medium uppercase" style={{fontFamily: 'Montserrat, sans-serif'}}>
+              Follow @sbkfragrances
+            </span>
+            <span className="transform transition-transform duration-300 group-hover:translate-x-1 text-xl">→</span>
+          </a>
+          <div className="mt-4">
+            <span className="text-sm text-gray-500 tracking-wider" style={{fontFamily: 'Montserrat, sans-serif'}}>
+              Join our fragrance community
+            </span>
+          </div>
         </div>
       </div>
-        <div className="text-center mt-10">
-          <a href="https://www.tiktok.com/@sbk_fragrances" target="_blank" rel="noopener" className="text-pink-600 font-semibold underline text-lg">@sbkfragrances</a>
-        </div>
-      </section>
+    </section>
   );
 }
