@@ -1,62 +1,60 @@
 "use client";
+import OptimizedImg from "./OptimizedImg";
 
-import Link from 'next/link';
-import AnimatedSection from './AnimatedSection';
-
+// Hero section inspired by the provided design
 export default function HeroSplit() {
   return (
     <section className="relative w-full h-screen max-h-screen flex flex-col sm:flex-row overflow-hidden">
       {/* Left: For Her */}
-      <AnimatedSection animation="slideRight" delay={0.3} className="flex-1 relative flex items-end justify-center h-1/2 sm:h-full w-full bg-black">
+      {/* Left: For Her */}
+      <div className="flex-1 relative flex items-end justify-center h-1/2 sm:h-full w-full bg-black">
         <div className="absolute inset-0 w-full h-full">
           <img
-            src="/images/webp/Experience Luxury.jpg"
+            src="/images/Floral Elegance_ My Way Perfume.png"
+            className="w-full h-full object-cover object-center scale-105"
+            style={{
+              objectFit: "cover",
+              transform: "scale(1.1)",
+              transformOrigin: "center"
+            }}
             alt="For Her"
-            className="w-full h-full object-cover object-center"
-            style={{
-              objectFit: "cover",
-              transform: "scale(1.1)",
-              transformOrigin: "center"
-            }}
           />
-          <div className="absolute inset-0 bg-black/30"></div>
+          <div className="absolute inset-0 bg-black/20" />
         </div>
-        <div className="relative z-10 text-center mb-8 sm:mb-16 p-4">
-          <h2 className="text-white text-4xl sm:text-5xl font-light mb-4">Experience Luxury</h2>
-          <p className="text-white/90 text-lg sm:text-xl mb-6 max-w-md mx-auto">
-            Discover our collection of handcrafted perfumes, where artistry meets elegance
-          </p>
-          <Link href="/shop" className="inline-block bg-white text-black px-8 py-3 rounded-full hover:bg-opacity-90 transition-all duration-300">
-            Discover More
-          </Link>
+        <span className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 text-white text-base sm:text-xl md:text-2xl font-bold uppercase tracking-[0.18em] drop-shadow-lg" style={{ fontFamily: "Oswald, Bebas Neue, Montserrat, Arial, sans-serif" }}>
+          For Her
+        </span>
         </div>
-      </AnimatedSection>
-
       {/* Right: For Him */}
-      <AnimatedSection animation="slideLeft" delay={0.3} className="flex-1 relative flex items-end justify-center h-1/2 sm:h-full w-full bg-gray-100">
+      <div className="flex-1 relative flex items-end justify-center h-1/2 sm:h-full w-full bg-black">
         <div className="absolute inset-0 w-full h-full">
           <img
-            src="/images/webp/close-up-perfume-bottle.jpg"
-            alt="For Him"
-            className="w-full h-full object-cover object-center"
+            src="/images/SBK Frangrance1.png"
+            className="w-full h-full object-cover object-center scale-105"
             style={{
               objectFit: "cover",
               transform: "scale(1.1)",
               transformOrigin: "center"
             }}
+            alt="For Him"
           />
-          <div className="absolute inset-0 bg-black/30"></div>
+          <div className="absolute inset-0 bg-black/20" />
+          <span className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 text-white text-base sm:text-xl md:text-2xl font-bold uppercase tracking-[0.18em] drop-shadow-lg" style={{ fontFamily: "Oswald, Bebas Neue, Montserrat, Arial, sans-serif" }}>
+            For Him
+          </span>
         </div>
-        <div className="relative z-10 text-center mb-8 sm:mb-16 p-4">
-          <h2 className="text-white text-4xl sm:text-5xl font-light mb-4">Our Collections</h2>
-          <p className="text-white/90 text-lg sm:text-xl mb-6 max-w-md mx-auto">
-            Explore our signature fragrances, each crafted to perfection
-          </p>
-          <Link href="/collections" className="inline-block bg-white text-black px-8 py-3 rounded-full hover:bg-opacity-90 transition-all duration-300">
-            View Collections
-          </Link>
-        </div>
-      </AnimatedSection>
+      </div>
+      {/* Centered Headline Overlay */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none px-4">
+        <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold uppercase tracking-normal text-white text-center leading-tight" style={{ 
+          fontFamily: "Oswald, sans-serif",
+          letterSpacing: "0.05em",
+          textShadow: "2px 2px 4px rgba(0,0,0,0.3)"
+        }}>
+          Indulge<br />
+          <span className="mt-2 block">Your Senses</span>
+        </h1>
+      </div>
     </section>
   );
 }
