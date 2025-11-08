@@ -1,9 +1,8 @@
+'use client';
 
 import React from 'react';
 import InstagramFeed from './components/InstagramFeed';
-import BehindTheScenes from './components/BehindTheScenes';
 import NewsletterSignup from './components/NewsletterSignup';
-import HeroSplit from './components/HeroSplit';
 import FeaturedCollections from './components/FeaturedCollections';
 import BestSellerShowcase from './components/BestSellerShowcase';
 import BodyPerfumeSection from './components/BodyPerfumeSection';
@@ -11,58 +10,40 @@ import OurPhilosophy from './components/OurPhilosophy';
 import UniquenessQualitySection from './components/UniquenessQualitySection';
 import OurStory from './components/OurStory';
 import VideoShowcaseSection from './components/VideoShowcaseSection';
-import MotionSectionWrapper from './components/MotionSectionWrapper';
 import ShopNowSection from './components/ShopNowSection';
 import WhyChooseUs from './components/WhyChooseUs';
 import Testimonials from './components/Testimonials';
+import AnimatedLayout from './components/AnimatedLayout';
 
-export const metadata = {
-  title: 'SBK FRAGRANCESsa - Bringing to life the fragrance you love',
-  description: 'Discover scents that define your style',
-};
+// Define section configurations with their animations
+const sections = [
+  { Component: FeaturedCollections, animation: 'slideRight', delay: 0.3 },
+  { Component: BestSellerShowcase, animation: 'scale', delay: 0.2 },
+  { Component: BodyPerfumeSection, animation: 'slideLeft', delay: 0.3 },
+  { Component: OurPhilosophy, animation: 'fade', delay: 0.2 },
+  { Component: UniquenessQualitySection, animation: 'slideRight', delay: 0.3 },
+  { Component: OurStory, animation: 'scale', delay: 0.2 },
+  { Component: VideoShowcaseSection, animation: 'slideLeft', delay: 0.3 },
+  { Component: ShopNowSection, animation: 'scale', delay: 0.2 },
+  { Component: WhyChooseUs, animation: 'fade', delay: 0.3 },
+  { Component: Testimonials, animation: 'slideRight', delay: 0.2 },
+  { Component: InstagramFeed, animation: 'slideLeft', delay: 0.2 },
+  { Component: NewsletterSignup, animation: 'fade', delay: 0.3 },
+];
 
 export default function Home() {
   return (
-    <div className="overflow-x-hidden">
-      <section className="parallax-section">
-        <HeroSplit />
-      </section>
-      <section className="fade-in-section">
-        <FeaturedCollections />
-      </section>
-      <section className="fade-in-section">
-        <BestSellerShowcase />
-      </section>
-      <section className="parallax-section">
-        <BodyPerfumeSection />
-      </section>
-      <section className="stagger-text">
-        <OurPhilosophy />
-      </section>
-      <section className="fade-in-section">
-        <UniquenessQualitySection />
-      </section>
-      <section className="stagger-text">
-        <OurStory />
-      </section>
-      <section className="scale-image">
-        <VideoShowcaseSection />
-      </section>
-      <section className="fade-in-section">
-        <ShopNowSection />
-      </section>
-      <section className="stagger-text">
-        <WhyChooseUs />
-      </section>
-      <section className="fade-in-section">
-        <Testimonials />
-      </section>
-      <section className="scale-image">
-        <InstagramFeed />
-      </section>
-      <section className="fade-in-section">
-        <NewsletterSignup />
-      </section>
-    </div>
+    <main className="relative w-full overflow-x-hidden">
+      {sections.map(({ Component, animation, delay }, index) => (
+        <AnimatedLayout 
+          key={index}
+          animation={animation}
+          delay={delay}
+          className="w-full"
+        >
+          <Component />
+        </AnimatedLayout>
+      ))}
+    </main>
   );
 }

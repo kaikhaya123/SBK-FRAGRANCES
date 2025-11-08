@@ -26,21 +26,21 @@ const BodyPerfumeSection = () => {
       />
       {/* Main content is intentionally minimal and centered, with lots of whitespace */}
       <div className="relative z-20 flex flex-col items-center justify-center w-full px-12 sm:px-32 md:px-48 py-10 sm:py-16 md:py-0 min-h-[320px] sm:min-h-[420px]">
-        <h2 
+          <h2 
           className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 tracking-tight drop-shadow-sm"
           style={{letterSpacing: '0.01em',fontFamily: 'Montserrat, Poppins, Lora, Inter, Arial, sans-serif',fontWeight: 700}}
-        >
-          Body Perfume
-        </h2>
-        <p 
-          className="text-base xs:text-lg sm:text-xl text-gray-700 mb-6 sm:mb-10 max-w-md text-center mx-auto"
-          style={{fontFamily: 'Montserrat, Poppins, Lora, Inter, Arial, sans-serif',fontWeight: 400}}
-        >
-          Experience the essence of luxury with our signature body perfume collection. Crafted with the finest ingredients for a long-lasting, captivating scent.
-        </p>
+          >
+            Body Perfume
+          </h2>
+          <p 
+          className="text-base xs:text-lg sm:text-xl text-gray-700 mb-6 sm:mb-10 max-w-lg xs:max-w-xl sm:max-w-2xl text-center mx-auto"
+          style={{fontFamily: 'Montserrat, Poppins, Lora, Inter, Arial, sans-serif',fontWeight: 200}}
+          >
+            Experience the essence of luxury with our signature body perfume collection. Crafted with the finest ingredients for a long-lasting, captivating scent.
+          </p>
             <a href="/shop" className="bg-white/80 text-black px-6 py-3 sm:px-7 sm:py-3 square-full font-semibold shadow-lg hover:bg-black hover:text-white transition-all duration-100 text-base sm:text-lg max-w-xs text-center block cursor-pointer ring-1 ring-black/10 hover:ring-2 hover:ring-black">
-              Shop Now
-            </a>
+            Shop Now
+        </a>
       </div>
       {/* Play button overlay in lower right */}
       <button
@@ -53,7 +53,7 @@ const BodyPerfumeSection = () => {
           <polygon points="13,10 24,16 13,22" fill="#222" />
         </svg>
       </button>
-      {/* Subtle gradient shadow at the bottom */}
+  {/* Subtle gradient shadow at the bottom */}
   <div className="absolute left-0 right-0 bottom-0 h-24 bg-gradient-to-t from-[#eae7e1] to-transparent z-10 pointer-events-none" />
     </section>
   );

@@ -1,5 +1,6 @@
 
-"use client";
+
+
 
 import React, { useRef, useEffect, useState } from "react";
 import OptimizedImg from "./OptimizedImg";
@@ -59,19 +60,13 @@ export default function TiktokFeed() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Heading Section */}
-        <div className="text-center mb-20">
-          <span className="block text-sm font-medium tracking-[0.4em] text-gray-500 mb-4" style={{fontFamily: 'Montserrat, sans-serif'}}>
-            DISCOVER OUR ESSENCE
-          </span>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#020202] to-[#000000] bg-clip-text text-transparent tracking-wider"
-              style={{fontFamily: 'Oswald, sans-serif', letterSpacing: '0.05em'}}>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-[#020202] to-[#000000] bg-clip-text text-transparent">
             FOLLOW US ON TIKTOK
           </h2>
-          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light"
-             style={{fontFamily: 'Montserrat, sans-serif'}}>
+          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
             Discover the artistry of perfumery through our captivating content
           </p>
-          <div className="w-24 h-[1px] bg-gradient-to-r from-black/40 via-black/20 to-transparent mx-auto mt-8"></div>
         </div>
 
         {/* TikTok Grid */}
@@ -80,20 +75,20 @@ export default function TiktokFeed() {
             <div
               key={index}
               className="group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:-translate-y-2 w-full max-w-md mx-auto"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
               {/* Content Container */}
               <div className="aspect-[9/16] relative overflow-hidden bg-gray-900 w-full">
                 {content.type === 'video' ? (
-                  <video
-                    ref={index === 0 ? videoRef : null}
+                    <video
+                      ref={index === 0 ? videoRef : null}
                     src={content.src}
                     className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                     autoPlay
-                    loop
-                    muted
-                    playsInline
+                      loop
+                      muted
+                      playsInline
                     loading="lazy"
                   />
                 ) : (
@@ -105,17 +100,15 @@ export default function TiktokFeed() {
                     className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                   />
                 )}
-
+                
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Content Info */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  <h3 className="text-white text-xl font-semibold mb-2 tracking-wide" style={{fontFamily: 'Oswald, sans-serif'}}>
-                    {content.title}
-                  </h3>
+                  <h3 className="text-white text-xl font-semibold mb-2">{content.title}</h3>
                   <div className="flex items-center space-x-4">
-                    <span className="text-white/90 text-sm flex items-center tracking-wider" style={{fontFamily: 'Montserrat, sans-serif'}}>
+                    <span className="text-white/90 text-sm flex items-center">
                       <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778C2 8.769 2 12 2 12s0 3.231.437 4.796a2.506 2.506 0 0 0 1.767 1.766C5.736 18.993 12 19 12 19s6.264.007 7.831-.404a2.506 2.506 0 0 0 1.767-1.766C22 15.231 22 12 22 12s0-3.231-.437-4.796Z" />
                       </svg>
@@ -160,18 +153,11 @@ export default function TiktokFeed() {
             href="https://www.tiktok.com/@sbk_fragrances"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-10 py-4 bg-black text-white rounded-full hover:bg-gray-900 transition-all duration-300 group hover:shadow-lg hover:-translate-y-0.5"
+            className="inline-flex items-center px-8 py-4 bg-black text-white rounded-full hover:bg-gray-900 transition-colors duration-300 group"
           >
-            <span className="mr-3 text-lg tracking-wider font-medium uppercase" style={{fontFamily: 'Montserrat, sans-serif'}}>
-              Follow @sbkfragrances
-            </span>
-            <span className="transform transition-transform duration-300 group-hover:translate-x-1 text-xl">→</span>
+            <span className="mr-3 text-lg font-medium">Follow @sbkfragrances</span>
+            <span className="transform transition-transform duration-300 group-hover:translate-x-1">→</span>
           </a>
-          <div className="mt-4">
-            <span className="text-sm text-gray-500 tracking-wider" style={{fontFamily: 'Montserrat, sans-serif'}}>
-              Join our fragrance community
-            </span>
-          </div>
         </div>
       </div>
     </section>

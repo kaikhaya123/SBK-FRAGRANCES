@@ -63,7 +63,7 @@ const preloadImages = async urls => {
 };
 
 const Masonry = ({
-  items,
+  items = [],
   ease = 'power3.out',
   duration = 0.6,
   stagger = 0.05,
@@ -80,6 +80,7 @@ const Masonry = ({
     stagger,
     animateFrom
   }), [ease, duration, stagger, animateFrom]);
+
   const columns = useMedia(
     ['(min-width:1500px)', '(min-width:1000px)', '(min-width:600px)', '(min-width:400px)'],
     [5, 4, 3, 2],
@@ -90,11 +91,13 @@ const Masonry = ({
   const [imagesReady, setImagesReady] = useState(false);
 
   useEffect(() => {
+    if (!items?.length) return;
     preloadImages(items.map(i => i.img)).then(() => setImagesReady(true));
   }, [items]);
 
   const grid = useMemo(() => {
     if (!width) return [];
+    if (!items?.length) return [];
 
     const colHeights = new Array(columns).fill(0);
     const columnWidth = width / columns;
@@ -171,7 +174,7 @@ const Masonry = ({
     <div 
       ref={containerRef} 
       className="list" 
-      style={{ height: Math.max(...grid.map(item => item.y + item.h), 0) + 'px' }}
+      style={{ height: Math.max(...(grid?.map(item => item.y + item.h) || [0])) + 'px' }}
     >
       {grid.map(item => (
         <div

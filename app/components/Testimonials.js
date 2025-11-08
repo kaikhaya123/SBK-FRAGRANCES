@@ -1,8 +1,5 @@
-"use client";
-
 import OptimizedImg from "./OptimizedImg";
 import React, { useRef, useState } from "react";
-import Masonry from "./Masonry";
 
 function VideoWithFallback({ src, poster, alt }) {
   const [error, setError] = useState(false);
@@ -20,15 +17,15 @@ function VideoWithFallback({ src, poster, alt }) {
   }, [error]);
 
   if (error) {
-      return (
-        <OptimizedImg
-          src={poster.replace('.jpg', '.webp').replace('.jpeg', '.webp')}
-          alt={alt}
-          width={400}
-          height={400}
-          className="object-cover w-full h-full"
-        />
-      );
+    return (
+      <OptimizedImg
+        src={poster.replace('.jpg', '.webp').replace('.jpeg', '.webp')}
+        alt={alt}
+        width={400}
+        height={400}
+        className="object-cover w-full h-full"
+      />
+    );
   }
   return (
     <video
@@ -93,10 +90,10 @@ export default function Testimonials() {
             Discover the captivating stories of those who have embraced our fragrances
           </p>
         </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto">
           {testimonials.map((t, idx) => (
             <div 
-              key={idx} 
+              key={idx}
               className="group relative bg-white rounded-2xl overflow-hidden transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
             >
               {/* Video Container */}
@@ -123,25 +120,26 @@ export default function Testimonials() {
               </div>
             </div>
           ))}
-      </div>
+        </div>
       {/* Image Testimonials Gallery */}
         <div className="mt-16 md:mt-24">
-          <Masonry
-            items={imageTestimonials.map((t, idx) => ({
-              id: String(idx + 1),
-              img: t.image,
-              url: "#",
-              height: 300 + Math.random() * 300, // Random heights between 300-600px for visual interest
-            }))}
-            ease="power3.out"
-            duration={0.6}
-            stagger={0.05}
-            animateFrom="bottom"
-            scaleOnHover={true}
-            hoverScale={0.95}
-            blurToFocus={true}
-            colorShiftOnHover={true}
-          />
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+            {imageTestimonials.map((t, idx) => (
+              <div 
+                key={idx} 
+                className="group relative aspect-square rounded-xl overflow-hidden transform transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"/>
+                <OptimizedImg
+                  src={t.image.replace('.jpeg', '.webp')}
+                  alt="Customer testimonial"
+                  width={400}
+                  height={400}
+                  className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       {/* Elegant CTA Section */}
         <div className="text-center mt-16 md:mt-24">

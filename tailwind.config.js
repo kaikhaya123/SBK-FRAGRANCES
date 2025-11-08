@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)'],
+        serif: ['var(--font-playfair)'],
+      },
       boxShadow: {
         'glass': '0 4px 32px 0 rgba(31, 38, 135, 0.37)',
       },

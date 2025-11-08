@@ -1,3 +1,27 @@
+/* Navbar background */
+.nav-background {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.85));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 1000;
+}
+
+.nav-scrolled {
+  background: rgba(0, 0, 0, 0.98);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 /* Base nav text styles */
 .nav-text {
   display: inline-block;
@@ -14,15 +38,21 @@
     content: '';
     position: absolute;
     width: 0;
-    height: 1px;
+    height: 2px;
     bottom: -2px;
-    left: 0;
-    background-color: currentColor;
-    transition: width 0.3s ease;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, transparent, currentColor, transparent);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   a:hover .nav-text::after {
     width: 100%;
+  }
+
+  .nav-text:hover {
+    opacity: 0.8;
+    transform: translateY(-1px);
   }
 }
 

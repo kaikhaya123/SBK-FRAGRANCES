@@ -6,18 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "static": "next build && next export"
   },
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.49",
     "@gsap/react": "^2.1.2",
     "aos": "^2.3.4",
+    "critters": "^0.0.23",
     "framer-motion": "^12.23.24",
     "gsap": "^3.13.0",
     "imagemin": "^9.0.1",
     "imagemin-webp": "^6.1.0",
     "lottie-react": "^2.4.1",
     "next": "^16.0.0",
+    "next-pwa": "^5.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^5.5.0",
