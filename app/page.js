@@ -3,6 +3,7 @@
 import React from 'react';
 import InstagramFeed from './components/InstagramFeed';
 import NewsletterSignup from './components/NewsletterSignup';
+import HeroSplit from './components/HeroSplit';
 import FeaturedCollections from './components/FeaturedCollections';
 import BestSellerShowcase from './components/BestSellerShowcase';
 import BodyPerfumeSection from './components/BodyPerfumeSection';
@@ -17,6 +18,7 @@ import AnimatedLayout from './components/AnimatedLayout';
 
 // Define section configurations with their animations
 const sections = [
+  { Component: HeroSplit, animation: 'fade', delay: 0.2 },
   { Component: FeaturedCollections, animation: 'slideRight', delay: 0.3 },
   { Component: BestSellerShowcase, animation: 'scale', delay: 0.2 },
   { Component: BodyPerfumeSection, animation: 'slideLeft', delay: 0.3 },
