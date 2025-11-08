@@ -55,7 +55,7 @@ export default function Reviews() {
         <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="absolute inset-0">
           <img
-            src="/images/reviews-hero.jpg"
+            src="/images/elegant-skin-care-banner-design.jpg"
             alt="Luxury Perfume Reviews"
             className="w-full h-full object-cover object-center"
           />

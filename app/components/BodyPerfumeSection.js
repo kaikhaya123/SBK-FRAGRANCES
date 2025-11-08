@@ -25,34 +25,36 @@ const BodyPerfumeSection = () => {
         draggable="false"
       />
       {/* Main content is intentionally minimal and centered, with lots of whitespace */}
-      <div className="relative z-20 flex flex-col items-center justify-center w-full px-12 sm:px-32 md:px-48 py-10 sm:py-16 md:py-0 min-h-[320px] sm:min-h-[420px]">
+      <div className="relative z-20 flex flex-col items-center justify-center w-full px-20 sm:px-48 lg:px-72 py-10 sm:py-16 md:py-0 min-h-[320px] sm:min-h-[420px] max-w-5xl mx-auto">
           <h2 
-          className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 tracking-tight drop-shadow-sm"
-          style={{letterSpacing: '0.01em',fontFamily: 'Montserrat, Poppins, Lora, Inter, Arial, sans-serif',fontWeight: 700}}
+          className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl text-gray-900 mb-4 sm:mb-6 tracking-wider drop-shadow-sm uppercase"
+          style={{
+            letterSpacing: '0.05em',
+            fontFamily: 'Oswald, Bebas Neue, sans-serif',
+            fontWeight: 500
+          }}
           >
             Body Perfume
           </h2>
           <p 
-          className="text-base xs:text-lg sm:text-xl text-gray-700 mb-6 sm:mb-10 max-w-lg xs:max-w-xl sm:max-w-2xl text-center mx-auto"
-          style={{fontFamily: 'Montserrat, Poppins, Lora, Inter, Arial, sans-serif',fontWeight: 200}}
+          className="text-base xs:text-lg sm:text-xl text-gray-700/90 mb-6 sm:mb-10 max-w-xs xs:max-w-md sm:max-w-lg text-center mx-auto"
+          style={{
+            fontFamily: 'Playfair Display, Cormorant Garamond, serif',
+            fontWeight: 400,
+            lineHeight: '1.75',
+            letterSpacing: '0.02em'
+          }}
           >
             Experience the essence of luxury with our signature body perfume collection. Crafted with the finest ingredients for a long-lasting, captivating scent.
           </p>
-            <a href="/shop" className="bg-white/80 text-black px-6 py-3 sm:px-7 sm:py-3 square-full font-semibold shadow-lg hover:bg-black hover:text-white transition-all duration-100 text-base sm:text-lg max-w-xs text-center block cursor-pointer ring-1 ring-black/10 hover:ring-2 hover:ring-black">
+          <Link href="/shop" className="bg-white/90 text-black px-8 py-3 sm:px-10 sm:py-4 rounded-none font-light tracking-widest uppercase shadow-lg hover:bg-black hover:text-white transition-all duration-300 text-sm sm:text-base max-w-xs text-center block cursor-pointer ring-1 ring-black/5 hover:ring-2 hover:ring-black"
+          style={{
+            fontFamily: 'Oswald, sans-serif',
+            letterSpacing: '0.2em'
+          }}>
             Shop Now
-        </a>
+          </Link>
       </div>
-      {/* Play button overlay in lower right */}
-      <button
-        className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 z-30 bg-white/70 hover:bg-white shadow-lg rounded-full p-3 sm:p-4 flex items-center justify-center transition-all duration-200 backdrop-blur-sm"
-        aria-label="Play video"
-        style={{ boxShadow: '0 4px 24px 0 rgba(0,0,0,0.10)' }}
-      >
-        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="16" cy="16" r="16" fill="#fff" fillOpacity="0.7" />
-          <polygon points="13,10 24,16 13,22" fill="#222" />
-        </svg>
-      </button>
   {/* Subtle gradient shadow at the bottom */}
   <div className="absolute left-0 right-0 bottom-0 h-24 bg-gradient-to-t from-[#eae7e1] to-transparent z-10 pointer-events-none" />
     </section>
