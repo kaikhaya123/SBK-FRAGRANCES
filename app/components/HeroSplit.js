@@ -1,13 +1,18 @@
 "use client";
-import OptimizedImg from "./OptimizedImg";
+import Link from 'next/link';
+import AnimatedSection from './AnimatedSection';
+import { motion } from 'framer-motion';
 
-// Hero section inspired by the provided design
 export default function HeroSplit() {
   return (
     <section className="relative w-full h-screen max-h-screen flex flex-col sm:flex-row overflow-hidden">
       {/* Left: For Her */}
-      {/* Left: For Her */}
-      <div className="flex-1 relative flex items-end justify-center h-1/2 sm:h-full w-full bg-black">
+      <motion.div 
+        initial={{ x: "-100%" }} 
+        animate={{ x: 0 }} 
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="flex-1 relative flex items-end justify-center h-1/2 sm:h-full w-full bg-black"
+      >
         <div className="absolute inset-0 w-full h-full">
           <img
             src="/images/Floral Elegance_ My Way Perfume.png"
@@ -21,12 +26,20 @@ export default function HeroSplit() {
           />
           <div className="absolute inset-0 bg-black/20" />
         </div>
-        <span className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 text-white text-base sm:text-xl md:text-2xl font-bold uppercase tracking-[0.18em] drop-shadow-lg" style={{ fontFamily: "Oswald, Bebas Neue, Montserrat, Arial, sans-serif" }}>
-          For Her
-        </span>
-        </div>
+        <AnimatedSection animation="fadeIn" delay={1}>
+          <span className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 text-white text-base sm:text-xl md:text-2xl font-bold uppercase tracking-[0.18em] drop-shadow-lg" style={{ fontFamily: "Oswald, Bebas Neue, Montserrat, Arial, sans-serif" }}>
+            For Her
+          </span>
+        </AnimatedSection>
+      </motion.div>
+
       {/* Right: For Him */}
-      <div className="flex-1 relative flex items-end justify-center h-1/2 sm:h-full w-full bg-black">
+      <motion.div 
+        initial={{ x: "100%" }} 
+        animate={{ x: 0 }} 
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="flex-1 relative flex items-end justify-center h-1/2 sm:h-full w-full bg-black"
+      >
         <div className="absolute inset-0 w-full h-full">
           <img
             src="/images/SBK Frangrance1.png"
@@ -39,22 +52,44 @@ export default function HeroSplit() {
             alt="For Him"
           />
           <div className="absolute inset-0 bg-black/20" />
-          <span className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 text-white text-base sm:text-xl md:text-2xl font-bold uppercase tracking-[0.18em] drop-shadow-lg" style={{ fontFamily: "Oswald, Bebas Neue, Montserrat, Arial, sans-serif" }}>
-            For Him
-          </span>
+          <AnimatedSection animation="fadeIn" delay={1}>
+            <span className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 text-white text-base sm:text-xl md:text-2xl font-bold uppercase tracking-[0.18em] drop-shadow-lg" style={{ fontFamily: "Oswald, Bebas Neue, Montserrat, Arial, sans-serif" }}>
+              For Him
+            </span>
+          </AnimatedSection>
         </div>
-      </div>
+      </motion.div>
+
       {/* Centered Headline Overlay */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none px-4">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
+        className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none px-4"
+      >
         <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold uppercase tracking-normal text-white text-center leading-tight" style={{ 
           fontFamily: "Oswald, sans-serif",
           letterSpacing: "0.05em",
           textShadow: "2px 2px 4px rgba(0,0,0,0.3)"
         }}>
-          Indulge<br />
-          <span className="mt-2 block">Your Senses</span>
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
+          >
+            Indulge
+          </motion.span>
+          <br />
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.1, duration: 0.8, ease: "easeOut" }}
+            className="mt-2 block"
+          >
+            Your Senses
+          </motion.span>
         </h1>
-      </div>
+      </motion.div>
     </section>
   );
 }
