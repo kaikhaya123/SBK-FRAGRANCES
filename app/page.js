@@ -10,7 +10,6 @@ import BodyPerfumeSection from './components/BodyPerfumeSection';
 import OurPhilosophy from './components/OurPhilosophy';
 import UniquenessQualitySection from './components/UniquenessQualitySection';
 import OurStory from './components/OurStory';
-import VideoShowcaseSection from './components/VideoShowcaseSection';
 import ShopNowSection from './components/ShopNowSection';
 import WhyChooseUs from './components/WhyChooseUs';
 import Testimonials from './components/Testimonials';
@@ -25,7 +24,6 @@ const sections = [
   { Component: OurPhilosophy, animation: 'fade', delay: 0.2 },
   { Component: UniquenessQualitySection, animation: 'slideRight', delay: 0.3 },
   { Component: OurStory, animation: 'scale', delay: 0.2 },
-  { Component: VideoShowcaseSection, animation: 'slideLeft', delay: 0.3 },
   { Component: ShopNowSection, animation: 'scale', delay: 0.2 },
   { Component: WhyChooseUs, animation: 'fade', delay: 0.3 },
   { Component: Testimonials, animation: 'slideRight', delay: 0.2 },
