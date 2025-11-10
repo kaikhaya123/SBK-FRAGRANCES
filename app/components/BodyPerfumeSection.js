@@ -7,10 +7,10 @@ import Link from 'next/link';
 // ...existing code...
 const BodyPerfumeSection = () => {
   return (
-    <section className="relative overflow-hidden min-h-[420px] sm:min-h-[520px] flex items-center justify-center bg-[#f6f7f3] px-2 sm:px-4 md:px-0">
+    <section className="relative overflow-hidden min-h-[420px] sm:min-h-[520px] flex items-center justify-center bg-[#f6f7f3] px-4 sm:px-8 md:px-12 lg:px-20">
       {/* Floral branch on the left */}
       <img
-        src="/images/collection-small-perfume-bottles.jpg"
+        src="/images/1761501664816.jpeg"
         alt="Floral Branch"
         className="absolute left-0 bottom-0 h-1/2 xs:h-2/3 sm:h-full w-auto object-cover z-10 select-none pointer-events-none"
         style={{ minWidth: 120, maxHeight: '100%' }}
@@ -18,32 +18,35 @@ const BodyPerfumeSection = () => {
       />
       {/* Flowing fabric on the right */}
       <img
-        src="/images/perfume-bottle-nature.jpg"
+        src="/images/1761501680588.jpeg"
         alt="Flowing Fabric"
         className="absolute right-0 top-0 h-1/2 xs:h-2/3 sm:h-full w-auto object-cover z-10 select-none pointer-events-none opacity-90"
         style={{ minWidth: 140, maxHeight: '100%' }}
         draggable="false"
       />
       {/* Main content is intentionally minimal and centered, with lots of whitespace */}
-      <div className="relative z-20 flex flex-col items-center justify-center w-full px-20 sm:px-48 lg:px-72 py-10 sm:py-16 md:py-0 min-h-[320px] sm:min-h-[420px] max-w-5xl mx-auto">
+  <div className="relative z-20 flex flex-col items-center justify-center w-full px-4 sm:px-8 md:px-16 lg:px-24 py-10 sm:py-16 md:py-0 min-h-[320px] sm:min-h-[420px] max-w-3xl mx-auto">
           <h2 
           className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl text-gray-900 mb-4 sm:mb-6 tracking-wider drop-shadow-sm uppercase"
           style={{
-            letterSpacing: '0.05em',
-            fontFamily: 'Oswald, Bebas Neue, sans-serif',
+            letterSpacing: '0.02em',
+            fontFamily: 'Mosthat',
             fontWeight: 500
           }}
           >
             Body Perfume
           </h2>
           <p 
-          className="text-base xs:text-lg sm:text-xl text-gray-700/90 mb-6 sm:mb-10 max-w-xs xs:max-w-md sm:max-w-lg text-center mx-auto"
-          style={{
-            fontFamily: 'Playfair Display, Cormorant Garamond, serif',
-            fontWeight: 400,
-            lineHeight: '1.75',
-            letterSpacing: '0.02em'
-          }}
+            className="text-sm xs:text-base sm:text-base text-gray-700/90 mb-6 sm:mb-10 max-w-[16rem] xs:max-w-[18rem] sm:max-w-[22rem] md:max-w-[26rem] text-center mx-auto"
+            style={{
+              fontFamily: 'Playfair Display, Cormorant Garamond, serif',
+              fontWeight: 400,
+              lineHeight: '1.35',
+              letterSpacing: '0.01em',
+              wordBreak: 'break-word',
+              paddingLeft: '2rem',
+              paddingRight: '2rem'
+            }}
           >
             Experience the essence of luxury with our signature body perfume collection. Crafted with the finest ingredients for a long-lasting, captivating scent.
           </p>

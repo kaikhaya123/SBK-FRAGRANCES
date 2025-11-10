@@ -67,10 +67,12 @@ export default function HeroSplit() {
         transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
         className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none px-4"
       >
-        <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold uppercase tracking-normal text-white text-center leading-tight" style={{ 
-          fontFamily: "Oswald, sans-serif",
-          letterSpacing: "0.05em",
-          textShadow: "2px 2px 4px rgba(0,0,0,0.3)"
+        <h1 className="text-4xl sm:text-6xl md:text-8xl font-semibold uppercase tracking-tight text-white text-center leading-tight" style={{ 
+          fontFamily: "var(--font-display)",
+          fontWeight: 700,
+          letterSpacing: "0.02em",
+          textShadow: "2px 2px 6px rgba(0,0,0,0.35)",
+          transform: 'translateZ(0)'
         }}>
           <motion.span
             initial={{ opacity: 0, y: 20 }}
