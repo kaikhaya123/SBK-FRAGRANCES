@@ -47,6 +47,8 @@ export default function ShopPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedType, setSelectedType] = useState('all');
   const [viewMode, setViewMode] = useState('grid');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 9;
 
   // Filter logic
   const filteredFragrances = useMemo(() => {
@@ -80,6 +82,17 @@ export default function ShopPage() {
     }
 
     return filtered;
+  }, [selectedCategory, priceRange, sortBy, searchQuery, selectedType]);
+
+  // Pagination logic
+  const totalPages = Math.ceil(filteredFragrances.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentFragrances = filteredFragrances.slice(startIndex, endIndex);
+
+  // Reset to page 1 when filters change
+  React.useEffect(() => {
+    setCurrentPage(1);
   }, [selectedCategory, priceRange, sortBy, searchQuery, selectedType]);
 
   return (
@@ -183,7 +196,7 @@ export default function ShopPage() {
             {/* Results Count */}
             <div>
               <p className="text-sm font-bold text-gray-900 uppercase tracking-widest">
-                SHOWING 1-{Math.min(9, filteredFragrances.length)} OF {filteredFragrances.length} RESULTS
+                SHOWING {startIndex + 1}-{Math.min(endIndex, filteredFragrances.length)} OF {filteredFragrances.length} RESULTS
               </p>
             </div>
 
@@ -260,81 +273,146 @@ export default function ShopPage() {
           {/* Products Grid - 3 columns */}
           <div className="lg:col-span-3">
             {filteredFragrances.length > 0 ? (
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={`${selectedCategory}-${priceRange[0]}-${priceRange[1]}-${sortBy}-${searchQuery}`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-                >
-                  {filteredFragrances.slice(0, 9).map((fragrance, index) => (
-                    <motion.div
-                      key={fragrance.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.05 }}
-                    >
-                      <div className="bg-white border border-gray-300 overflow-hidden hover:shadow-md transition-shadow duration-300">
-                        {/* Product Image */}
-                        <div className="relative h-80 bg-gray-100 border-b border-gray-300 overflow-hidden group">
-                          <motion.div
-                            whileHover={{ scale: 1.05 }}
-                            transition={{ duration: 0.4 }}
-                            className="w-full h-full"
-                            style={{
-                              backgroundImage: `url('${fragrance.image}')`,
-                              backgroundSize: 'cover',
-                              backgroundPosition: 'center'
-                            }}
-                          />
+              <div className="space-y-8">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={`page-${currentPage}`}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                  >
+                    {currentFragrances.map((fragrance, index) => (
+                      <motion.div
+                        key={fragrance.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.05 }}
+                      >
+                        <div className="bg-white border border-gray-300 overflow-hidden hover:shadow-md transition-shadow duration-300">
+                          {/* Product Image */}
+                          <div className="relative h-80 bg-gray-100 border-b border-gray-300 overflow-hidden group">
+                            <motion.div
+                              whileHover={{ scale: 1.05 }}
+                              transition={{ duration: 0.4 }}
+                              className="w-full h-full"
+                              style={{
+                                backgroundImage: `url('${fragrance.image}')`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center'
+                              }}
+                            />
 
-                          {/* SALE Badge */}
-                          {fragrance.originalPrice && (
-                            <div className="absolute top-0 left-0 bg-black text-white px-3 py-2 text-xs font-bold uppercase tracking-widest">
-                              SALE
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Product Info */}
-                        <div className="p-4 text-center">
-                          {/* Rating Stars */}
-                          <div className="flex justify-center gap-1 mb-3">
-                            {[...Array(5)].map((_, i) => (
-                              <span
-                                key={i}
-                                className={`text-lg ${i < fragrance.rating ? 'text-orange-400' : 'text-gray-300'}`}
-                              >
-                                ★
-                              </span>
-                            ))}
-                          </div>
-
-                          {/* Product Name */}
-                          <h3 className="text-sm font-semibold text-gray-900 mb-1 line-clamp-2 h-10">
-                            {fragrance.name}
-                          </h3>
-
-                          {/* Price */}
-                          <div className="flex items-center justify-center gap-2">
+                            {/* SALE Badge */}
                             {fragrance.originalPrice && (
-                              <span className="text-xs text-gray-500 line-through">
-                                R{fragrance.originalPrice.toLocaleString('en-ZA')}
-                              </span>
+                              <div className="absolute top-0 left-0 bg-black text-white px-3 py-2 text-xs font-bold uppercase tracking-widest">
+                                SALE
+                              </div>
                             )}
-                            <p className="text-base font-bold text-gray-900">
-                              R{fragrance.price.toLocaleString('en-ZA')}
-                            </p>
+                          </div>
+
+                          {/* Product Info */}
+                          <div className="p-4 text-center">
+                            {/* Rating Stars */}
+                            <div className="flex justify-center gap-1 mb-3">
+                              {[...Array(5)].map((_, i) => (
+                                <span
+                                  key={i}
+                                  className={`text-lg ${i < fragrance.rating ? 'text-orange-400' : 'text-gray-300'}`}
+                                >
+                                  ★
+                                </span>
+                              ))}
+                            </div>
+
+                            {/* Product Name */}
+                            <h3 className="text-sm font-semibold text-gray-900 mb-1 line-clamp-2 h-10">
+                              {fragrance.name}
+                            </h3>
+
+                            {/* Price */}
+                            <div className="flex items-center justify-center gap-2">
+                              {fragrance.originalPrice && (
+                                <span className="text-xs text-gray-500 line-through">
+                                  R{fragrance.originalPrice.toLocaleString('en-ZA')}
+                                </span>
+                              )}
+                              <p className="text-base font-bold text-gray-900">
+                                R{fragrance.price.toLocaleString('en-ZA')}
+                              </p>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </AnimatePresence>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Pagination Controls */}
+                {totalPages > 1 && (
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8 border-t border-gray-200">
+                    {/* Previous Button */}
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                      disabled={currentPage === 1}
+                      className={`flex items-center gap-2 px-6 py-3 font-bold uppercase tracking-widest text-sm transition-all ${
+                        currentPage === 1
+                          ? 'text-gray-400 cursor-not-allowed'
+                          : 'text-gray-900 hover:bg-gray-100'
+                      }`}
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                      PREVIOUS
+                    </motion.button>
+
+                    {/* Page Indicators */}
+                    <div className="flex items-center gap-2">
+                      {[...Array(totalPages)].map((_, pageNum) => {
+                        const pageNumber = pageNum + 1;
+                        return (
+                          <motion.button
+                            key={pageNumber}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                            onClick={() => setCurrentPage(pageNumber)}
+                            className={`w-10 h-10 flex items-center justify-center font-bold rounded-full transition-all ${
+                              currentPage === pageNumber
+                                ? 'bg-black text-white'
+                                : 'bg-gray-200 text-gray-900 hover:bg-gray-300'
+                            }`}
+                          >
+                            {pageNumber}
+                          </motion.button>
+                        );
+                      })}
+                    </div>
+
+                    {/* Next Button */}
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                      disabled={currentPage === totalPages}
+                      className={`flex items-center gap-2 px-6 py-3 font-bold uppercase tracking-widest text-sm transition-all ${
+                        currentPage === totalPages
+                          ? 'text-gray-400 cursor-not-allowed'
+                          : 'text-gray-900 hover:bg-gray-100'
+                      }`}
+                    >
+                      NEXT
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </motion.button>
+                  </div>
+                )}
+              </div>
             ) : (
               <div className="col-span-full py-12 text-center">
                 <p className="text-lg text-gray-600">No fragrances found. Try adjusting your filters.</p>
