@@ -63,147 +63,95 @@ export default function ShopPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
+      {/* Hero Section - Full Width Background */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative bg-gradient-to-b from-gray-50 to-white border-b border-gray-200 pt-24 md:pt-20"
+        className="relative pt-24 md:pt-20"
+        style={{
+          backgroundImage: "url('/images/New West.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          {/* Hero Content */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left: Text Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-6"
+        {/* Overlay for content readability */}
+        <div className="absolute inset-0 bg-black/50" />
+
+        {/* Hero Content - Centered */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-48">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="max-w-3xl mx-auto text-center text-white space-y-6"
+          >
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="text-xs font-bold text-gray-200 uppercase tracking-widest"
             >
-              <div>
-                <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.4 }}
-                  className="text-xs font-bold text-gray-600 uppercase tracking-widest"
-                >
-                  DISCOVER OUR COLLECTION
-                </motion.span>
-                <motion.h1
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5, duration: 0.6 }}
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mt-4 leading-tight"
-                >
-                  Timeless Fragrances for Every Moment
-                </motion.h1>
+              ✨ DISCOVER OUR COLLECTION
+            </motion.span>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
+            >
+              Timeless Fragrances for Every Moment
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="text-lg md:text-xl text-gray-100 leading-relaxed"
+            >
+              Explore our curated selection of premium fragrances, crafted with the finest ingredients. From bold and spicy to fresh and floral, find your signature scent.
+            </motion.p>
+
+            {/* Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-8 justify-center pt-8"
+            >
+              <div className="border-l-2 border-white pl-6 text-left">
+                <p className="text-3xl md:text-4xl font-bold">{allFragrances.length}</p>
+                <p className="text-xs text-gray-200 uppercase tracking-widest">Fragrances</p>
               </div>
-
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6 }}
-                className="text-lg text-gray-600 leading-relaxed max-w-xl"
-              >
-                Explore our curated selection of premium fragrances, crafted with the finest ingredients. From bold and spicy to fresh and floral, find your signature scent.
-              </motion.p>
-
-              {/* Stats */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7 }}
-                className="flex gap-8 pt-4"
-              >
-                <div className="border-l-2 border-gray-900 pl-6">
-                  <p className="text-2xl font-bold text-gray-900">{allFragrances.length}</p>
-                  <p className="text-xs text-gray-600 uppercase tracking-widest">Fragrances</p>
-                </div>
-                <div className="border-l-2 border-gray-900 pl-6">
-                  <p className="text-2xl font-bold text-gray-900">2+</p>
-                  <p className="text-xs text-gray-600 uppercase tracking-widest">Categories</p>
-                </div>
-                <div className="border-l-2 border-gray-900 pl-6">
-                  <p className="text-2xl font-bold text-gray-900">5★</p>
-                  <p className="text-xs text-gray-600 uppercase tracking-widest">Ratings</p>
-                </div>
-              </motion.div>
-
-              {/* CTA Button */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.8 }}
-                className="pt-2"
-              >
-                <motion.button
-                  whileHover={{ scale: 1.02, boxShadow: "0 10px 25px rgba(0,0,0,0.15)" }}
-                  whileTap={{ scale: 0.98 }}
-                  className="px-8 py-3 bg-black text-white font-bold uppercase tracking-widest text-sm hover:bg-gray-900 transition-colors"
-                >
-                  Shop Now
-                </motion.button>
-              </motion.div>
+              <div className="border-l-2 border-white pl-6 text-left">
+                <p className="text-3xl md:text-4xl font-bold">2+</p>
+                <p className="text-xs text-gray-200 uppercase tracking-widest">Categories</p>
+              </div>
+              <div className="border-l-2 border-white pl-6 text-left">
+                <p className="text-3xl md:text-4xl font-bold">5★</p>
+                <p className="text-xs text-gray-200 uppercase tracking-widest">Ratings</p>
+              </div>
             </motion.div>
 
-            {/* Right: Visual Element */}
+            {/* CTA Button */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="hidden lg:flex items-center justify-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7 }}
+              className="pt-4"
             >
-              <motion.div
-                animate={{ y: [0, -20, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="relative w-full max-w-md"
+              <motion.button
+                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0,0,0,0.3)" }}
+                whileTap={{ scale: 0.98 }}
+                className="px-10 py-4 bg-white text-black font-bold uppercase tracking-widest text-sm hover:bg-gray-100 transition-colors"
               >
-                {/* Decorative Circle Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-50 rounded-full opacity-60" />
-                
-                {/* Featured Fragrance Display */}
-                <div className="relative z-10 flex items-center justify-center py-12">
-                  <motion.div
-                    whileHover={{ scale: 1.05, rotate: 2 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                    className="w-48 h-64 bg-white rounded-lg shadow-2xl border border-gray-200 overflow-hidden flex items-center justify-center"
-                  >
-                    <div
-                      className="w-full h-full"
-                      style={{
-                        backgroundImage: "url('/images/New West.jpg')",
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center'
-                      }}
-                    />
-                  </motion.div>
-                </div>
-
-                {/* Floating Badges */}
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 flex items-center justify-center pointer-events-none"
-                  style={{ width: '320px', height: '320px', left: '50%', top: '50%', marginLeft: '-160px', marginTop: '-160px' }}
-                >
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8">
-                    <div className="bg-white rounded-full shadow-lg p-3 border border-gray-200">
-                      <p className="text-xs font-bold text-gray-900">Premium</p>
-                    </div>
-                  </div>
-                  <div className="absolute bottom-0 right-0 transform translate-x-8 translate-y-8">
-                    <div className="bg-black text-white rounded-full shadow-lg p-3">
-                      <p className="text-xs font-bold">✓ Bestseller</p>
-                    </div>
-                  </div>
-                </motion.div>
-              </motion.div>
+                Shop Now
+              </motion.button>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
-
-        {/* Decorative Bottom Accent */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-900 to-transparent opacity-20" />
       </motion.div>
 
       {/* Shop Products Section */}
