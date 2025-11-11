@@ -132,7 +132,7 @@ export default function ShopPage() {
           backgroundImage: "url('/images/pexels-wulfranodelangel-31152155.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
+          backgroundAttachment: 'scroll'
         }}
       >
         {/* Overlay for content readability */}
