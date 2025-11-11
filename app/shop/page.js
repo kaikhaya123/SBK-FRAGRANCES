@@ -269,11 +269,11 @@ export default function ShopPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
-                  <div className="text-6xl mb-4">👨</div>
-                  <h3 className="text-3xl md:text-4xl font-bold uppercase tracking-widest mb-3">
+                  <div className="mb-4 h-1 w-16 bg-white/70 rounded" aria-hidden="true" />
+                  <h3 className="text-3xl md:text-4xl font-extrabold uppercase tracking-wider mb-4 leading-tight">
                     For Him
                   </h3>
-                  <p className="text-gray-100 text-lg font-light tracking-wide mb-6">
+                  <p className="text-gray-100 text-base font-light tracking-wide mb-6">
                     Bold. Sophisticated. Timeless.
                   </p>
                   <motion.div
@@ -329,11 +329,11 @@ export default function ShopPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
-                  <div className="text-6xl mb-4">👩</div>
-                  <h3 className="text-3xl md:text-4xl font-bold uppercase tracking-widest mb-3">
+                  <div className="mb-4 h-1 w-16 bg-white/70 rounded" aria-hidden="true" />
+                  <h3 className="text-3xl md:text-4xl font-extrabold uppercase tracking-wider mb-4 leading-tight">
                     For Her
                   </h3>
-                  <p className="text-gray-100 text-lg font-light tracking-wide mb-6">
+                  <p className="text-gray-100 text-base font-light tracking-wide mb-6">
                     Elegant. Mesmerizing. Unforgettable.
                   </p>
                   <motion.div
