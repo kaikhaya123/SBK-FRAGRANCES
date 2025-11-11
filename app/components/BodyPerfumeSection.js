@@ -21,17 +21,17 @@ const BodyPerfumeSection = () => {
       <img
         src="/images/1761501664816.jpeg"
         alt="Floral Branch"
-        // hide decorative image on very small screens to avoid overflow
-        className="hidden sm:block absolute left-0 bottom-0 h-1/2 sm:h-2/3 md:h-full w-auto object-contain z-10 select-none pointer-events-none"
-        style={{ minWidth: 120, maxHeight: '100%' }}
+        // show decorative image on mobile but use reduced height to avoid overflow
+        className="absolute left-0 bottom-0 h-28 sm:h-2/3 md:h-full w-auto object-contain z-10 select-none pointer-events-none"
+        style={{ maxHeight: '100%', maxWidth: 220 }}
         draggable="false"
       />
       {/* Flowing fabric on the right */}
       <img
         src="/images/1761501680588.jpeg"
         alt="Flowing Fabric"
-        className="hidden sm:block absolute right-0 top-0 h-1/2 sm:h-2/3 md:h-full w-auto object-contain z-10 select-none pointer-events-none opacity-90"
-        style={{ minWidth: 140, maxHeight: '100%' }}
+        className="absolute right-0 top-0 h-28 sm:h-2/3 md:h-full w-auto object-contain z-10 select-none pointer-events-none opacity-90"
+        style={{ maxHeight: '100%', maxWidth: 240 }}
         draggable="false"
       />
       {/* Main content is intentionally minimal and centered, with lots of whitespace */}
