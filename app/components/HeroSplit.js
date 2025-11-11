@@ -1,11 +1,25 @@
 "use client";
-import Link from 'next/link';
-import AnimatedSection from './AnimatedSection';
+import { useEffect } from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 export default function HeroSplit() {
+  useEffect(() => {
+    // set a CSS variable --vh to account for mobile browser address bar
+    const setVh = () => {
+      if (typeof window === 'undefined') return;
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+    };
+
+    setVh();
+    window.addEventListener('resize', setVh);
+    return () => window.removeEventListener('resize', setVh);
+  }, []);
   return (
-    <section className="relative w-full h-screen max-h-screen flex flex-col sm:flex-row overflow-hidden">
+    <section
+      className="relative w-full flex flex-col sm:flex-row overflow-hidden"
+      style={{ height: 'calc(var(--vh, 1vh) * 100)' }}
+    >
       {/* Left: For Her */}
       <motion.div 
         initial={{ x: "-100%" }} 
@@ -13,24 +27,26 @@ export default function HeroSplit() {
         transition={{ duration: 1, ease: "easeOut" }}
         className="flex-1 relative flex items-end justify-center h-1/2 sm:h-full w-full bg-black"
       >
-        <div className="absolute inset-0 w-full h-full">
-          <img
+  <div className="absolute inset-0 w-full h-full">
+          <Image
             src="/images/Floral Elegance_ My Way Perfume.png"
-            className="w-full h-full object-cover object-center scale-105"
-            style={{
-              objectFit: "cover",
-              transform: "scale(1.1)",
-              transformOrigin: "center"
-            }}
             alt="For Her"
+            fill
+            priority
+            className="object-cover object-center"
+            style={{ transform: 'scale(1.05)' }}
           />
           <div className="absolute inset-0 bg-black/20" />
         </div>
-        <AnimatedSection animation="fadeIn" delay={1}>
-          <span className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 text-white text-base sm:text-xl md:text-2xl font-bold uppercase tracking-[0.18em] drop-shadow-lg" style={{ fontFamily: "Oswald, Bebas Neue, Montserrat, Arial, sans-serif" }}>
-            For Her
-          </span>
-        </AnimatedSection>
+        <motion.span
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
+          className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 text-white font-bold uppercase tracking-[0.18em] drop-shadow-lg z-20"
+          style={{ fontFamily: "Oswald, Bebas Neue, Montserrat, Arial, sans-serif", fontSize: 'clamp(0.9rem, 4.5vw, 1.6rem)' }}
+        >
+          For Her
+        </motion.span>
       </motion.div>
 
       {/* Right: For Him */}
@@ -40,23 +56,25 @@ export default function HeroSplit() {
         transition={{ duration: 1, ease: "easeOut" }}
         className="flex-1 relative flex items-end justify-center h-1/2 sm:h-full w-full bg-black"
       >
-        <div className="absolute inset-0 w-full h-full">
-          <img
+  <div className="absolute inset-0 w-full h-full">
+          <Image
             src="/images/SBK Frangrance1.png"
-            className="w-full h-full object-cover object-center scale-105"
-            style={{
-              objectFit: "cover",
-              transform: "scale(1.1)",
-              transformOrigin: "center"
-            }}
             alt="For Him"
+            fill
+            priority
+            className="object-cover object-center"
+            style={{ transform: 'scale(1.05)' }}
           />
           <div className="absolute inset-0 bg-black/20" />
-          <AnimatedSection animation="fadeIn" delay={1}>
-            <span className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 text-white text-base sm:text-xl md:text-2xl font-bold uppercase tracking-[0.18em] drop-shadow-lg" style={{ fontFamily: "Oswald, Bebas Neue, Montserrat, Arial, sans-serif" }}>
-              For Him
-            </span>
-          </AnimatedSection>
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
+            className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 text-white font-bold uppercase tracking-[0.18em] drop-shadow-lg z-20"
+            style={{ fontFamily: "Oswald, Bebas Neue, Montserrat, Arial, sans-serif", fontSize: 'clamp(0.9rem, 4.5vw, 1.6rem)' }}
+          >
+            For Him
+          </motion.span>
         </div>
       </motion.div>
 
@@ -67,12 +85,13 @@ export default function HeroSplit() {
         transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
         className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none px-4"
       >
-        <h1 className="text-4xl sm:text-6xl md:text-8xl font-semibold uppercase tracking-tight text-white text-center leading-tight" style={{ 
+        <h1 className="font-semibold uppercase tracking-tight text-white text-center leading-tight" style={{ 
           fontFamily: "var(--font-display)",
           fontWeight: 700,
           letterSpacing: "0.02em",
           textShadow: "2px 2px 6px rgba(0,0,0,0.35)",
-          transform: 'translateZ(0)'
+          transform: 'translateZ(0)',
+          fontSize: 'clamp(2rem, 8vw, 5.5rem)'
         }}>
           <motion.span
             initial={{ opacity: 0, y: 20 }}
