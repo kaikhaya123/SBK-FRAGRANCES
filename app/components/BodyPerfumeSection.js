@@ -16,23 +16,46 @@ const BodyPerfumeSection = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden min-h-[300px] sm:min-h-[420px] md:min-h-[520px] flex items-center justify-center bg-[#f6f7f3] px-4 sm:px-8 md:px-12 lg:px-20" style={{ height: 'auto', maxHeight: 'calc(var(--vh, 1vh) * 100)' }}>
-      {/* Floral branch on the left */}
-      <img
-        src="/images/1761501664816.jpeg"
-        alt="Floral Branch"
-        // show decorative image on mobile but use reduced height to avoid overflow
-        className="absolute left-0 bottom-0 h-28 sm:h-2/3 md:h-full w-auto object-contain z-10 select-none pointer-events-none"
-        style={{ maxHeight: '100%', maxWidth: 220 }}
-        draggable="false"
+    <section
+      className="relative overflow-hidden min-h-[300px] sm:min-h-[420px] md:min-h-[520px] flex items-center justify-center bg-[#f6f7f3]"
+      style={{
+        height: 'auto',
+        maxHeight: 'calc(var(--vh, 1vh) * 100)',
+        // pad the content so it doesn't overlap the decorative side images
+        paddingLeft: 'clamp(12px, 18vw, 360px)',
+        paddingRight: 'clamp(12px, 18vw, 360px)'
+      }}
+    >
+      {/* Decorative image (left) - use background div for consistent scaling */}
+      <div
+        aria-hidden="true"
+        className="absolute z-10 left-0 pointer-events-none"
+        style={{
+          top: 0,
+          bottom: 0,
+          left: 0,
+          width: 'clamp(120px, 18vw, 360px)',
+          backgroundImage: "url('/images/1761501664816.jpeg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
       />
-      {/* Flowing fabric on the right */}
-      <img
-        src="/images/1761501680588.jpeg"
-        alt="Flowing Fabric"
-        className="absolute right-0 top-0 h-28 sm:h-2/3 md:h-full w-auto object-contain z-10 select-none pointer-events-none opacity-90"
-        style={{ maxHeight: '100%', maxWidth: 240 }}
-        draggable="false"
+
+      {/* Decorative image (right) - use background div for consistent scaling */}
+      <div
+        aria-hidden="true"
+        className="absolute z-10 right-0 opacity-90 pointer-events-none"
+        style={{
+          top: 0,
+          bottom: 0,
+          right: 0,
+          width: 'clamp(120px, 18vw, 360px)',
+          backgroundImage: "url('/images/1761501680588.jpeg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
       />
       {/* Main content is intentionally minimal and centered, with lots of whitespace */}
       <div className="relative z-20 flex flex-col items-center justify-center w-full px-4 sm:px-8 md:px-16 lg:px-24 py-8 sm:py-12 md:py-0 min-h-[240px] sm:min-h-[320px] max-w-3xl mx-auto">
