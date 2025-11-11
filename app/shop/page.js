@@ -9,27 +9,27 @@ const allFragrances = [
   { id: 1, name: 'New West', category: 'men', price: 350.00, rating: 5, reviews: 128, image: '/images/New West.jpg', tags: ['woody', 'bold'], type: 'Eau de Parfum', topNotes: 'Bergamot, Pepper', bestseller: true, isNew: true, stock: 12 },
   { id: 2, name: 'Lacoste White', category: 'men', price: 350.00, rating: 4, reviews: 95, image: '/images/Lacoste White.jpg', tags: ['aquatic', 'fresh'], type: 'Eau de Toilette', topNotes: 'Lemon, Sea Salt', stock: 8 },
   { id: 3, name: 'Kaishiri Oud', category: 'men', price: 350.00, rating: 5, reviews: 156, image: '/images/Kaishiri.jpg', tags: ['spicy', 'warm'], type: 'Eau de Parfum', topNotes: 'Cardamom, Ginger', bestseller: true, limitedStock: true, stock: 3 },
-  { id: 4, name: 'Black Oud', category: 'men', price: 350.00, rating: 4, reviews: 87, image: '/images/Dunhill.jpg', tags: ['aromatic', 'herbs'], type: 'Eau de Toilette', topNotes: 'Lavender, Sage', stock: 6 },
-  { id: 5, name: 'Oud Satin Mood', category: 'men', price: 350.00, rating: 5, reviews: 203, image: '/images/Creed.jpg', tags: ['leather', 'dark'], type: 'Eau de Parfum', topNotes: 'Leather, Tobacco', bestseller: true, stock: 10 },
-  { id: 6, name: 'Barakkat Rouge', category: 'men', price: 350.00, rating: 4, reviews: 72, image: '/images/Bul.jpg', tags: ['ginger', 'fresh'], type: 'Eau de Toilette', topNotes: 'Ginger, Orange', isNew: true, stock: 18 },
-  { id: 7, name: 'Royal Oud', category: 'men', price: 350.00, rating: 5, reviews: 241, image: '/images/blackOud.jpg', tags: ['oud', 'exotic'], type: 'Eau de Parfum', topNotes: 'Rose, Oud', bestseller: true, stock: 20 },
-  { id: 8, name: 'White Oud', category: 'men', price: 350.00, rating: 5, reviews: 187, image: '/images/Invitus.jpg', tags: ['fruity', 'vanilla'], type: 'Eau de Parfum', topNotes: 'Passion Fruit, Vanilla', bestseller: true, stock: 14 },
-  { id: 9, name: 'Shemmiring Flowers', category: 'men', price: 350.00, rating: 4, reviews: 134, image: '/images/Tobacco.jpg', tags: ['tobacco', 'warm'], type: 'Eau de Toilette', topNotes: 'Tobacco, Cedar', stock: 11 },
-  { id: 10, name: 'Gentlemen', category: 'men', price: 350.00, rating: 5, reviews: 165, image: '/images/pexels-karola-g-8361483.jpg', tags: ['aquatic', 'fresh'], type: 'Eau de Parfum', topNotes: 'Sea Salt, Driftwood', bestseller: true, stock: 9 },
+  { id: 4, name: 'Black Oud', category: 'men', price: 350.00, rating: 4, reviews: 87, image: '/images/blackOud.jpg', tags: ['aromatic', 'herbs'], type: 'Eau de Toilette', topNotes: 'Lavender, Sage', stock: 6 },
+  { id: 5, name: 'Oud Satin Mood', category: 'men', price: 350.00, rating: 5, reviews: 203, image: '/images/Oud Satin.jpg', tags: ['leather', 'dark'], type: 'Eau de Parfum', topNotes: 'Leather, Tobacco', bestseller: true, stock: 10 },
+  { id: 6, name: 'Barakkat Rouge', category: 'men', price: 350.00, rating: 4, reviews: 72, image: '/images/Baccat.jpg', tags: ['ginger', 'fresh'], type: 'Eau de Toilette', topNotes: 'Ginger, Orange', isNew: true, stock: 18 },
+  { id: 7, name: 'Royal Oud', category: 'men', price: 350.00, rating: 5, reviews: 241, image: '/images/Royal Oud.jpg', tags: ['oud', 'exotic'], type: 'Eau de Parfum', topNotes: 'Rose, Oud', bestseller: true, stock: 20 },
+  { id: 8, name: 'White Oud', category: 'men', price: 350.00, rating: 5, reviews: 187, image: '/images/WhiteOud.jpg', tags: ['fruity', 'vanilla'], type: 'Eau de Parfum', topNotes: 'Passion Fruit, Vanilla', bestseller: true, stock: 14 },
+  { id: 9, name: 'Shemmiring Flowers', category: 'men', price: 350.00, rating: 4, reviews: 134, image: '/images/Flowers.jpg', tags: ['tobacco', 'warm'], type: 'Eau de Toilette', topNotes: 'Tobacco, Cedar', stock: 11 },
+  { id: 10, name: 'Gentlemen', category: 'men', price: 350.00, rating: 5, reviews: 165, image: '/images/ssstik.io_1762256007905.jpeg', tags: ['aquatic', 'fresh'], type: 'Eau de Parfum', topNotes: 'Sea Salt, Driftwood', bestseller: true, stock: 9 },
   { id: 11, name: 'Burberry', category: 'men', price: 350.00, rating: 4, reviews: 98, image: '/images/pexels-mart-production-8450121.jpg', tags: ['spicy', 'warm'], type: 'Eau de Toilette', topNotes: 'Clove, Cinnamon', limitedStock: true, stock: 5 },
-  { id: 12, name: 'Black Opium', category: 'men', price: 350.00, rating: 5, reviews: 219, image: '/images/pexels-karola-g-8361483.jpg', tags: ['dark', 'sensual'], type: 'Eau de Parfum', topNotes: 'Dark Rose, Oud', bestseller: true, stock: 16 },
-  { id: 13, name: 'Issey Miyake', category: 'men', price: 350.00, rating: 4, reviews: 112, image: '/images/New West.jpg', tags: ['aquatic', 'citrus'], type: 'Eau de Toilette', topNotes: 'Lemon, Mint', stock: 15 },
-  { id: 14, name: 'Versace Erose', category: 'men', price: 350.00, rating: 5, reviews: 145, image: '/images/Lacoste White.jpg', tags: ['woody', 'amber'], type: 'Eau de Parfum', topNotes: 'Amber, Sandalwood', isNew: true, stock: 9 },
-  { id: 15, name: 'CK One ', category: 'men', price: 350.00, rating: 4, reviews: 88, image: '/images/Kaishiri.jpg', tags: ['woody', 'fresh'], type: 'Eau de Toilette', topNotes: 'Pine, Eucalyptus', stock: 22 },
-  { id: 16, name: 'Black Code', category: 'men', price: 350.00, rating: 5, reviews: 176, image: '/images/Dunhill.jpg', tags: ['amber', 'warm'], type: 'Eau de Parfum', topNotes: 'Honey, Amber', bestseller: true, stock: 11 },
+  { id: 12, name: 'Black Opium', category: 'men', price: 350.00, rating: 5, reviews: 219, image: '/images/Black Optium.jpg', tags: ['dark', 'sensual'], type: 'Eau de Parfum', topNotes: 'Dark Rose, Oud', bestseller: true, stock: 16 },
+  { id: 13, name: 'Issey Miyake', category: 'men', price: 350.00, rating: 4, reviews: 112, image: '/images/Issey .jpg', tags: ['aquatic', 'citrus'], type: 'Eau de Toilette', topNotes: 'Lemon, Mint', stock: 15 },
+  { id: 14, name: 'Versace Erose', category: 'men', price: 350.00, rating: 5, reviews: 145, image: '/images/Versace .jpg', tags: ['woody', 'amber'], type: 'Eau de Parfum', topNotes: 'Amber, Sandalwood', isNew: true, stock: 9 },
+  { id: 15, name: 'CK One ', category: 'men', price: 350.00, rating: 4, reviews: 88, image: '/images/CK Code.jpg', tags: ['woody', 'fresh'], type: 'Eau de Toilette', topNotes: 'Pine, Eucalyptus', stock: 22 },
+  { id: 16, name: 'Black Code', category: 'men', price: 350.00, rating: 5, reviews: 176, image: '/images/Black Code.jpg', tags: ['amber', 'warm'], type: 'Eau de Parfum', topNotes: 'Honey, Amber', bestseller: true, stock: 11 },
   { id: 17, name: 'Black Xs ', category: 'men', price: 350.00, rating: 4, reviews: 107, image: '/images/Creed.jpg', tags: ['citrus', 'fresh'], type: 'Eau de Toilette', topNotes: 'Orange, Grapefruit', stock: 17 },
   { id: 18, name: 'Diesel', category: 'men', price: 350.00, rating: 5, reviews: 192, image: '/images/Bul.jpg', tags: ['dark', 'woody'], type: 'Eau de Parfum', topNotes: 'Black Pepper, Vetiver', bestseller: true, limitedStock: true, stock: 4 },
-  { id: 19, name: 'YSL', category: 'men', price: 350.00, rating: 4, reviews: 99, image: '/images/blackOud.jpg', tags: ['aquatic', 'fruity'], type: 'Eau de Toilette', topNotes: 'Mango, Sea Breeze', stock: 13 },
-  { id: 20, name: 'Interlude', category: 'men', price: 350.00, rating: 5, reviews: 158, image: '/images/Invitus.jpg', tags: ['amber', 'warm'], type: 'Eau de Parfum', topNotes: 'Saffron, Vanilla', isNew: true, bestseller: true, stock: 19 },
-  { id: 21, name: 'Invictus', category: 'men', price: 350.00, rating: 4, reviews: 84, image: '/images/Tobacco.jpg', tags: ['fresh', 'cool'], type: 'Eau de Toilette', topNotes: 'Mint, Bergamot', stock: 20 },
+  { id: 19, name: 'YSL', category: 'men', price: 350.00, rating: 4, reviews: 99, image: '/images/YSL.jpg', tags: ['aquatic', 'fruity'], type: 'Eau de Toilette', topNotes: 'Mango, Sea Breeze', stock: 13 },
+  { id: 20, name: 'Interlude', category: 'men', price: 350.00, rating: 5, reviews: 158, image: '/images/Interlude.jpg', tags: ['amber', 'warm'], type: 'Eau de Parfum', topNotes: 'Saffron, Vanilla', isNew: true, bestseller: true, stock: 19 },
+  { id: 21, name: 'Invictus', category: 'men', price: 350.00, rating: 4, reviews: 84, image: '/images/Invitus.jpg', tags: ['fresh', 'cool'], type: 'Eau de Toilette', topNotes: 'Mint, Bergamot', stock: 20 },
   { id: 22, name: 'Bulgari', category: 'men', price: 350.00, rating: 5, reviews: 201, image: '/images/pexels-karola-g-8361483.jpg', tags: ['woody', 'leather'], type: 'Eau de Parfum', topNotes: 'Oak, Leather', bestseller: true, stock: 8 },
-  { id: 23, name: 'Dunhill Desire', category: 'men', price: 350.00, rating: 5, reviews: 169, image: '/images/pexels-mart-production-8450121.jpg', tags: ['dark', 'mysterious'], type: 'Eau de Parfum', topNotes: 'Black Musk, Iris', bestseller: true, limitedStock: true, stock: 6 },
-  { id: 24, name: 'Adventures Creed', category: 'men', price: 350.00, rating: 4, reviews: 115, image: '/images/New West.jpg', tags: ['fresh', 'adventure'], type: 'Eau de Toilette', topNotes: 'Basil, Lemongrass', stock: 18 },
+  { id: 23, name: 'Dunhill Desire', category: 'men', price: 350.00, rating: 5, reviews: 169, image: '/images/Dunhill.jpg', tags: ['dark', 'mysterious'], type: 'Eau de Parfum', topNotes: 'Black Musk, Iris', bestseller: true, limitedStock: true, stock: 6 },
+  { id: 24, name: 'Adventures Creed', category: 'men', price: 350.00, rating: 4, reviews: 115, image: '/images/Creed.jpg', tags: ['fresh', 'adventure'], type: 'Eau de Toilette', topNotes: 'Basil, Lemongrass', stock: 18 },
   
   // Women's Fragrances
   { id: 26, name: 'Rose Garden', category: 'women', price: 350.00, rating: 5, reviews: 241, image: '/images/blackOud.jpg', tags: ['floral', 'romantic'], type: 'Eau de Parfum', topNotes: 'Rose, Peony', bestseller: true, isNew: true, stock: 20 },
@@ -47,7 +47,52 @@ export default function ShopPage() {
   const [selectedType, setSelectedType] = useState('all');
   const [viewMode, setViewMode] = useState('grid');
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedSizes, setSelectedSizes] = useState({});
+  const [cart, setCart] = useState([]);
   const itemsPerPage = 9;
+
+  // Size options for fragrances
+  const sizeOptions = [
+    { id: '55ml', label: '55ml', inStock: true },
+    { id: '100ml', label: '100ml', inStock: true }
+  ];
+
+  // Handle size selection
+  const handleSizeSelect = (fragranceId, sizeId) => {
+    setSelectedSizes(prev => ({
+      ...prev,
+      [fragranceId]: sizeId
+    }));
+  };
+
+  // Handle Add to Cart
+  const handleAddToCart = (fragrance) => {
+    const selectedSize = selectedSizes[fragrance.id] || '55ml';
+    const cartItem = {
+      id: `${fragrance.id}-${selectedSize}`,
+      fragranceId: fragrance.id,
+      name: fragrance.name,
+      price: fragrance.price,
+      size: selectedSize,
+      quantity: 1,
+      image: fragrance.image
+    };
+    
+    setCart(prev => {
+      const existingItem = prev.find(item => item.id === cartItem.id);
+      if (existingItem) {
+        return prev.map(item =>
+          item.id === cartItem.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      }
+      return [...prev, cartItem];
+    });
+
+    // Show success message
+    alert(`${fragrance.name} (${selectedSize}) added to cart!`);
+  };
 
   // Filter logic
   const filteredFragrances = useMemo(() => {
@@ -328,11 +373,56 @@ export default function ShopPage() {
                             </h3>
 
                             {/* Price */}
-                            <div className="flex items-center justify-center gap-2">
+                            <div className="flex items-center justify-center gap-2 mb-3">
                               <p className="text-base font-bold text-gray-900">
                                 R{fragrance.price.toLocaleString('en-ZA')}
                               </p>
                             </div>
+
+                            {/* Size Selection */}
+                            <div className="mb-3">
+                              <p className="text-xs font-semibold text-gray-600 uppercase mb-2">Size</p>
+                              <div className="flex gap-2 justify-center">
+                                {sizeOptions.map((size) => (
+                                  <button
+                                    key={size.id}
+                                    onClick={() => handleSizeSelect(fragrance.id, size.id)}
+                                    disabled={!size.inStock}
+                                    className={`px-3 py-1 text-xs font-bold border-2 transition-all rounded ${
+                                      selectedSizes[fragrance.id] === size.id
+                                        ? 'bg-black text-white border-black'
+                                        : size.inStock
+                                        ? 'border-gray-300 text-gray-900 hover:border-black'
+                                        : 'border-gray-200 text-gray-300 cursor-not-allowed'
+                                    }`}
+                                  >
+                                    {size.label}
+                                  </button>
+                                ))}
+                              </div>
+                            </div>
+
+                            {/* Stock Status */}
+                            <div className="mb-3">
+                              <p className={`text-xs font-semibold ${fragrance.stock > 0 ? 'text-green-600' : 'text-red-600'}`}>
+                                {fragrance.stock > 0 ? `${fragrance.stock} in stock` : 'Out of Stock'}
+                              </p>
+                            </div>
+
+                            {/* Add to Cart Button */}
+                            <motion.button
+                              whileHover={{ scale: 1.02 }}
+                              whileTap={{ scale: 0.98 }}
+                              onClick={() => handleAddToCart(fragrance)}
+                              disabled={fragrance.stock === 0}
+                              className={`w-full py-2 px-3 font-bold uppercase tracking-widest text-xs transition-all ${
+                                fragrance.stock > 0
+                                  ? 'bg-black text-white hover:bg-gray-800'
+                                  : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                              }`}
+                            >
+                              {fragrance.stock > 0 ? 'Add to Cart' : 'Out of Stock'}
+                            </motion.button>
                           </div>
                         </div>
                       </motion.div>
