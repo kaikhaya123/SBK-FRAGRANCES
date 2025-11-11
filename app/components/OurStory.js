@@ -2,17 +2,26 @@
 
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
+import VideoPlayer from './VideoPlayer';
 
 export default function OurStory() {
   // Video removed for performance; using a static background image instead.
 
   return (
     <section className="relative w-full h-auto md:h-[500px] flex items-center justify-center overflow-hidden rounded-lg my-16 shadow-lg bg-white">
-        <div className="absolute inset-0 w-full h-full relative">
-          {/* Static background image used instead of a video for better performance */}
+  <div className="absolute inset-0 w-full h-full">
+          {/* Background video for richer storytelling (falls back to poster image) */}
           <div className="absolute inset-0">
-            <img src="/images/pexels-karola-g-8361483.jpg" alt="Background" className="w-full h-full object-cover object-center grayscale opacity-90" aria-hidden="true" />
+            <VideoPlayer
+              src="/videos/3418073194160208973.mp4"
+              posterImage="/images/pexels-karola-g-8361483.jpg"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
           </div>
+          {/* subtle overlay to keep text readable */}
           <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent" />
         </div>
 
