@@ -1,46 +1,20 @@
 "use client";
 
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import AnimatedSection from './AnimatedSection';
 
 export default function OurStory() {
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    const handleIntersection = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          video.play();
-        } else {
-          video.pause();
-        }
-      });
-    };
-    const observer = new window.IntersectionObserver(handleIntersection, { threshold: 0.5 });
-    observer.observe(video);
-    return () => observer.disconnect();
-  }, []);
+  // Video removed for performance; using a static background image instead.
 
   return (
     <section className="relative w-full h-auto md:h-[500px] flex items-center justify-center overflow-hidden rounded-lg my-16 shadow-lg bg-white">
-      <AnimatedSection animation="scale" delay={0.2} className="absolute inset-0 w-full h-full">
-        <video
-          ref={videoRef}
-          className="w-full h-full object-cover object-center grayscale opacity-80"
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/images/webp/ssstik.io_1762181265941.webp"
-          loading="lazy"
-        >
-          <source src="/videos/7034150-uhd_3840_2160_25fps.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent" />
-      </AnimatedSection>
+        <div className="absolute inset-0 w-full h-full relative">
+          {/* Static background image used instead of a video for better performance */}
+          <div className="absolute inset-0">
+            <img src="/images/pexels-karola-g-8361483.jpg" alt="Background" className="w-full h-full object-cover object-center grayscale opacity-90" aria-hidden="true" />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent" />
+        </div>
 
       <div className="relative z-10 flex flex-col md:flex-row items-center w-full h-full px-6 md:px-16 py-12 md:py-0">
         <AnimatedSection animation="slideRight" delay={0.3} className="w-full md:w-1/2 flex flex-col justify-center h-full">
