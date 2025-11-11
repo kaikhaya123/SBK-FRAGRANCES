@@ -41,7 +41,7 @@ const allFragrances = [
 
 export default function ShopPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [priceRange, setPriceRange] = useState([1200, 2200]);
+  const [priceRange, setPriceRange] = useState([0, 1000]);
   const [sortBy, setSortBy] = useState('featured');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedType, setSelectedType] = useState('all');
@@ -477,8 +477,8 @@ export default function ShopPage() {
                   <div>
                     <input
                       type="range"
-                      min="1200"
-                      max="2200"
+                      min="0"
+                      max="1000"
                       value={priceRange[0]}
                       onChange={(e) => setPriceRange([parseInt(e.target.value), priceRange[1]])}
                       className="w-full"
@@ -487,8 +487,8 @@ export default function ShopPage() {
                   <div>
                     <input
                       type="range"
-                      min="1200"
-                      max="2200"
+                      min="0"
+                      max="1000"
                       value={priceRange[1]}
                       onChange={(e) => setPriceRange([priceRange[0], parseInt(e.target.value)])}
                       className="w-full"
