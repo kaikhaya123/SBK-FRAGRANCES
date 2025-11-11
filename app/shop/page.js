@@ -213,6 +213,151 @@ export default function ShopPage() {
         </div>
       </motion.div>
 
+      {/* Category Selector Section - Split Image Cards */}
+      <div className="w-full bg-gradient-to-b from-white to-gray-50 py-12 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12 md:mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 uppercase tracking-widest mb-4">
+              Choose Your Collection
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Discover fragrances curated just for you. Explore our timeless selections for men and elegant collections for women.
+            </p>
+            <div className="mt-6 h-1 w-24 bg-black mx-auto" />
+          </motion.div>
+
+          {/* Split Image Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-6">
+            {/* FOR HIM Card */}
+            <motion.button
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => setSelectedCategory('men')}
+              className="relative group h-96 md:h-[500px] rounded-lg overflow-hidden cursor-pointer"
+            >
+              {/* Background Image */}
+              <motion.div
+                className="absolute inset-0 w-full h-full"
+                style={{
+                  backgroundImage: "url('/images/Bul.jpg')",
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+                whileHover={{ scale: 1.08 }}
+                transition={{ duration: 0.6 }}
+              />
+
+              {/* Dark Overlay */}
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-all duration-500" />
+
+              {/* Content */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 p-6">
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                  <div className="text-6xl mb-4">👨</div>
+                  <h3 className="text-3xl md:text-4xl font-bold uppercase tracking-widest mb-3">
+                    For Him
+                  </h3>
+                  <p className="text-gray-100 text-lg font-light tracking-wide mb-6">
+                    Bold. Sophisticated. Timeless.
+                  </p>
+                  <motion.div
+                    className="inline-block px-8 py-3 bg-white text-black font-bold uppercase tracking-widest text-sm rounded-full"
+                    whileHover={{ backgroundColor: '#f0f0f0' }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Explore Collection
+                  </motion.div>
+                </motion.div>
+
+                {/* Item Count */}
+                <div className="absolute bottom-6 text-xs font-semibold text-gray-200 uppercase tracking-widest">
+                  {allFragrances.filter(f => f.category === 'men').length} Fragrances
+                </div>
+              </div>
+
+              {/* Border Effect on Hover */}
+              <div className="absolute inset-0 border-2 border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none" />
+            </motion.button>
+
+            {/* FOR HER Card */}
+            <motion.button
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => setSelectedCategory('women')}
+              className="relative group h-96 md:h-[500px] rounded-lg overflow-hidden cursor-pointer"
+            >
+              {/* Background Image */}
+              <motion.div
+                className="absolute inset-0 w-full h-full"
+                style={{
+                  backgroundImage: "url('/images/pexels-karola-g-8361483.jpg')",
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+                whileHover={{ scale: 1.08 }}
+                transition={{ duration: 0.6 }}
+              />
+
+              {/* Pink Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-pink-500/40 to-pink-600/50 group-hover:from-pink-500/50 group-hover:to-pink-600/60 transition-all duration-500" />
+
+              {/* Content */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 p-6">
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <div className="text-6xl mb-4">👩</div>
+                  <h3 className="text-3xl md:text-4xl font-bold uppercase tracking-widest mb-3">
+                    For Her
+                  </h3>
+                  <p className="text-gray-100 text-lg font-light tracking-wide mb-6">
+                    Elegant. Mesmerizing. Unforgettable.
+                  </p>
+                  <motion.div
+                    className="inline-block px-8 py-3 bg-white text-pink-600 font-bold uppercase tracking-widest text-sm rounded-full"
+                    whileHover={{ backgroundColor: '#f0f0f0' }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Explore Collection
+                  </motion.div>
+                </motion.div>
+
+                {/* Item Count */}
+                <div className="absolute bottom-6 text-xs font-semibold text-gray-200 uppercase tracking-widest">
+                  {allFragrances.filter(f => f.category === 'women').length} Fragrances
+                </div>
+              </div>
+
+              {/* Border Effect on Hover */}
+              <div className="absolute inset-0 border-2 border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none" />
+            </motion.button>
+          </div>
+        </div>
+      </div>
+
       {/* Shop Products Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header with Results Count, Sort, View Mode, and Search */}
