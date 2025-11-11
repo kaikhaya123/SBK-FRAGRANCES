@@ -2,10 +2,13 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useCart } from '../context/CartContext';
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileCollectionsOpen, setMobileCollectionsOpen] = useState(false);
+  const { getCartItemCount } = useCart();
+  const cartCount = getCartItemCount();
 
   const seasons = [
     { name: 'Summer Collection', link: '/collections/summer' },
@@ -25,10 +28,15 @@ export function Navbar() {
 
       {/* Checkout icon fixed at top right */}
       <div className="absolute top-6 right-16 sm:right-8 z-50 select-none pointer-events-auto">
-        <Link href="/checkout" className="flex items-center justify-center w-10 h-10 bg-white/80 backdrop-blur rounded-full shadow-lg border border-gray-200 hover:bg-white/90 transition-all duration-300">
+        <Link href="/checkout" className="flex items-center justify-center w-10 h-10 bg-white/80 backdrop-blur rounded-full shadow-lg border border-gray-200 hover:bg-white/90 transition-all duration-300 relative">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
           </svg>
+          {cartCount > 0 && (
+            <span className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center -translate-y-1 translate-x-1">
+              {cartCount}
+            </span>
+          )}
         </Link>
       </div>
 

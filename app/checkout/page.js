@@ -4,8 +4,10 @@ import Image from 'next/image';
 import { FiShoppingCart, FiCreditCard, FiTruck, FiCheck, FiMapPin, FiClock, FiAlertCircle, FiDollarSign } from 'react-icons/fi';
 import { SiVisa, SiMastercard } from 'react-icons/si';
 import { RiBankLine } from 'react-icons/ri';
+import { useCart } from '../context/CartContext';
 
 export default function CheckoutPage() {
+  const { cart, updateQuantity, removeFromCart } = useCart();
   const [step, setStep] = useState(1);
   const [selectedDelivery, setSelectedDelivery] = useState('');
   const [selectedProvince, setSelectedProvince] = useState('');
@@ -13,15 +15,6 @@ export default function CheckoutPage() {
   const [selectedCollectionPoint, setSelectedCollectionPoint] = useState('');
   const [formErrors, setFormErrors] = useState({});
   const [specialInstructions, setSpecialInstructions] = useState('');
-  const [cart] = useState([
-    {
-      id: 1,
-      name: "Alien Goodness",
-      price: 600.00,
-      quantity: 1,
-      image: "/images/ssstik.io_1762260060241-removebg-preview (1).png"
-    }
-  ]);
 
   const provinces = [
     "Eastern Cape",
@@ -158,27 +151,57 @@ export default function CheckoutPage() {
             {step === 1 && (
               <div className="bg-white rounded-2xl p-6 shadow-lg backdrop-blur-lg backdrop-filter bg-opacity-50">
                 <h2 className="text-2xl font-bold mb-6">Shopping Cart</h2>
-                {cart.map((item) => (
-                  <div key={item.id} className="flex items-center space-x-4 p-4 border-b last:border-b-0">
-                    <div className="relative w-24 h-24">
-                      <Image
-                        src={item.image}
-                        alt={item.name}
-                        fill
-                        className="object-cover rounded-lg"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-medium">{item.name}</h3>
-                      <p className="text-gray-600">R{item.price.toFixed(2)}</p>
-                      <div className="flex items-center mt-2">
-                        <button className="px-2 py-1 border rounded-l">-</button>
-                        <span className="px-4 py-1 border-t border-b">{item.quantity}</span>
-                        <button className="px-2 py-1 border rounded-r">+</button>
-                      </div>
-                    </div>
+                {cart.length === 0 ? (
+                  <div className="text-center py-12">
+                    <FiShoppingCart className="w-16 h-16 mx-auto text-gray-300 mb-4" />
+                    <p className="text-gray-500 text-lg">Your cart is empty</p>
+                    <p className="text-gray-400 text-sm mt-2">Add some fragrances from the shop to get started!</p>
                   </div>
-                ))}
+                ) : (
+                  <>
+                    {cart.map((item) => (
+                      <div key={item.id} className="flex items-center space-x-4 p-4 border-b last:border-b-0">
+                        <div className="relative w-24 h-24">
+                          <Image
+                            src={item.image}
+                            alt={item.name}
+                            fill
+                            className="object-cover rounded-lg"
+                          />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="font-medium">{item.name}</h3>
+                          {item.size && <p className="text-sm text-gray-500">Size: {item.size}</p>}
+                          <p className="text-gray-600">R{item.price.toFixed(2)}</p>
+                          <div className="flex items-center mt-2 gap-2">
+                            <button 
+                              onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                              className="px-2 py-1 border rounded-l hover:bg-gray-100"
+                            >
+                              -
+                            </button>
+                            <span className="px-4 py-1 border-t border-b">{item.quantity}</span>
+                            <button 
+                              onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                              className="px-2 py-1 border rounded-r hover:bg-gray-100"
+                            >
+                              +
+                            </button>
+                            <button 
+                              onClick={() => removeFromCart(item.id)}
+                              className="ml-4 px-3 py-1 text-red-600 hover:bg-red-50 rounded text-sm"
+                            >
+                              Remove
+                            </button>
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <p className="font-semibold">R{(item.price * item.quantity).toFixed(2)}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </>
+                )}
               </div>
             )}
 
@@ -442,7 +465,7 @@ export default function CheckoutPage() {
               <div className="space-y-4">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
-                  <span>R{cart[0].price.toFixed(2)}</span>
+                  <span>R{cart.reduce((sum, item) => sum + (item.price * item.quantity), 0).toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Shipping</span>
@@ -460,11 +483,19 @@ export default function CheckoutPage() {
                 </div>
                 <button
                   onClick={() => setStep(Math.min(step + 1, 3))}
-                  className="w-full bg-black hover:bg-gray-900 text-white py-3 rounded-lg mt-6 transition duration-200"
-                  disabled={step === 2 && !selectedDelivery}
+                  className="w-full bg-black hover:bg-gray-900 text-white py-3 rounded-lg mt-6 transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={(step === 2 && !selectedDelivery) || cart.length === 0}
                 >
                   {step === 3 ? 'Place Order' : 'Continue'}
                 </button>
+                {step === 1 && cart.length > 0 && (
+                  <a
+                    href="/shop"
+                    className="w-full bg-gray-200 hover:bg-gray-300 text-gray-900 py-3 rounded-lg mt-2 transition duration-200 block text-center"
+                  >
+                    Continue Shopping
+                  </a>
+                )}
               </div>
             </div>
           </div>

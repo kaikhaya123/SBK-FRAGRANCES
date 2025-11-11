@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useCart } from '../context/CartContext';
 
 // Sample fragrance data (prices in South African Rand - ZAR)
 const allFragrances = [
@@ -40,6 +41,7 @@ const allFragrances = [
 ];
 
 export default function ShopPage() {
+  const { addToCart } = useCart();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [priceRange, setPriceRange] = useState([0, 1000]);
   const [sortBy, setSortBy] = useState('featured');
@@ -48,7 +50,6 @@ export default function ShopPage() {
   const [viewMode, setViewMode] = useState('grid');
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedSizes, setSelectedSizes] = useState({});
-  const [cart, setCart] = useState([]);
   const itemsPerPage = 9;
 
   // Size options for fragrances
@@ -68,27 +69,7 @@ export default function ShopPage() {
   // Handle Add to Cart
   const handleAddToCart = (fragrance) => {
     const selectedSize = selectedSizes[fragrance.id] || '55ml';
-    const cartItem = {
-      id: `${fragrance.id}-${selectedSize}`,
-      fragranceId: fragrance.id,
-      name: fragrance.name,
-      price: fragrance.price,
-      size: selectedSize,
-      quantity: 1,
-      image: fragrance.image
-    };
-    
-    setCart(prev => {
-      const existingItem = prev.find(item => item.id === cartItem.id);
-      if (existingItem) {
-        return prev.map(item =>
-          item.id === cartItem.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
-      }
-      return [...prev, cartItem];
-    });
+    addToCart(fragrance, selectedSize);
 
     // Show success message
     alert(`${fragrance.name} (${selectedSize}) added to cart!`);
@@ -405,7 +386,7 @@ export default function ShopPage() {
                             {/* Stock Status */}
                             <div className="mb-3">
                               <p className={`text-xs font-semibold ${fragrance.stock > 0 ? 'text-green-600' : 'text-red-600'}`}>
-                                {fragrance.stock > 0 ? `${fragrance.stock} in stock` : 'Out of Stock'}
+                                {fragrance.stock > 0 ? 'In stock' : 'Out of Stock'}
                               </p>
                             </div>
 
@@ -585,9 +566,9 @@ export default function ShopPage() {
                     />
                   </div>
                   <div className="flex gap-2 text-xs font-semibold text-gray-900">
-                    <span>R{priceRange[0].toLocaleString('en-ZA')}</span>
+                    <span>R{priceRange[0]}</span>
                     <span className="text-gray-400">-</span>
-                    <span>R{priceRange[1].toLocaleString('en-ZA')}</span>
+                    <span>R{priceRange[1]}</span>
                   </div>
                 </div>
               </div>

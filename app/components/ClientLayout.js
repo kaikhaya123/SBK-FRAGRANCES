@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
+import { usePathname } from 'next/navigation';
 import Loading from './Loading';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -28,6 +29,9 @@ const pageTransition = {
 };
 
 export default function ClientLayout({ children }) {
+  const pathname = usePathname();
+  const isCheckout = pathname === '/checkout';
+
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -38,7 +42,7 @@ export default function ClientLayout({ children }) {
         variants={pageVariants}
         transition={pageTransition}
       >
-        <Navbar className="z-50" />
+        {!isCheckout && <Navbar className="z-50" />}
         <motion.main
           className="flex-1 w-full"
           initial={{ opacity: 0, y: 20 }}
@@ -47,7 +51,7 @@ export default function ClientLayout({ children }) {
         >
           {children}
         </motion.main>
-        <Footer />
+        {!isCheckout && <Footer />}
       </motion.div>
     </AnimatePresence>
   );

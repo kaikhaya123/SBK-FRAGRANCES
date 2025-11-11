@@ -2,6 +2,7 @@ import './globals.css';
 import './styles/fullpage.css';
 import { Inter, Playfair_Display, Cormorant_Garamond } from 'next/font/google';
 import ClientLayout from './components/ClientLayout';
+import { CartProvider } from './context/CartContext';
 
 const cormorantGaramond = Cormorant_Garamond({
   weight: ['300', '400', '500', '600', '700'],
@@ -70,7 +71,9 @@ export default function RootLayout({ children }) {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
       </head>
       <body className="min-h-screen bg-white text-gray-900 font-sans">
-        <ClientLayout>{children}</ClientLayout>
+        <CartProvider>
+          <ClientLayout>{children}</ClientLayout>
+        </CartProvider>
       </body>
     </html>
   );
