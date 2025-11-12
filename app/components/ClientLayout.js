@@ -5,6 +5,7 @@ import { Suspense } from 'react';
 import { usePathname } from 'next/navigation';
 import Loading from './Loading';
 import { motion, AnimatePresence } from 'framer-motion';
+import CartNotification from './CartNotification';
 
 const Navbar = dynamic(() => import('./Navbar').then(mod => ({ default: mod.Navbar })), {
   loading: () => <div className="h-20" />,
@@ -42,7 +43,9 @@ export default function ClientLayout({ children }) {
         variants={pageVariants}
         transition={pageTransition}
       >
-        {!isCheckout && <Navbar className="z-50" />}
+  {!isCheckout && <Navbar className="z-50" />}
+  {/* Global cart notification (visible across pages) */}
+  <CartNotification />
         <motion.main
           className="flex-1 w-full"
           initial={{ opacity: 0, y: 20 }}

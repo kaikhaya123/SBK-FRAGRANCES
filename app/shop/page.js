@@ -33,15 +33,23 @@ const allFragrances = [
   { id: 24, name: 'Adventures Creed', category: 'men', price: 350.00, rating: 4, reviews: 115, image: '/images/Creed.jpg', tags: ['fresh', 'adventure'], type: 'Eau de Toilette', topNotes: 'Basil, Lemongrass', stock: 18 },
   
   // Women's Fragrances
-  { id: 26, name: 'Rose Garden', category: 'women', price: 350.00, rating: 5, reviews: 241, image: '/images/blackOud.jpg', tags: ['floral', 'romantic'], type: 'Eau de Parfum', topNotes: 'Rose, Peony', bestseller: true, isNew: true, stock: 20 },
-  { id: 27, name: 'Jasmine Dream', category: 'women', price: 350.00, rating: 5, reviews: 187, image: '/images/Invitus.jpg', tags: ['jasmine', 'vanilla'], type: 'Eau de Parfum', topNotes: 'Jasmine, Bergamot', bestseller: true, stock: 14 },
-  { id: 28, name: 'Citrus Sunset', category: 'women', price: 350.00, rating: 4, reviews: 134, image: '/images/Tobacco.jpg', tags: ['citrus', 'warm'], type: 'Eau de Toilette', topNotes: 'Orange, Grapefruit', stock: 11 },
-  { id: 29, name: 'Floral Elegance', category: 'women', price: 350.00, rating: 5, reviews: 165, image: '/images/pexels-karola-g-8361483.jpg', tags: ['floral', 'exotic'], type: 'Eau de Parfum', topNotes: 'Orchid, Tuberose', bestseller: true, stock: 9 },
-  { id: 30, name: 'Ocean Pearl', category: 'women', price: 350.00, rating: 4, reviews: 98, image: '/images/pexels-mart-production-8450121.jpg', tags: ['marine', 'fresh'], type: 'Body Lotion', topNotes: 'Marine, Lily', limitedStock: true, stock: 2 },
+  { id: 26, name: 'Hypnotic Poison', category: 'women', price: 300.00, rating: 5, reviews: 241, image: '/images/Hynotic .jpg', tags: ['floral', 'romantic'], type: 'Eau de Parfum', topNotes: 'Rose, Peony', bestseller: true, isNew: true, stock: 20 },
+  { id: 27, name: 'Flower Bomb', category: 'women', price: 350.00, rating: 5, reviews: 187, image: '/images/Flower Bomb.jpg', tags: ['jasmine', 'vanilla'], type: 'Eau de Parfum', topNotes: 'Jasmine, Bergamot', bestseller: true, stock: 14 },
+  { id: 28, name: 'CK Downtown ', category: 'women', price: 350.00, rating: 4, reviews: 134, image: '/images/CK Downtown.jpg', tags: ['citrus', 'warm'], type: 'Eau de Toilette', topNotes: 'Orange, Grapefruit', stock: 11 },
+  { id: 29, name: 'Olympea', category: 'women', price: 300.00, rating: 5, reviews: 165, image: '/images/Olympie.jpg', tags: ['floral', 'exotic'], type: 'Eau de Parfum', topNotes: 'Orchid, Tuberose', bestseller: true, stock: 9 },
+  { id: 30, name: 'Nude', category: 'women', price: 350.00, rating: 4, reviews: 98, image: '/images/Nude.jpg', tags: ['marine', 'fresh'], type: 'Body Lotion', topNotes: 'Marine, Lily', limitedStock: true, stock: 2 },
+  { id: 31, name: 'La Vie Est Belle', category: 'women', price: 350.00, rating: 5, reviews: 142, image: '/images/La vile.jpg', tags: ['floral', 'velvety'], type: 'Eau de Parfum', topNotes: 'Peony, Vanilla', stock: 12 },
+  { id: 32, name: 'Channel No 5', category: 'women', price: 350.00, rating: 4, reviews: 88, image: '/images/Channel No 5.jpg', tags: ['citrus', 'fresh'], type: 'Eau de Toilette', topNotes: 'Orange, Bergamot', stock: 15 },
+  { id: 33, name: 'Ted Lupidus', category: 'women', price: 350.00, rating: 5, reviews: 176, image: '/images/Ted .jpg', tags: ['rose', 'sensual'], type: 'Eau de Parfum', topNotes: 'Rose, Amber', bestseller: true, stock: 9 },
+  { id: 34, name: 'Fantasy', category: 'women', price: 350.00, rating: 4, reviews: 64, image: '/images/Fantasy.jpg', tags: ['marine', 'soft'], type: 'Eau de Toilette', topNotes: 'Sea Salt, Lily', stock: 11 },
+  { id: 35, name: 'Blossom Love', category: 'women', price: 350.00, rating: 4, reviews: 101, image: '/images/Blossom Love.jpg', tags: ['fruity', 'floral'], type: 'Eau de Parfum', topNotes: 'Peach, Jasmine', stock: 14 },
+  { id: 36, name: 'Shemmiring Flowers', category: 'women', price: 350.00, rating: 5, reviews: 132, image: '/images/Shemmiring Flowers.png', tags: ['amber', 'warm'], type: 'Eau de Parfum', topNotes: 'Amber, Sandalwood', stock: 8 },
+  { id: 37, name: 'Black Optium', category: 'women', price: 350.00, rating: 4, reviews: 73, image: '/images/Black Optium.jpg', tags: ['vanilla', 'soft'], type: 'Eau de Parfum', topNotes: 'Vanilla, Musk', stock: 10 },
+  { id: 38, name: 'Burberry', category: 'women', price: 350.00, rating: 5, reviews: 159, image: '/images/Burberry.jpg', tags: ['floral', 'green'], type: 'Eau de Parfum', topNotes: 'Jasmine, Green Leaves', stock: 13 },
 ];
 
 export default function ShopPage() {
-  const { addToCart } = useCart();
+  const { addToCart, notify } = useCart();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [priceRange, setPriceRange] = useState([0, 1000]);
   const [sortBy, setSortBy] = useState('featured');
@@ -72,7 +80,13 @@ export default function ShopPage() {
     addToCart(fragrance, selectedSize);
 
     // Show success message
-    alert(`${fragrance.name} (${selectedSize}) added to cart!`);
+    // Use in-app cart notification (visible on cart/checkout page)
+    notify(`${fragrance.name} (${selectedSize}) added to cart.`, {
+      id: fragrance.id,
+      name: fragrance.name,
+      image: fragrance.image,
+      size: selectedSize
+    });
   };
 
   // Filter logic
@@ -227,7 +241,7 @@ export default function ShopPage() {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 uppercase tracking-widest mb-4">
               Choose Your Collection
             </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <p className="text-black-600 text-lg max-w-2xl mx-auto">
               Discover fragrances curated just for you. Explore our timeless selections for men and elegant collections for women.
             </p>
             <div className="mt-6 h-1 w-24 bg-black mx-auto" />
@@ -250,7 +264,7 @@ export default function ShopPage() {
               <motion.div
                 className="absolute inset-0 w-full h-full"
                 style={{
-                  backgroundImage: "url('/images/Bul.jpg')",
+                  backgroundImage: "url('/images/wmremove-transformed.jpeg')",
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
@@ -258,8 +272,8 @@ export default function ShopPage() {
                 transition={{ duration: 0.6 }}
               />
 
-              {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-all duration-500" />
+              {/* Dark Overlay (hidden by default to preserve image colors) */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500" />
 
               {/* Content */}
               <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 p-6">
@@ -270,10 +284,13 @@ export default function ShopPage() {
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
                   <div className="mb-4 h-1 w-16 bg-white/70 rounded" aria-hidden="true" />
-                  <h3 className="text-3xl md:text-4xl font-extrabold uppercase tracking-wider mb-4 leading-tight">
+                  <h3
+                    className="text-3xl md:text-4xl font-extrabold uppercase tracking-wider mb-4 leading-tight"
+                    style={{ textShadow: '0 6px 18px rgba(0,0,0,0.55)' }}
+                  >
                     For Him
                   </h3>
-                  <p className="text-gray-100 text-base font-light tracking-wide mb-6">
+                  <p className="text-gray-100 text-base font-light tracking-wide mb-6" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.45)' }}>
                     Bold. Sophisticated. Timeless.
                   </p>
                   <motion.div
@@ -310,7 +327,7 @@ export default function ShopPage() {
               <motion.div
                 className="absolute inset-0 w-full h-full"
                 style={{
-                  backgroundImage: "url('/images/pexels-karola-g-8361483.jpg')",
+                  backgroundImage: "url('/images/benjamin-watterson-azbhr-x1bMQ-unsplash.jpg')",
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
@@ -318,8 +335,8 @@ export default function ShopPage() {
                 transition={{ duration: 0.6 }}
               />
 
-              {/* Pink Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-b from-pink-500/40 to-pink-600/50 group-hover:from-pink-500/50 group-hover:to-pink-600/60 transition-all duration-500" />
+              {/* Pink Overlay (hidden by default to preserve image colors) */}
+              <div className="absolute inset-0 bg-gradient-to-b from-pink-500/0 to-pink-600/0 group-hover:from-pink-500/40 group-hover:to-pink-600/50 transition-all duration-500" />
 
               {/* Content */}
               <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 p-6">
@@ -330,14 +347,17 @@ export default function ShopPage() {
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
                   <div className="mb-4 h-1 w-16 bg-white/70 rounded" aria-hidden="true" />
-                  <h3 className="text-3xl md:text-4xl font-extrabold uppercase tracking-wider mb-4 leading-tight">
+                  <h3
+                    className="text-3xl md:text-4xl font-extrabold uppercase tracking-wider mb-4 leading-tight"
+                    style={{ textShadow: '0 6px 18px rgba(0,0,0,0.55)' }}
+                  >
                     For Her
                   </h3>
-                  <p className="text-gray-100 text-base font-light tracking-wide mb-6">
+                  <p className="text-gray-100 text-base font-light tracking-wide mb-6" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.45)' }}>
                     Elegant. Mesmerizing. Unforgettable.
                   </p>
                   <motion.div
-                    className="inline-block px-8 py-3 bg-white text-pink-600 font-bold uppercase tracking-widest text-sm rounded-full"
+                    className="inline-block px-8 py-3 bg-black text-white-600 font-bold uppercase tracking-widest text-sm rounded-full"
                     whileHover={{ backgroundColor: '#f0f0f0' }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -346,7 +366,7 @@ export default function ShopPage() {
                 </motion.div>
 
                 {/* Item Count */}
-                <div className="absolute bottom-6 text-xs font-semibold text-gray-200 uppercase tracking-widest">
+                <div className="absolute bottom-6 text-xs font-semibold text-black-200 uppercase tracking-widest">
                   {allFragrances.filter(f => f.category === 'women').length} Fragrances
                 </div>
               </div>

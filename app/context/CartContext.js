@@ -1,12 +1,14 @@
 'use client';
 
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useState, useContext, useEffect, useRef } from 'react';
 
 const CartContext = createContext();
 
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [notification, setNotification] = useState({ visible: false, message: '', item: null });
+  const timerRef = useRef(null);
 
   // Load cart from localStorage on mount
   useEffect(() => {
@@ -55,6 +57,32 @@ export function CartProvider({ children }) {
     });
   };
 
+  // Notification API: show a non-blocking message (auto-dismiss)
+  const notify = (message, item = null, duration = 3500) => {
+    // clear any existing timer
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+
+    setNotification({ visible: true, message, item });
+
+    if (duration > 0) {
+      timerRef.current = setTimeout(() => {
+        setNotification({ visible: false, message: '', item: null });
+        timerRef.current = null;
+      }, duration);
+    }
+  };
+
+  const clearNotification = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+    setNotification({ visible: false, message: '', item: null });
+  };
+
   const removeFromCart = (cartItemId) => {
     setCart(prev => prev.filter(item => item.id !== cartItemId));
   };
@@ -89,6 +117,9 @@ export function CartProvider({ children }) {
   const value = {
     cart,
     addToCart,
+    notification,
+    notify,
+    clearNotification,
     removeFromCart,
     updateQuantity,
     clearCart,

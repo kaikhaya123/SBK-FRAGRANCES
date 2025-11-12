@@ -14,6 +14,7 @@ import ShopNowSection from './components/ShopNowSection';
 import WhyChooseUs from './components/WhyChooseUs';
 import Testimonials from './components/Testimonials';
 import AnimatedLayout from './components/AnimatedLayout';
+import ResellerProgram from './components/ResellerProgram';
 
 // Define section configurations with their animations
 const sections = [
@@ -28,6 +29,7 @@ const sections = [
   { Component: WhyChooseUs, animation: 'fade', delay: 0.3 },
   { Component: Testimonials, animation: 'slideRight', delay: 0.2 },
   { Component: InstagramFeed, animation: 'slideLeft', delay: 0.2 },
+  { Component: ResellerProgram, animation: 'fade', delay: 0.3 },
   { Component: NewsletterSignup, animation: 'fade', delay: 0.3 },
 ];
 
