@@ -143,18 +143,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        {/* Keyframes for animation */}
-        <style jsx>{`
-          @keyframes mask-reveal {
-            0% { transform: scale(0.2); opacity: 0; }
-            60% { opacity: 1; }
-            100% { transform: scale(1); opacity: 1; }
-          }
-          @keyframes fade-in-up {
-            0% { opacity: 0; transform: translateY(40px); }
-            100% { opacity: 1; transform: translateY(0); }
-          }
-        `}</style>
+        {/* Keyframes migrated to global CSS (globals.css) to avoid styled-jsx in app router */}
       </section>
     </div>
   );

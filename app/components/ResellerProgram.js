@@ -172,7 +172,7 @@ export default function ResellerProgram() {
   }, []);
 
   return (
-  <section className="w-full py-16 md:py-28 bg-[#ffffff] relative overflow-hidden text-black font-sans">
+  <section className="w-full py-24 md:py-36 bg-[#ffffff] relative overflow-hidden text-black font-sans">
       {/* Decorative Background */}
       <div className="absolute inset-0 opacity-6 pointer-events-none">
         <div className="absolute -left-32 -top-16 w-96 h-96 bg-amber-500 rounded-full blur-3xl mix-blend-screen" />
@@ -186,13 +186,9 @@ export default function ResellerProgram() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16"
+          className="grid grid-cols-1 gap-12 items-center mb-16"
         >
-          <div>
-            <div className="inline-block mb-4 px-4 py-2 bg-amber-500/10 rounded-full border border-amber-500/30">
-              <span className="text-black font-semibold text-xs uppercase tracking-widest">Wholesale Opportunity</span>
-            </div>
-
+          <div className="mx-auto text-center max-w-2xl">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-black" style={{ letterSpacing: '-0.02em', fontFamily: 'var(--font-playfair)' }}>
               Start Your Perfume
               <br />
@@ -204,33 +200,10 @@ export default function ResellerProgram() {
               Join our growing network of resellers and entrepreneurs. Access premium fragrance stock at wholesale prices with attractive margins, marketing support and easy restocking.
             </p>
 
-            <div className="flex gap-4">
-              <a href="mailto:hello@sbkfragrances.com" className="inline-flex items-center gap-3 px-6 py-3 bg-black hover:bg-black/90 text-[#FAF9F6] rounded-full font-semibold shadow-md">
-                Contact Sales
-              </a>
-              <a href="#packages" className="inline-flex items-center gap-2 px-6 py-3 border border-black rounded-full text-black bg-transparent hover:bg-white font-semibold">
+            <div className="flex justify-center">
+              <a href="#packages" className="inline-flex items-center gap-2 px-8 py-3 border border-black rounded-full text-black bg-transparent hover:bg-white font-semibold">
                 View Packages
               </a>
-            </div>
-          </div>
-
-          <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-lg border-2 border-black/20 bg-gray-100">
-            {getSrc(packages[2].image) ? (
-              <Image
-                src={getSrc(packages[2].image)}
-                alt="Reseller selection - Premium Round Bottle"
-                fill
-                className="object-cover w-full h-full"
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            ) : (
-              <div className="w-full h-full bg-gray-200" />
-            )}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-            <div className="absolute left-6 bottom-6 bg-white/90 backdrop-blur-sm rounded-lg p-4 border border-white/50 shadow-md">
-              <p className="text-sm text-black/70">Top pick</p>
-              <p className="text-base font-bold text-black" style={{ fontFamily: 'var(--font-playfair)' }}>Round Bottle Premium</p>
             </div>
           </div>
         </motion.div>
@@ -288,7 +261,7 @@ export default function ResellerProgram() {
                   <div className="text-sm text-black/70">{pkg.icon}</div>
                 </div>
 
-                <p className="text-sm text-[#666666] mb-6 font-sans leading-relaxed">{pkg.description}</p>
+                <p className="text-sm text-[#666666] mb-6 leading-relaxed">{pkg.description}</p>
 
                 <div className="mb-6 p-5 bg-[#FAFAF8] rounded-lg border-2 border-black/10">
                   <div className="flex items-baseline justify-between">
@@ -356,7 +329,7 @@ export default function ResellerProgram() {
                 </div>
               </div>
               <h4 className="font-bold text-lg text-black mb-3 text-center" style={{ fontFamily: 'var(--font-playfair)' }}>100% Authentic</h4>
-              <p className="text-sm text-[#666666] font-sans leading-relaxed">All our fragrances are genuine and sourced with certification—trusted by retailers.</p>
+              <p className="text-sm text-[#666666] leading-relaxed">All our fragrances are genuine and sourced with certification—trusted by retailers.</p>
             </div>
 
             <div className="p-7 bg-white rounded-2xl shadow-sm">
@@ -372,7 +345,7 @@ export default function ResellerProgram() {
                 </div>
               </div>
               <h4 className="font-bold text-lg text-black mb-3 text-center" style={{ fontFamily: 'var(--font-playfair)' }}>Dedicated Support</h4>
-              <p className="text-sm text-[#666666] font-sans leading-relaxed">Personal onboarding, marketing assets and a reseller support team to help you grow.</p>
+              <p className="text-sm text-[#666666] leading-relaxed">Personal onboarding, marketing assets and a reseller support team to help you grow.</p>
             </div>
 
             <div className="p-7 bg-white rounded-2xl shadow-sm">
@@ -388,7 +361,7 @@ export default function ResellerProgram() {
                 </div>
               </div>
               <h4 className="font-bold text-lg text-black mb-3 text-center" style={{ fontFamily: 'var(--font-playfair)' }}>Fast Delivery</h4>
-              <p className="text-sm text-[#666666] font-sans leading-relaxed">Reliable shipping and fast restocking so you never miss a sale.</p>
+              <p className="text-sm text-[#666666] leading-relaxed">Reliable shipping and fast restocking so you never miss a sale.</p>
             </div>
           </div>
         </motion.div>
@@ -408,7 +381,7 @@ export default function ResellerProgram() {
       >
         {/* Background Image - Lifestyle shot */}
         <Image
-          src="/images/pexels-mart-production-8450240.jpg"
+          src="/images/spa-still-life-with-beauty-products.jpg"
           alt="Luxury fragrance lifestyle"
           fill
           className="object-cover w-full h-full absolute inset-0"
@@ -421,26 +394,29 @@ export default function ResellerProgram() {
 
         {/* Content - Positioned above overlay */}
         <div className="relative z-10 max-w-3xl mx-auto">
-      <h3 className="text-3xl md:text-5xl text-[#FAF9F6] font-bold mb-4" style={{ letterSpacing: '-0.01em', fontFamily: 'var(--font-playfair)' }}>
+  <h3 className="text-3xl md:text-5xl text-[#FAF9F6] font-bold mb-4" style={{ letterSpacing: '-0.01em', fontFamily: 'var(--font-playfair)' }}>
             Ready to Scale Your Business?
           </h3>
           <p className="text-[#FAF9F6]/90 mb-8 leading-relaxed text-base md:text-lg">
             Join hundreds of successful resellers. Start small or go big—we have packages and support for every stage.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
-            <a
-              href="#packages"
-              className="px-8 py-3 bg-black text-[#FAF9F6] rounded-full font-semibold transition-all hover:bg-black/80 hover:shadow-lg duration-300"
-            >
-              Explore Packages
-            </a>
-            <a
+          <div className="flex justify-center items-center mb-6 w-full">
+            <motion.a
               href="mailto:hello@sbkfragrances.com"
-              className="px-8 py-3 border-2 border-[#FAF9F6] text-[#FAF9F6] rounded-full font-semibold transition-all hover:bg-white/10 hover:shadow-lg duration-300 backdrop-blur-sm"
+              aria-label="Contact us"
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              viewport={{ once: true }}
+              className="mx-auto w-max inline-flex items-center justify-center px-4 py-2 sm:px-8 sm:py-3 bg-black text-white rounded-full font-semibold shadow-lg hover:bg-black/90 transition-colors duration-300"
             >
-              Contact Us
-            </a>
+              {/* Phone icon from public/icons/telephone.png */}
+              <span className="mr-3 flex-shrink-0" aria-hidden="true">
+                <Image src="/icons/telephone.png" alt="" width={20} height={20} className="w-5 h-5 filter invert" />
+              </span>
+              <span>Contact Us</span>
+            </motion.a>
           </div>
 
           <p className="text-sm text-[#FAF9F6]/80">

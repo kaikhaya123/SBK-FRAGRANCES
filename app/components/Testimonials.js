@@ -143,13 +143,19 @@ export default function Testimonials() {
         </div>
       {/* Elegant CTA Section */}
         <div className="text-center mt-16 md:mt-24">
-          <a 
-            href="/reviews#review-form" 
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#ffffff] to-[#000000] text-white rounded-full hover:shadow-lg transform transition-all duration-300 hover:-translate-y-0.5"
+          <a
+            href="/reviews#review-form"
+            className="group inline-flex items-center px-8 py-3 bg-black text-white rounded-full shadow-lg hover:bg-black/90 transform transition-all duration-300"
+            aria-label="Share your story"
           >
             <span className="text-lg font-medium">Share Your Story</span>
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            <svg
+              className="w-5 h-5 ml-2 text-white transform transition-transform duration-300 group-hover:translate-x-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </a>
         </div>

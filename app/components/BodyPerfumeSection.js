@@ -21,9 +21,9 @@ const BodyPerfumeSection = () => {
       style={{
         height: 'auto',
         maxHeight: 'calc(var(--vh, 1vh) * 100)',
-        // pad the content so it doesn't overlap the decorative side images
-        paddingLeft: 'clamp(12px, 18vw, 360px)',
-        paddingRight: 'clamp(12px, 18vw, 360px)'
+        // reduce side padding on small screens so center content has more room
+        paddingLeft: 'clamp(12px, 6vw, 360px)',
+        paddingRight: 'clamp(12px, 6vw, 360px)'
       }}
     >
       {/* Decorative image (left) - use background div for consistent scaling */}
@@ -58,45 +58,45 @@ const BodyPerfumeSection = () => {
         }}
       />
       {/* Main content is intentionally minimal and centered, with lots of whitespace */}
-      <div className="relative z-20 flex flex-col items-center justify-center w-full px-4 sm:px-8 md:px-16 lg:px-24 py-8 sm:py-12 md:py-0 min-h-[240px] sm:min-h-[320px] max-w-3xl mx-auto">
+      <div className="relative z-20 flex flex-col items-center justify-center w-full px-4 sm:px-8 md:px-16 lg:px-24 py-6 sm:py-8 md:py-0 min-h-[200px] sm:min-h-[260px] max-w-3xl mx-auto">
         <h2
-          className="text-gray-900 mb-4 sm:mb-6 tracking-wider drop-shadow-sm uppercase text-center"
+          className="text-gray-900 mb-2 sm:mb-3 tracking-wider drop-shadow-sm uppercase text-center"
           style={{
             letterSpacing: '0.02em',
             fontFamily: 'Mosthat',
             fontWeight: 500,
-            fontSize: 'clamp(1.25rem, 5.5vw, 2.5rem)'
+            fontSize: 'clamp(0.95rem, 3.2vw, 1.3rem)'
           }}
         >
           Body Perfume
         </h2>
         <p
-          className="text-gray-700/90 mb-6 sm:mb-10 text-center mx-auto px-4 sm:px-8"
+          className="text-black-700/90 mb-3 sm:mb-4 text-center mx-auto px-3 sm:px-6"
           style={{
             fontFamily: 'Playfair Display, Cormorant Garamond, serif',
             fontWeight: 400,
-            lineHeight: '1.35',
+            lineHeight: '1.26',
             letterSpacing: '0.01em',
             wordBreak: 'break-word',
-            maxWidth: '28rem',
-            fontSize: 'clamp(0.9rem, 3.5vw, 1.05rem)'
+            maxWidth: '20rem',
+            fontSize: 'clamp(0.72rem, 2.0vw, 0.88rem)'
           }}
         >
           Experience the essence of luxury with our signature body perfume collection. Crafted with the finest ingredients for a long-lasting, captivating scent.
         </p>
         <Link
           href="/shop"
-          className="bg-white/90 text-black px-6 py-2 sm:px-10 sm:py-3 rounded-none font-light tracking-widest uppercase shadow-lg hover:bg-black hover:text-white transition-all duration-300 text-sm sm:text-base max-w-xs text-center block cursor-pointer ring-1 ring-black/5 hover:ring-2 hover:ring-black"
+          className="mx-auto bg-black text-white px-6 py-2 sm:px-10 sm:py-3 rounded-full font-semibold tracking-widest shadow-md hover:bg-black/90 transition-all duration-300 text-sm sm:text-base inline-block w-max"
           style={{
             fontFamily: 'Oswald, sans-serif',
-            letterSpacing: '0.2em'
+            letterSpacing: '0.16em'
           }}
         >
           Shop Now
         </Link>
       </div>
   {/* Subtle gradient shadow at the bottom */}
-  <div className="absolute left-0 right-0 bottom-0 h-24 bg-gradient-to-t from-[#eae7e1] to-transparent z-10 pointer-events-none" />
+  <div className="absolute left-0 right-0 bottom-0 h-20 bg-gradient-to-t from-black/30 to-transparent z-0 pointer-events-none" />
     </section>
   );
 };
