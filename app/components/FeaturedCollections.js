@@ -3,7 +3,7 @@ import AnimatedSection from "./AnimatedSection";
 
 export default function FeaturedCollections() {
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="py-20 px-4 bg-light-purple">
       <div className="max-w-7xl mx-auto bg-white">
         <AnimatedSection animation="fadeIn" delay={0.2}>
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-14 tracking-wide text-gray-900" style={{fontFamily: 'Oswald, Bebas Neue, Montserrat, Arial, sans-serif'}}>
@@ -37,7 +37,7 @@ export default function FeaturedCollections() {
 
         <AnimatedSection animation="fadeIn" delay={0.8}>
           <div className="flex justify-center">
-            <a href="/collections" className="inline-flex items-center gap-3 px-8 py-3 bg-[#f4f3f2] text-black text-lg font-semibold rounded transition hover:bg-[#fcfcfc] shadow-md">
+            <a href="/collections" className="inline-flex items-center gap-3 px-8 py-3 bg-[#000000] text-white text-lg font-semibold rounded transition hover:bg-[#fcfcfc] shadow-md">
               <span>&rarr;</span> VIEW FULL COLLECTION
             </a>
           </div>

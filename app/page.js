@@ -28,8 +28,8 @@ const sections = [
   { Component: ShopNowSection, animation: 'scale', delay: 0.2 },
   { Component: WhyChooseUs, animation: 'fade', delay: 0.3 },
   { Component: Testimonials, animation: 'slideRight', delay: 0.2 },
-  { Component: InstagramFeed, animation: 'slideLeft', delay: 0.2 },
   { Component: ResellerProgram, animation: 'fade', delay: 0.3 },
+  { Component: InstagramFeed, animation: 'slideLeft', delay: 0.2 },
   { Component: NewsletterSignup, animation: 'fade', delay: 0.3 },
 ];
 

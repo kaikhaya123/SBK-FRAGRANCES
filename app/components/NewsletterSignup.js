@@ -54,6 +54,8 @@ export default function NewsletterSignup() {
                 required
                 value={email}
                 onChange={e => setEmail(e.target.value)}
+                aria-label="Email address"
+                suppressHydrationWarning
                 placeholder="Enter your email"
                 className="px-6 py-3 sm:px-7 sm:py-4 rounded-full focus:outline-none focus:ring-1 focus:ring-white/30 w-full sm:w-auto text-base bg-white/10 text-white placeholder:text-white/60 border border-white/10"
                 style={{ fontFamily: 'Montserrat, sans-serif' }}

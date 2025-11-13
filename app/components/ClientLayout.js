@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import Loading from './Loading';
 import { motion, AnimatePresence } from 'framer-motion';
 import CartNotification from './CartNotification';
+import { useEffect } from 'react';
 
 const Navbar = dynamic(() => import('./Navbar').then(mod => ({ default: mod.Navbar })), {
   loading: () => <div className="h-20" />,
@@ -32,6 +33,20 @@ const pageTransition = {
 export default function ClientLayout({ children }) {
   const pathname = usePathname();
   const isCheckout = pathname === '/checkout';
+
+  useEffect(() => {
+    // Remove attributes that browser extensions (e.g. Grammarly) sometimes inject
+    // which cause hydration mismatches during SSR -> client hydration.
+    try {
+      const attrs = ['data-new-gr-c-s-check-loaded', 'data-gr-ext-installed'];
+      attrs.forEach((a) => {
+        if (document.body && document.body.hasAttribute(a)) document.body.removeAttribute(a);
+        if (document.documentElement && document.documentElement.hasAttribute(a)) document.documentElement.removeAttribute(a);
+      });
+    } catch (e) {
+      // ignore
+    }
+  }, []);
 
   return (
     <AnimatePresence mode="wait">

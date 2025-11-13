@@ -1,7 +1,9 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+const MotionLink = motion(Link);
 import { useCart } from '../context/CartContext';
 
 // Sample fragrance data (prices in South African Rand - ZAR)
@@ -247,134 +249,59 @@ export default function ShopPage() {
             <div className="mt-6 h-1 w-24 bg-black mx-auto" />
           </motion.div>
 
-          {/* Split Image Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-6">
-            {/* FOR HIM Card */}
-            <motion.button
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => setSelectedCategory('men')}
-              className="relative group h-96 md:h-[500px] rounded-lg overflow-hidden cursor-pointer"
-            >
-              {/* Background Image */}
-              <motion.div
-                className="absolute inset-0 w-full h-full"
-                style={{
-                  backgroundImage: "url('/images/wmremove-transformed.jpeg')",
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-                whileHover={{ scale: 1.08 }}
-                transition={{ duration: 0.6 }}
-              />
+          {/* Split Image Cards - updated to three-card design (For Him, For Her, Defusers) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {/* compute counts and formatter */}
+            {(() => {
+              const fmt = (n) => new Intl.NumberFormat('en-GB').format(n);
+              const himCount = allFragrances.filter(f => f.category === 'men').length;
+              const herCount = allFragrances.filter(f => f.category === 'women').length;
+              // try to infer diffusers by type or tag; fallback to 0
+              const diffCount = allFragrances.filter(f => (f.type && f.type.toLowerCase().includes('diffuser')) || (f.tags && f.tags.includes('diffuser'))).length || 0;
+              const cards = [
+                { key: 'men', title: 'For Him', subtitle: 'Bold. Sophisticated. Timeless.', img: '/images/download (1).jpg', stat: himCount, statLabel: 'Fragrances', cta: 'Explore Collection' },
+                { key: 'women', title: 'For Her', subtitle: 'Elegant. Mesmerizing. Unforgettable.', img: '/images/Using Aromatherapy to Create Memories _ Aromatherapy Associates.jpg', stat: herCount, statLabel: 'Fragrances', cta: 'Explore Collection' },
+                { key: 'diffusers', title: 'Defusers', subtitle: 'Fresh. Long-lasting. Popular.', img: '/images/Luxury Scent Car Diffuser - Our Way.jpg', stat: diffCount, statLabel: 'Items', cta: 'Explore Collection' }
+              ];
 
-              {/* Dark Overlay (hidden by default to preserve image colors) */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500" />
-
-              {/* Content */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 p-6">
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
+              return cards.map((card, i) => (
+                <MotionLink
+                  key={card.key}
+                  href={`/shop?category=${card.key === 'diffusers' ? 'diffusers' : card.key}`}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.12 * i }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="relative group h-80 md:h-[500px] rounded-2xl overflow-hidden cursor-pointer bg-white shadow-lg inline-block no-underline"
                 >
-                  <div className="mb-4 h-1 w-16 bg-white/70 rounded" aria-hidden="true" />
-                  <h3
-                    className="text-3xl md:text-4xl font-extrabold uppercase tracking-wider mb-4 leading-tight"
-                    style={{ textShadow: '0 6px 18px rgba(0,0,0,0.55)' }}
-                  >
-                    For Him
-                  </h3>
-                  <p className="text-gray-100 text-base font-light tracking-wide mb-6" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.45)' }}>
-                    Bold. Sophisticated. Timeless.
-                  </p>
+                  {/* Background Image with subtle parallax/scale on hover */}
                   <motion.div
-                    className="inline-block px-8 py-3 bg-white text-black font-bold uppercase tracking-widest text-sm rounded-full"
-                    whileHover={{ backgroundColor: '#f0f0f0' }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Explore Collection
-                  </motion.div>
-                </motion.div>
+                    className="absolute inset-0 w-full h-full bg-center bg-cover"
+                    style={{ backgroundImage: `url('${card.img}')` }}
+                    whileHover={{ scale: 1.08 }}
+                    transition={{ duration: 0.6 }}
+                  />
 
-                {/* Item Count */}
-                <div className="absolute bottom-6 text-xs font-semibold text-gray-200 uppercase tracking-widest">
-                  {allFragrances.filter(f => f.category === 'men').length} Fragrances
-                </div>
-              </div>
+                  {/* Soft subtle gradient overlay (above label) so label peeks through without obscuring image */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-transparent via-black/10 to-transparent transition-colors duration-400 z-20 pointer-events-none group-hover:via-black/12" />
 
-              {/* Border Effect on Hover */}
-              <div className="absolute inset-0 border-2 border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none" />
-            </motion.button>
+                  {/* Large background typography effect (appears integrated with image) */}
+                  {/* Large faint label placed under the soft gradient so it reads as background typography */}
+                  <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none overflow-hidden">
+                    <span className="text-[4rem] sm:text-[5.5rem] md:text-[8rem] lg:text-[9rem] leading-none font-extrabold text-white opacity-25 transition-opacity duration-300 group-hover:opacity-40 whitespace-nowrap">
+                      {card.key === 'men' ? 'MEN' : card.key === 'women' ? 'WOMEN' : 'DEFUSES'}
+                    </span>
+                  </div>
 
-            {/* FOR HER Card */}
-            <motion.button
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => setSelectedCategory('women')}
-              className="relative group h-96 md:h-[500px] rounded-lg overflow-hidden cursor-pointer"
-            >
-              {/* Background Image */}
-              <motion.div
-                className="absolute inset-0 w-full h-full"
-                style={{
-                  backgroundImage: "url('/images/benjamin-watterson-azbhr-x1bMQ-unsplash.jpg')",
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-                whileHover={{ scale: 1.08 }}
-                transition={{ duration: 0.6 }}
-              />
-
-              {/* Pink Overlay (hidden by default to preserve image colors) */}
-              <div className="absolute inset-0 bg-gradient-to-b from-pink-500/0 to-pink-600/0 group-hover:from-pink-500/40 group-hover:to-pink-600/50 transition-all duration-500" />
-
-              {/* Content */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 p-6">
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                  <div className="mb-4 h-1 w-16 bg-white/70 rounded" aria-hidden="true" />
-                  <h3
-                    className="text-3xl md:text-4xl font-extrabold uppercase tracking-wider mb-4 leading-tight"
-                    style={{ textShadow: '0 6px 18px rgba(0,0,0,0.55)' }}
-                  >
-                    For Her
-                  </h3>
-                  <p className="text-gray-100 text-base font-light tracking-wide mb-6" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.45)' }}>
-                    Elegant. Mesmerizing. Unforgettable.
-                  </p>
-                  <motion.div
-                    className="inline-block px-8 py-3 bg-black text-white-600 font-bold uppercase tracking-widest text-sm rounded-full"
-                    whileHover={{ backgroundColor: '#f0f0f0' }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Explore Collection
-                  </motion.div>
-                </motion.div>
-
-                {/* Item Count */}
-                <div className="absolute bottom-6 text-xs font-semibold text-black-200 uppercase tracking-widest">
-                  {allFragrances.filter(f => f.category === 'women').length} Fragrances
-                </div>
-              </div>
-
-              {/* Border Effect on Hover */}
-              <div className="absolute inset-0 border-2 border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none" />
-            </motion.button>
+                  {/* Hover border effect */}
+                  <div className="absolute inset-0 border-2 border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+                </MotionLink>
+              ));Can 
+            })()}
           </div>
+          
         </div>
       </div>
 

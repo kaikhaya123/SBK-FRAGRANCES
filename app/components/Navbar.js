@@ -1,5 +1,6 @@
-'use client';
+"use client";
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useCart } from '../context/CartContext';
@@ -51,55 +52,96 @@ export function Navbar() {
       </button>
 
       {/* Mobile menu with conditional rendering */}
-      {menuOpen && (
-        <div 
-          className="fixed inset-0 z-40"
-          aria-modal="true"
-          role="dialog"
-          aria-label="Mobile navigation menu"
-        >
-          {/* Overlay */}
-          <div
-            className="absolute inset-0 bg-black/40 transition-opacity duration-300"
-            onClick={() => setMenuOpen(false)}
-            aria-hidden="true"
-          />
-          {/* Mobile Navigation */}
-          <nav
-            className="fixed top-0 left-0 h-full w-64 bg-white/80 backdrop-blur-lg z-50 flex flex-col pt-20 px-8 gap-8 transform transition-transform duration-300"
-            style={{fontFamily: "Oswald, Bebas Neue, Montserrat, Arial, sans-serif", boxShadow: "none", border: "none"}}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div 
+            className="fixed inset-0 z-40"
+            aria-modal="true"
+            role="dialog"
+            aria-label="Mobile navigation menu"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           >
-            <button
-              className="absolute top-6 right-6 text-3xl text-gray-700 hover:text-black bg-white/60 rounded-full w-10 h-10 flex items-center justify-center"
-              aria-label="Close menu"
+            {/* Overlay */}
+            <motion.div
+              className="absolute inset-0 bg-black/40"
               onClick={() => setMenuOpen(false)}
-              style={{boxShadow: "0 2px 8px 0 rgba(0,0,0,0.04)"}}
+              aria-hidden="true"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            />
+
+            {/* Mobile Navigation - slide in */}
+            <motion.nav
+              className="fixed top-0 left-0 h-full w-64 bg-white/95 backdrop-blur-lg z-50 flex flex-col pt-20 px-6 gap-6"
+              style={{fontFamily: "Oswald, Bebas Neue, Montserrat, Arial, sans-serif", boxShadow: "none", border: "none"}}
+              initial={{ x: -300 }}
+              animate={{ x: 0 }}
+              exit={{ x: -300 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             >
-              ×
-            </button>
-            <Link href="/" className="text-xl font-bold uppercase tracking-[0.18em] py-3 hover:text-[#4d3222] transition-colors" onClick={() => setMenuOpen(false)}>Home</Link>
-            <Link href="/shop" className="text-xl font-bold uppercase tracking-[0.18em] py-3 hover:text-[#4d3222] transition-colors" onClick={() => setMenuOpen(false)}>Shop</Link>
-            <div className="relative">
               <button
-                className="text-xl font-bold uppercase tracking-[0.18em] py-3 hover:text-[#4d3222] transition-colors flex items-center w-full text-left"
-                onClick={() => setMobileCollectionsOpen((s) => !s)}
+                className="absolute top-6 right-6 text-3xl text-gray-700 hover:text-black bg-white/60 rounded-full w-10 h-10 flex items-center justify-center"
+                aria-label="Close menu"
+                onClick={() => setMenuOpen(false)}
+                style={{boxShadow: "0 2px 8px 0 rgba(0,0,0,0.04)"}}
               >
-                Collections
-                <span className="ml-2 text-sm">{mobileCollectionsOpen ? '▴' : '▾'}</span>
+                ×
               </button>
-              <div className={`${mobileCollectionsOpen ? 'block' : 'hidden'} pl-5 pb-1`}> 
-                {seasons.map((season) => (
-                  <Link key={season.name} href={season.link} className="block py-3 text-gray-700 hover:text-[#4d3222] text-[15px] transition-colors" onClick={() => setMenuOpen(false)}>
-                    {season.name}
-                  </Link>
-                ))}
+              <Link href="/" className="text-xl font-bold uppercase tracking-[0.18em] py-3 hover:text-[#4d3222] transition-colors" onClick={() => setMenuOpen(false)}>Home</Link>
+              <Link href="/shop" className="text-xl font-bold uppercase tracking-[0.18em] py-3 hover:text-[#4d3222] transition-colors" onClick={() => setMenuOpen(false)}>Shop</Link>
+              <div className="relative">
+                <button
+                  className="text-xl font-bold uppercase tracking-[0.18em] py-3 hover:text-[#4d3222] transition-colors flex items-center w-full text-left"
+                  onClick={() => setMobileCollectionsOpen((s) => !s)}
+                >
+                  Collections
+                  <span className="ml-2 text-sm">{mobileCollectionsOpen ? '▴' : '▾'}</span>
+                </button>
+                <div className={`${mobileCollectionsOpen ? 'block' : 'hidden'} pl-5 pb-1`}> 
+                  {seasons.map((season) => (
+                    <Link key={season.name} href={season.link} className="block py-3 text-gray-700 hover:text-[#4d3222] text-[15px] transition-colors" onClick={() => setMenuOpen(false)}>
+                      {season.name}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
-            <Link href="/about" className="text-xl font-bold uppercase tracking-[0.18em] py-3 hover:text-[#4d3222] transition-colors" onClick={() => setMenuOpen(false)}>About</Link>
-            <Link href="/contact" className="text-xl font-bold uppercase tracking-[0.18em] py-3 hover:text-[#4d3222] transition-colors" onClick={() => setMenuOpen(false)}>Contact</Link>
-          </nav>
-        </div>
-      )}
+              <Link href="/about" className="text-xl font-bold uppercase tracking-[0.18em] py-3 hover:text-[#4d3222] transition-colors" onClick={() => setMenuOpen(false)}>About</Link>
+              <Link href="/contact" className="text-xl font-bold uppercase tracking-[0.18em] py-3 hover:text-[#4d3222] transition-colors" onClick={() => setMenuOpen(false)}>Contact</Link>
+
+              {/* Social links at the bottom (left-aligned with fixed icon column) */}
+              <div className="mt-auto pb-8 w-full">
+                <div className="flex flex-col items-start space-y-3 pl-2">
+                  <a href="https://www.tiktok.com/@sbkfragrances" target="_blank" rel="noopener noreferrer" aria-label="SBK Fragrances TikTok" className="flex items-center space-x-3 text-gray-700 hover:text-black transition-colors w-full">
+                    <span className="w-6 flex-none text-gray-700">
+                      {/* TikTok image icon */}
+                      <Image src="/images/4138198.png" alt="TikTok" width={20} height={20} className="w-5 h-5 object-contain" />
+                    </span>
+                    <span className="text-sm">TikTok</span>
+                  </a>
+                  <a href="https://www.instagram.com/sbkfragrances" target="_blank" rel="noopener noreferrer" aria-label="SBK Fragrances Instagram" className="flex items-center space-x-3 text-gray-700 hover:text-black transition-colors w-full">
+                    <span className="w-6 flex-none text-gray-700">
+                      {/* Instagram image icon */}
+                      <Image src="/images/pngwing.com (6).png" alt="Instagram" width={20} height={20} className="w-5 h-5 object-contain" />
+                    </span>
+                    <span className="text-sm">Instagram</span>
+                  </a>
+                  <a href="https://www.facebook.com/sbkfragrances" target="_blank" rel="noopener noreferrer" aria-label="SBK Fragrances Facebook" className="flex items-center space-x-3 text-gray-700 hover:text-black transition-colors w-full">
+                    <span className="w-6 flex-none text-gray-700">
+                      {/* Facebook image icon */}
+                      <Image src="/icons/icons8-facebook-50.png" alt="Instagram" width={20} height={20} className="w-5 h-5 object-contain" />
+                    </span>
+                    <span className="text-sm">Facebook</span>
+                  </a>
+                </div>
+              </div>
+            </motion.nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Desktop Navigation */}
       <div className="hidden sm:flex absolute top-8 left-1/2 transform -translate-x-1/2 z-40 w-full max-w-5xl flex-row items-center justify-center select-none pointer-events-auto">

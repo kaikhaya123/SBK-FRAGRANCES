@@ -1,24 +1,22 @@
 "use client";
-import Link from 'next/link';
 import OptimizedImg from "./OptimizedImg";
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
-
 const sections = [
   {
-    image: "/images/webp/still-life-cosmetic-products.webp",
+    image: "/images/cosmetic-item-with-marijuana-leaves.jpg",
     title: "Uniqueness in Every Note",
     text: "At SBK Fragrances, each perfume is crafted to reveal a story as unique as you are. Our scents are designed to highlight individuality, blending rare ingredients and creative inspiration to ensure every note is truly one-of-a-kind.",
     button: "Learn more"
   },
   {
-    image: "/images/webp/pexels-shvetsa-5760898.webp",
+    image: "/images/download.jpg",
     title: "The Art of Premium Quality",
     text: "Our perfumes are meticulously created by hand in our laboratory, where passion meets precision. SBK Fragrances uses only the finest ingredients and time-honored techniques, resulting in exceptional quality and lasting impressions in every bottle.",
     button: "Learn more"
   },
   {
-    image: "/images/man-spraying-luxury-perfume-black-background-man-spraying-luxury-perfume-black-background-closeup-212805345.webp",
+    image: "/images/Smelling strip.jpg",
     title: "Uniqueness in Every Note",
     text: "From the first spritz to the lingering finish, SBK Fragrances invites you to experience the magic of a scent that is truly yours. Discover the difference that artistry and dedication make in every fragrance we create.",
     button: "Learn more"
@@ -60,10 +58,7 @@ export default function UniquenessQualitySection() {
               <p className="text-gray-700 mb-6 leading-relaxed">
                 {section.text}
               </p>
-              <Link href="/philosophy" className="inline-flex items-center gap-2 text-black hover:text-gray-700 font-medium transition-colors">
-                {section.button}
-                <span className="text-lg">&rarr;</span>
-              </Link>
+              {/* 'Learn more' link removed as requested */}
             </AnimatedSection>
           </div>
         </AnimatedSection>

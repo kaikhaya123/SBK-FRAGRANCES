@@ -3,6 +3,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Montelisa font placeholder: if you have the Montelisa font files, place them under /public/fonts
+   with names like Montelisa.woff2 and Montelisa.woff and this @font-face will load them.
+   If you have a webfont URL provider (CDN), replace the src URLs accordingly. */
+@font-face {
+  font-family: 'Montelisa';
+  src: url('/fonts/Montelisa.woff2') format('woff2'),
+       url('/fonts/Montelisa.woff') format('woff');
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* utility class for the tall display Montelisa heading */
+.font-montelisa {
+  font-family: 'Montelisa', 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  text-transform: uppercase;
+  /* slightly tighter letter-spacing to avoid overflow while keeping tall-display feel */
+  letter-spacing: 0.12em;
+}
+
 :root {
   --font-inter: var(--font-inter);
   --font-playfair: var(--font-playfair);

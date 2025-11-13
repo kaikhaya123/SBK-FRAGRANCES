@@ -52,7 +52,7 @@ export default function TiktokFeed() {
   }, []);
 
   return (
-    <section className="w-full py-20 md:py-32 bg-gradient-to-b from-black/5 to-transparent relative overflow-hidden">
+    <section className="w-full py-20 md:py-32 bg-black relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-[url('/images/pattern.png')] bg-repeat opacity-20"></div>
@@ -60,11 +60,20 @@ export default function TiktokFeed() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Heading Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-[#020202] to-[#000000] bg-clip-text text-transparent">
+        <div className="text-center mb-16 relative">
+          {/* Large background typographic layer */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
+            <span className="text-[3.5rem] sm:text-[4.5rem] md:text-[6rem] lg:text-[7.5rem] leading-none font-extrabold text-white opacity-6 tracking-widest">
+              FOLLOW US ON TIKTOK
+            </span>
+          </div>
+
+          {/* Foreground heading */}
+          <h2 className="relative text-4xl md:text-5xl font-bold mb-6 text-white z-10">
             FOLLOW US ON TIKTOK
           </h2>
-          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
+
+          <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
             Discover the artistry of perfumery through our captivating content
           </p>
         </div>
@@ -129,7 +138,7 @@ export default function TiktokFeed() {
                       <div className="absolute inset-0 bg-gradient-to-r from-[#4d3222]/20 to-[#8b6b56]/20 blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       
                       {/* Musical note decoration */}
-                      <div className="absolute -top-1 -right-1 w-2 h-2 bg-white/80 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" />
+                      <div className="absolute -top-1 -right-1 w-2 h-2 bg-black/80 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" />
                       
                       {/* TikTok Icon */}
                       <OptimizedImg
@@ -153,7 +162,7 @@ export default function TiktokFeed() {
             href="https://www.tiktok.com/@sbk_fragrances"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 bg-black text-white rounded-full hover:bg-gray-900 transition-colors duration-300 group"
+            className="inline-flex items-center px-8 py-4 bg-white text-black rounded-full hover:bg-gray-100 transition-colors duration-300 group"
           >
             <span className="mr-3 text-lg font-medium">Follow @sbkfragrances</span>
             <span className="transform transition-transform duration-300 group-hover:translate-x-1">→</span>

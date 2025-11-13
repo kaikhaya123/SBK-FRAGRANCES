@@ -151,7 +151,8 @@ export default function ResellerProgram() {
     try {
       if (typeof s === 'string') {
         const trimmed = s.trim();
-        return trimmed.length ? trimmed : null;
+        // encodeURI will make paths with spaces or parentheses safe for Next/Image and fetch
+        return trimmed.length ? encodeURI(trimmed) : null;
       }
       return null;
     } catch (e) {
@@ -160,15 +161,29 @@ export default function ResellerProgram() {
   };
 
   React.useEffect(() => {
-    fetch('/icons/Delivery boy animation.json')
+    // Delivery animation (unchanged)
+    // encodeURI to ensure spaces/parentheses in filenames are handled correctly
+    fetch(encodeURI('/icons/Delivery boy animation.json'))
       .then(res => res.json())
       .then(data => setDeliveryAnimation(data))
-      .catch(err => console.error('Failed to load animation:', err));
-    
-    fetch('/icons/team.json')
-      .then(res => res.json())
+      .catch(err => console.error('Failed to load delivery animation:', err));
+
+    // Dedicated support animation: prefer a customer-service.json placed in /public/icons
+    // If not present, fall back to existing team.json
+    // Use encodeURI to ensure spaces/parentheses in file name are handled correctly
+    const customerServicePath = '/icons/Customer Service Support Agent Animation (1).json';
+    fetch(encodeURI(customerServicePath))
+      .then(res => {
+        if (!res.ok) throw new Error('Not found');
+        return res.json();
+      })
       .then(data => setTeamAnimation(data))
-      .catch(err => console.error('Failed to load team animation:', err));
+      .catch(() => {
+        fetch(encodeURI('/icons/team.json'))
+          .then(res => res.json())
+          .then(data => setTeamAnimation(data))
+          .catch(err => console.error('Failed to load team animation:', err));
+      });
   }, []);
 
   return (
@@ -318,48 +333,54 @@ export default function ResellerProgram() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-7 bg-white rounded-2xl shadow-sm">
               <div className="mb-6 flex justify-center">
-                <div className="w-32 h-32">
-                  <Image 
-                    src="/icons/perfume.png" 
-                    alt="100% Authentic" 
-                    width={128}
-                    height={128}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              </div>
+                    <div className="w-40 h-40 md:w-44 md:h-44">
+                      {getSrc('/icons/perfume.png') ? (
+                        <Image 
+                          src={getSrc('/icons/perfume.png')}
+                          alt="100% Authentic" 
+                          width={160}
+                          height={160}
+                          className="w-full h-full object-contain"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gray-100" />
+                      )}
+                    </div>
+                  </div>
               <h4 className="font-bold text-lg text-black mb-3 text-center" style={{ fontFamily: 'var(--font-playfair)' }}>100% Authentic</h4>
               <p className="text-sm text-[#666666] leading-relaxed">All our fragrances are genuine and sourced with certification—trusted by retailers.</p>
             </div>
 
             <div className="p-7 bg-white rounded-2xl shadow-sm">
               <div className="mb-6 flex justify-center">
-                <div className="w-32 h-32">
-                  {teamAnimation && (
-                    <Lottie 
-                      animationData={teamAnimation} 
-                      loop={true}
-                      autoplay={true}
-                    />
-                  )}
+                  <div className="w-40 h-40 md:w-44 md:h-44">
+                    {teamAnimation && (
+                      <Lottie 
+                        animationData={teamAnimation} 
+                        loop={true}
+                        autoplay={true}
+                        style={{ width: '100%', height: '100%' }}
+                      />
+                    )}
+                  </div>
                 </div>
-              </div>
               <h4 className="font-bold text-lg text-black mb-3 text-center" style={{ fontFamily: 'var(--font-playfair)' }}>Dedicated Support</h4>
               <p className="text-sm text-[#666666] leading-relaxed">Personal onboarding, marketing assets and a reseller support team to help you grow.</p>
             </div>
 
             <div className="p-7 bg-white rounded-2xl shadow-sm">
               <div className="mb-6 flex justify-center">
-                <div className="w-32 h-32">
-                  {deliveryAnimation && (
-                    <Lottie 
-                      animationData={deliveryAnimation} 
-                      loop={true}
-                      autoplay={true}
-                    />
-                  )}
+                  <div className="w-40 h-40 md:w-44 md:h-44">
+                    {deliveryAnimation && (
+                      <Lottie 
+                        animationData={deliveryAnimation} 
+                        loop={true}
+                        autoplay={true}
+                        style={{ width: '100%', height: '100%' }}
+                      />
+                    )}
+                  </div>
                 </div>
-              </div>
               <h4 className="font-bold text-lg text-black mb-3 text-center" style={{ fontFamily: 'var(--font-playfair)' }}>Fast Delivery</h4>
               <p className="text-sm text-[#666666] leading-relaxed">Reliable shipping and fast restocking so you never miss a sale.</p>
             </div>
@@ -413,7 +434,11 @@ export default function ResellerProgram() {
             >
               {/* Phone icon from public/icons/telephone.png */}
               <span className="mr-3 flex-shrink-0" aria-hidden="true">
-                <Image src="/icons/telephone.png" alt="" width={20} height={20} className="w-5 h-5 filter invert" />
+                {getSrc('/icons/telephone.png') ? (
+                  <Image src={getSrc('/icons/telephone.png')} alt="" width={20} height={20} className="w-5 h-5 filter invert" />
+                ) : (
+                  <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 16.5v3a2.5 2.5 0 01-2.5 2.5C9.6 22 2 14.4 2 4.5 2 2 4 0 6.5 0h3A2.5 2.5 0 0112 2.5v3A2.5 2.5 0 019.5 8H6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                )}
               </span>
               <span>Contact Us</span>
             </motion.a>

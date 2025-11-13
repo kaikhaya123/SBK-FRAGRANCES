@@ -64,8 +64,9 @@ const BodyPerfumeSection = () => {
           style={{
             letterSpacing: '0.02em',
             fontFamily: 'Mosthat',
-            fontWeight: 500,
-            fontSize: 'clamp(0.95rem, 3.2vw, 1.3rem)'
+            fontWeight: 600,
+            // increase the clamp so the heading reads larger on mobile and desktop
+            fontSize: 'clamp(1.25rem, 4.5vw, 2.25rem)'
           }}
         >
           Body Perfume
@@ -75,11 +76,14 @@ const BodyPerfumeSection = () => {
           style={{
             fontFamily: 'Playfair Display, Cormorant Garamond, serif',
             fontWeight: 400,
-            lineHeight: '1.26',
+            // slightly more relaxed leading for readability
+            lineHeight: '1.45',
             letterSpacing: '0.01em',
             wordBreak: 'break-word',
-            maxWidth: '20rem',
-            fontSize: 'clamp(0.72rem, 2.0vw, 0.88rem)'
+            // allow the paragraph to expand so text wraps naturally and is readable
+            maxWidth: '40rem',
+            // increase the clamp so body text is comfortable on small screens
+            fontSize: 'clamp(0.95rem, 2.4vw, 1.125rem)'
           }}
         >
           Experience the essence of luxury with our signature body perfume collection. Crafted with the finest ingredients for a long-lasting, captivating scent.

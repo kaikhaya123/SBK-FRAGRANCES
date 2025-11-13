@@ -70,7 +70,8 @@ export default function RootLayout({ children }) {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
       </head>
-      <body className="min-h-screen bg-white text-gray-900 font-sans">
+  {/* suppress hydration warnings at the root to avoid mismatches caused by browser extensions */}
+  <body suppressHydrationWarning className="min-h-screen bg-white text-gray-900 font-sans">
         <CartProvider>
           <ClientLayout>{children}</ClientLayout>
         </CartProvider>
