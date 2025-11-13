@@ -27,7 +27,23 @@ export default function CartNotification() {
             <div className="flex-1">
               <p className="text-sm font-semibold text-gray-900">{notification.message}</p>
               {notification.item && (
-                <p className="text-xs text-gray-500 mt-1 line-clamp-1">{notification.item.name}</p>
+                <div className="mt-1">
+                  <p className="text-xs text-gray-500 line-clamp-1">{notification.item.name}</p>
+                  {(notification.item.selectedSize || notification.item.size) && (
+                    <p className="text-xs text-gray-500 mt-1">Size: <span className="font-semibold text-gray-700">{notification.item.selectedSize || notification.item.size}</span></p>
+                  )}
+                  {notification.item.price !== undefined && (
+                    <p className="text-xs text-gray-500">Price: <span className="font-semibold text-gray-700">{(() => {
+                      // Use deterministic formatting to avoid SSR/CSR Intl differences
+                      const amount = Number(notification.item.price || 0).toFixed(2);
+                      const parts = amount.split('.');
+                      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                      const cur = notification.item.currency || 'ZAR';
+                      const symbol = (cur === 'ZAR' || cur === 'R') ? 'R' : cur;
+                      return `${symbol} ${parts.join('.')}`;
+                    })()}</span></p>
+                  )}
+                </div>
               )}
               <div className="mt-2 flex items-center gap-2">
                 <a href="/checkout" className="text-xs font-semibold text-rose-600 hover:underline">View Cart</a>

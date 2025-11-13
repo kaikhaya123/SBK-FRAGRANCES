@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -10,12 +11,14 @@ export function Navbar() {
   const [mobileCollectionsOpen, setMobileCollectionsOpen] = useState(false);
   const { getCartItemCount } = useCart();
   const cartCount = getCartItemCount();
+  const pathname = usePathname();
+  const hideNavButtons = pathname && pathname.startsWith('/collections');
 
   const seasons = [
-    { name: 'Summer Collection', link: '/collections/summer' },
-    { name: 'Winter Collection', link: '/collections/winter' },
-    { name: 'Spring Collection', link: '/collections/spring' },
-    { name: 'Autumn Collection', link: '/collections/autumn' }
+    { name: 'Summer', link: '/collections?season=Summer' },
+    { name: 'Winter', link: '/collections?season=Winter' },
+    { name: 'Spring', link: '/collections?season=Spring' },
+    { name: 'Autumn', link: '/collections?season=Autumn' }
   ];
 
   return (
@@ -27,29 +30,31 @@ export function Navbar() {
         </Link>
       </div>
 
-      {/* Checkout icon fixed at top right */}
-      <div className="absolute top-6 right-16 sm:right-8 z-50 select-none pointer-events-auto">
-        <Link href="/checkout" className="flex items-center justify-center w-10 h-10 bg-white/80 backdrop-blur rounded-full shadow-lg border border-gray-200 hover:bg-white/90 transition-all duration-300 relative">
+      {/* Checkout icon fixed at top right (larger & better positioned on mobile) */}
+      <div className="absolute top-4 right-4 sm:top-6 sm:right-16 z-50 select-none pointer-events-auto">
+        <Link href="/checkout" className="flex items-center justify-center w-12 h-12 sm:w-10 sm:h-10 bg-white/80 backdrop-blur rounded-full shadow-lg border border-gray-200 hover:bg-white/90 transition-all duration-300 relative px-2 py-2">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
           </svg>
           {cartCount > 0 && (
-            <span className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center -translate-y-1 translate-x-1">
+            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-sm">
               {cartCount}
             </span>
           )}
         </Link>
       </div>
 
-      {/* Hamburger for mobile */}
-      <button
-        className="sm:hidden absolute top-7 right-4 z-50 flex flex-col items-center justify-center w-10 h-10 bg-white/80 rounded-full shadow-lg border border-gray-200"
-        aria-label="Open menu"
-        onClick={() => setMenuOpen(true)}
-      >
-        <span className="block w-6 h-0.5 bg-black mb-1 rounded" />
-        <span className="block w-6 h-0.5 bg-black rounded" />
-      </button>
+      {/* Hamburger for mobile (hidden on collections pages) */}
+      {!hideNavButtons && (
+        <button
+          className="sm:hidden absolute top-7 right-4 z-50 flex flex-col items-center justify-center w-10 h-10 bg-white/80 rounded-full shadow-lg border border-gray-200"
+          aria-label="Open menu"
+          onClick={() => setMenuOpen(true)}
+        >
+          <span className="block w-6 h-0.5 bg-black mb-1 rounded" />
+          <span className="block w-6 h-0.5 bg-black rounded" />
+        </button>
+      )}
 
       {/* Mobile menu with conditional rendering */}
       <AnimatePresence>
@@ -104,8 +109,8 @@ export function Navbar() {
                 <div className={`${mobileCollectionsOpen ? 'block' : 'hidden'} pl-5 pb-1`}> 
                   {seasons.map((season) => (
                     <Link key={season.name} href={season.link} className="block py-3 text-gray-700 hover:text-[#4d3222] text-[15px] transition-colors" onClick={() => setMenuOpen(false)}>
-                      {season.name}
-                    </Link>
+                          {season.name}
+                        </Link>
                   ))}
                 </div>
               </div>
@@ -137,14 +142,15 @@ export function Navbar() {
                     <span className="text-sm">Facebook</span>
                   </a>
                 </div>
-              </div>
+                </div>
             </motion.nav>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Desktop Navigation */}
-      <div className="hidden sm:flex absolute top-8 left-1/2 transform -translate-x-1/2 z-40 w-full max-w-5xl flex-row items-center justify-center select-none pointer-events-auto">
+      {/* Desktop Navigation (hidden on collections pages) */}
+      {!hideNavButtons && (
+        <div className="hidden sm:flex absolute top-8 left-1/2 transform -translate-x-1/2 z-40 w-full max-w-5xl flex-row items-center justify-center select-none pointer-events-auto">
         <nav className="flex flex-row gap-6 md:gap-10 text-white text-sm md:text-base font-bold uppercase tracking-[0.18em] bg-transparent px-6 py-2 rounded-xl" style={{fontFamily: "Oswald, Bebas Neue, Montserrat, Arial, sans-serif"}}>
           <Link href="/" className="hover:text-black-300 transition">Home</Link>
           <Link href="/shop" className="hover:text-black-300 transition">Shop</Link>
@@ -152,7 +158,7 @@ export function Navbar() {
             <Link href="/collections" className="hover:text-black-300 transition flex items-center">Collections<span className="ml-1 text-xs">▾</span></Link>
             <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white/95 backdrop-blur-md rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
               {seasons.map((season) => (
-                <Link key={season.name} href={season.link} className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm first:rounded-t-lg last:rounded-b-lg transition-colors duration-300">
+                  <Link key={season.name} href={season.link} className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm first:rounded-t-lg last:rounded-b-lg transition-colors duration-300">
                   {season.name}
                 </Link>
               ))}
@@ -161,7 +167,8 @@ export function Navbar() {
           <Link href="/about" className="hover:text-black-300 transition">About</Link>
           <Link href="/contact" className="hover:text-black-300 transition">Contact</Link>
         </nav>
-      </div>
+        </div>
+      )}
     </>
   );
 }

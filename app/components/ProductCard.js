@@ -1,11 +1,26 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-export default function ProductCard({ product, index }) {
+export default function ProductCard({ product, index, onAdd, currency = 'ZAR', locale = 'en-ZA' }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [selectedSize, setSelectedSize] = useState('55ml');
+  const images = (product.images && product.images.length) ? product.images : (product.image ? [product.image] : []);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Deterministic formatter to avoid SSR/CSR Intl mismatches.
+  // Formats numbers with comma thousand separators and dot decimals, e.g. "R 1,234.50".
+  const formatPrice = (amount) => {
+    if (amount === undefined || amount === null) return '';
+    const fixed = Number(amount).toFixed(2);
+    // insert comma thousands separators
+    const parts = fixed.split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    const symbol = (currency === 'ZAR' || currency === 'R') ? 'R' : currency;
+    return `${symbol} ${parts.join('.')}`;
+  };
 
   const containerVariants = {
     initial: { opacity: 0, y: 20 },
@@ -18,6 +33,18 @@ export default function ProductCard({ product, index }) {
     hover: { scale: 1.08 },
     transition: { duration: 0.4, ease: 'easeOut' }
   };
+
+  // Auto-rotate images every 3s. Pause while hovered.
+  useEffect(() => {
+    if (!images.length) return undefined;
+    if (isHovered) return undefined; // pause rotation while hovered
+
+    const id = setInterval(() => {
+      setCurrentImageIndex(i => (i + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(id);
+  }, [images.length, isHovered]);
 
   const overlayVariants = {
     initial: { opacity: 0 },
@@ -48,7 +75,7 @@ export default function ProductCard({ product, index }) {
             <div
               className="w-full h-full bg-cover bg-center"
               style={{
-                backgroundImage: `url('${product.image}')`,
+                backgroundImage: `url('${images[currentImageIndex] || product.image}')`,
                 backgroundColor: product.color || '#f3f4f6'
               }}
             />
@@ -109,13 +136,29 @@ export default function ProductCard({ product, index }) {
               </span>
             )}
             <span className="text-2xl font-bold text-gray-900">
-              ${product.price}
+              {formatPrice(product.sizes && product.sizes[selectedSize] ? product.sizes[selectedSize] : product.price)}
             </span>
             {product.discount && (
               <span className="text-xs font-semibold text-red-600 bg-red-50 px-2 py-1 rounded">
                 Save {product.discount}%
               </span>
             )}
+          </div>
+
+          {/* Size selector */}
+          <div className="mb-4">
+            <p className="text-xs text-gray-500 mb-2 uppercase tracking-wider font-semibold">Size</p>
+            <div className="flex gap-2">
+              {['55ml','100ml'].map(size => (
+                <button
+                  key={size}
+                  onClick={() => setSelectedSize(size)}
+                  className={`px-3 py-1 border rounded-md text-sm ${selectedSize === size ? 'bg-black text-white border-black' : 'bg-white text-gray-800 border-gray-200'}`}
+                >
+                  {size}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Quick Features */}
@@ -136,7 +179,8 @@ export default function ProductCard({ product, index }) {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full py-3 bg-black text-white font-semibold uppercase tracking-widest text-sm rounded-none hover:bg-indigo-600 transition-colors duration-300 group/btn relative overflow-hidden"
+            onClick={() => onAdd ? onAdd(product, selectedSize) : null}
+            className={`w-full py-3 font-semibold uppercase tracking-widest text-sm rounded-none transition-colors duration-300 group/btn relative overflow-hidden ${product.stock === 0 ? 'bg-gray-300 text-gray-600 cursor-not-allowed' : 'bg-black text-white hover:bg-indigo-600'}`}
           >
             <span className="relative z-10">Add to Cart</span>
             <motion.div
@@ -150,8 +194,8 @@ export default function ProductCard({ product, index }) {
 
           {/* Stock Status */}
           {product.stock !== undefined && (
-            <p className={`text-xs mt-3 text-center font-semibold ${product.stock > 5 ? 'text-green-600' : 'text-red-600'}`}>
-              {product.stock > 0 ? `${product.stock} in stock` : 'Out of stock'}
+            <p className={`text-xs mt-3 text-center font-semibold ${product.stock > 0 ? 'text-green-600' : 'text-red-600'}`}>
+              {product.stock > 0 ? 'In stock' : 'Out of stock'}
             </p>
           )}
         </div>

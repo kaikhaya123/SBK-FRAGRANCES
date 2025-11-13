@@ -1,12 +1,13 @@
+"use client";
 import OptimizedImg from "./OptimizedImg";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 function VideoWithFallback({ src, poster, alt }) {
   const [error, setError] = useState(false);
   const videoRef = useRef(null);
 
   // Try to autoplay on mount
-  React.useEffect(() => {
+  useEffect(() => {
     const video = videoRef.current;
     if (video && !error) {
       const playPromise = video.play();
@@ -37,10 +38,8 @@ function VideoWithFallback({ src, poster, alt }) {
       playsInline
       poster={poster}
       onError={() => setError(true)}
-      loading="lazy"
     >
       <source src={src} type="video/mp4" />
-      Sorry, your browser does not support embedded videos.
     </video>
   );
 }
@@ -48,7 +47,7 @@ function VideoWithFallback({ src, poster, alt }) {
 const testimonials = [
   {
     name: "",
-    quote: "Absolutely in love with Amber Nights! Fast delivery and beautiful packaging.",
+    quote: "Absolutely in love with the fragrance smell! Fast delivery and beautiful packaging.",
     video: "/videos/3428863531774445170.mp4"
   },
   {
@@ -101,14 +100,7 @@ export default function Testimonials() {
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"/>
                 <VideoWithFallback src={t.video} poster="/images/webp/ssstik.io_1762181265941.webp" alt={t.name + ' testimonial'} />
                 
-                {/* Play Button Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-100 group-hover:opacity-0 transition-opacity duration-500">
-                  <span className="w-16 h-16 flex items-center justify-center rounded-full bg-white/90 text-[#4d3222] shadow-lg transform transition-transform group-hover:scale-110">
-                    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z"/>
-                    </svg>
-                  </span>
-                </div>
+                {/* Play button removed to show only media (video or image fallback) */}
               </div>
 
               {/* Quote Section */}

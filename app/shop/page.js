@@ -5,6 +5,58 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 const MotionLink = motion(Link);
 import { useCart } from '../context/CartContext';
+import ProductCard from '../components/ProductCard';
+
+// List row for mobile / list view — uses local state for size selection
+function ListProductRow({ fragrance, onAdd }) {
+  const [selectedSize, setSelectedSize] = React.useState('55ml');
+  const sizes = fragrance.sizes || { '55ml': fragrance.price, '100ml': Math.round(fragrance.price * 1.7) };
+  const price = sizes[selectedSize] || fragrance.price;
+
+  return (
+    <div className="w-full bg-white border border-gray-100 rounded-lg p-4 flex flex-col sm:flex-row items-center gap-4">
+      <div className="w-full sm:w-40 h-36 bg-cover bg-center rounded-md shadow-sm flex-shrink-0" style={{ backgroundImage: `url('${fragrance.image}')` }} />
+
+      <div className="flex-1 w-full">
+        <div className="flex items-start justify-between">
+          <div>
+            <h4 className="text-lg font-semibold text-gray-900">{fragrance.name}</h4>
+            <p className="text-sm text-gray-600 mt-1 line-clamp-2">{fragrance.topNotes || fragrance.description || ''}</p>
+          </div>
+          <div className="text-right">
+            <div className="text-2xl font-bold">R {Number(price).toFixed(2)}</div>
+            <div className={`text-xs font-semibold mt-1 ${fragrance.stock > 0 ? 'text-green-600' : 'text-red-600'}`}>
+              {fragrance.stock > 0 ? 'In stock' : 'Out of stock'}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div className="flex gap-2">
+            {['55ml','100ml'].map(sz => (
+              <button
+                key={sz}
+                onClick={() => setSelectedSize(sz)}
+                className={`px-3 py-1 border rounded-md text-sm ${selectedSize === sz ? 'bg-black text-white border-black' : 'bg-white text-gray-800 border-gray-200'}`}
+              >
+                {sz}
+              </button>
+            ))}
+          </div>
+
+          <div className="flex-shrink-0 w-full sm:w-auto">
+            <button
+              onClick={() => onAdd(fragrance, selectedSize)}
+              className={`w-full sm:w-auto px-4 py-2 bg-black text-white font-semibold rounded-md ${fragrance.stock === 0 ? 'opacity-60 cursor-not-allowed' : ''}`}
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 // Sample fragrance data (prices in South African Rand - ZAR)
 const allFragrances = [
@@ -59,35 +111,30 @@ export default function ShopPage() {
   const [selectedType, setSelectedType] = useState('all');
   const [viewMode, setViewMode] = useState('grid');
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedSizes, setSelectedSizes] = useState({});
   const itemsPerPage = 9;
 
-  // Size options for fragrances
-  const sizeOptions = [
-    { id: '55ml', label: '55ml', inStock: true },
-    { id: '100ml', label: '100ml', inStock: true }
-  ];
-
-  // Handle size selection
-  const handleSizeSelect = (fragranceId, sizeId) => {
-    setSelectedSizes(prev => ({
-      ...prev,
-      [fragranceId]: sizeId
-    }));
-  };
-
   // Handle Add to Cart
-  const handleAddToCart = (fragrance) => {
-    const selectedSize = selectedSizes[fragrance.id] || '55ml';
-    addToCart(fragrance, selectedSize);
+  const handleAddToCart = (fragrance, size = '55ml') => {
+    const price = fragrance.sizes && fragrance.sizes[size] ? fragrance.sizes[size] : fragrance.price;
 
-    // Show success message
-    // Use in-app cart notification (visible on cart/checkout page)
-    notify(`${fragrance.name} (${selectedSize}) added to cart.`, {
+    const fragranceForCart = {
+      id: fragrance.id,
+      name: fragrance.name,
+      price,
+      image: fragrance.image,
+      type: fragrance.type
+    };
+
+    addToCart(fragranceForCart, size);
+
+    notify(`${fragrance.name} (${size}) added to cart.`, {
       id: fragrance.id,
       name: fragrance.name,
       image: fragrance.image,
-      size: selectedSize
+      selectedSize: size,
+      price,
+      currency: 'ZAR',
+      locale: 'en-ZA'
     });
   };
 
@@ -398,7 +445,11 @@ export default function ShopPage() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
                     transition={{ duration: 0.3 }}
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                    className={
+                      viewMode === 'grid'
+                        ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'
+                        : 'flex flex-col gap-4'
+                    }
                   >
                     {currentFragrances.map((fragrance, index) => (
                       <motion.div
@@ -408,96 +459,24 @@ export default function ShopPage() {
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.05 }}
                       >
-                        <div className="bg-white border border-gray-300 overflow-hidden hover:shadow-md transition-shadow duration-300">
-                          {/* Product Image */}
-                          <div className="relative h-80 bg-gray-100 border-b border-gray-300 overflow-hidden group">
-                            <motion.div
-                              whileHover={{ scale: 1.05 }}
-                              transition={{ duration: 0.4 }}
-                              className="w-full h-full"
-                              style={{
-                                backgroundImage: `url('${fragrance.image}')`,
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center'
-                              }}
-                            />
-
-                            {/* SALE Badge */}
-                            {/* Removed - no original prices */}
-                          </div>
-
-                          {/* Product Info */}
-                          <div className="p-4 text-center">
-                            {/* Rating Stars */}
-                            <div className="flex justify-center gap-1 mb-3">
-                              {[...Array(5)].map((_, i) => (
-                                <span
-                                  key={i}
-                                  className={`text-lg ${i < fragrance.rating ? 'text-orange-400' : 'text-gray-300'}`}
-                                >
-                                  ★
-                                </span>
-                              ))}
-                            </div>
-
-                            {/* Product Name */}
-                            <h3 className="text-sm font-semibold text-gray-900 mb-1 line-clamp-2 h-10">
-                              {fragrance.name}
-                            </h3>
-
-                            {/* Price */}
-                            <div className="flex items-center justify-center gap-2 mb-3">
-                              <p className="text-base font-bold text-gray-900">
-                                R{fragrance.price.toLocaleString('en-ZA')}
-                              </p>
-                            </div>
-
-                            {/* Size Selection */}
-                            <div className="mb-3">
-                              <p className="text-xs font-semibold text-gray-600 uppercase mb-2">Size</p>
-                              <div className="flex gap-2 justify-center">
-                                {sizeOptions.map((size) => (
-                                  <button
-                                    key={size.id}
-                                    onClick={() => handleSizeSelect(fragrance.id, size.id)}
-                                    disabled={!size.inStock}
-                                    className={`px-3 py-1 text-xs font-bold border-2 transition-all rounded ${
-                                      selectedSizes[fragrance.id] === size.id
-                                        ? 'bg-black text-white border-black'
-                                        : size.inStock
-                                        ? 'border-gray-300 text-gray-900 hover:border-black'
-                                        : 'border-gray-200 text-gray-300 cursor-not-allowed'
-                                    }`}
-                                  >
-                                    {size.label}
-                                  </button>
-                                ))}
-                              </div>
-                            </div>
-
-                            {/* Stock Status */}
-                            <div className="mb-3">
-                              <p className={`text-xs font-semibold ${fragrance.stock > 0 ? 'text-green-600' : 'text-red-600'}`}>
-                                {fragrance.stock > 0 ? 'In stock' : 'Out of Stock'}
-                              </p>
-                            </div>
-
-                            {/* Add to Cart Button */}
-                            <motion.button
-                              whileHover={{ scale: 1.02 }}
-                              whileTap={{ scale: 0.98 }}
-                              onClick={() => handleAddToCart(fragrance)}
-                              disabled={fragrance.stock === 0}
-                              className={`w-full py-2 px-3 font-bold uppercase tracking-widest text-xs transition-all ${
-                                fragrance.stock > 0
-                                  ? 'bg-black text-white hover:bg-gray-800'
-                                  : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                              }`}
-                            >
-                              {fragrance.stock > 0 ? 'Add to Cart' : 'Out of Stock'}
-                            </motion.button>
-                          </div>
-                        </div>
+                        {viewMode === 'grid' ? (
+                          <ProductCard
+                            product={{
+                              ...fragrance,
+                              sizes: fragrance.sizes || { '55ml': fragrance.price, '100ml': Math.round(fragrance.price * 1.7) }
+                            }}
+                            index={index}
+                            onAdd={handleAddToCart}
+                          />
+                        ) : (
+                          <ListProductRow
+                            fragrance={{
+                              ...fragrance,
+                              sizes: fragrance.sizes || { '55ml': fragrance.price, '100ml': Math.round(fragrance.price * 1.7) }
+                            }}
+                            onAdd={handleAddToCart}
+                          />
+                        )}
                       </motion.div>
                     ))}
                   </motion.div>
