@@ -30,8 +30,13 @@ export function Navbar() {
         </Link>
       </div>
 
-      {/* Checkout icon fixed at top right (larger & better positioned on mobile) */}
-      <div className="absolute top-4 right-4 sm:top-6 sm:right-16 z-50 select-none pointer-events-auto">
+      {/* Checkout icon fixed at top right (larger & better positioned on mobile).
+          When the mobile menu is open we shift the cart button to sit just to the right
+          of the sliding sidebar so it remains visible and clickable. */}
+      <div
+        className="fixed top-4 sm:top-6 select-none pointer-events-auto z-60 transition-all duration-200"
+        style={menuOpen ? { left: '16rem', right: 'auto' } : { right: '1rem', left: 'auto' }}
+      >
         <Link href="/checkout" className="flex items-center justify-center w-12 h-12 sm:w-10 sm:h-10 bg-white/80 backdrop-blur rounded-full shadow-lg border border-gray-200 hover:bg-white/90 transition-all duration-300 relative px-2 py-2">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
