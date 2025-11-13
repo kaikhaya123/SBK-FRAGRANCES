@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useMemo, useEffect } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
 import ProductCard from '../components/ProductCard';
 import { useCart } from '../context/CartContext';
 import placeholderImage from '../utils/placeholder-image';
@@ -28,8 +27,6 @@ const SAMPLE_PRODUCTS = [
 export default function Collections() {
   const [activeSeason, setActiveSeason] = useState('Summer');
   const { addToCart, notify } = useCart();
-  const searchParams = useSearchParams();
-  const router = useRouter();
 
   const products = useMemo(() => SAMPLE_PRODUCTS.filter(p => p.season.toLowerCase() === activeSeason.toLowerCase()), [activeSeason]);
   // choose a hero image: prefer the first product's first image, then product.image, then fallback
@@ -91,17 +88,18 @@ export default function Collections() {
     })();
   }, [productHero, activeSeason]);
 
-  // If the URL contains a `season` query param, use it to set the active season.
+  // If the URL contains a `season` query param, read it on the client and set the active season.
   useEffect(() => {
     try {
-      const seasonParam = searchParams ? searchParams.get('season') : null;
+      const params = new URLSearchParams(window.location.search || '');
+      const seasonParam = params.get('season');
       if (seasonParam && SEASONS.includes(seasonParam)) {
         setActiveSeason(seasonParam);
       }
     } catch (e) {
       // ignore
     }
-  }, [searchParams]);
+  }, []);
 
   const handleAdd = (product, size = '55ml') => {
     // Map our product shape to CartContext expected fragrance object
