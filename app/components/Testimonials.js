@@ -78,6 +78,24 @@ export default function Testimonials() {
   useEffect(() => {
     if (!window.IntersectionObserver) return;
 
+    // Prefetch observer: start loading videos when they are near the viewport
+    const prefetchObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const vid = entry.target;
+        try {
+          if (entry.isIntersecting) {
+            // request the browser to begin downloading media
+            try { vid.preload = 'auto'; } catch (e) {}
+            try { vid.load(); } catch (e) {}
+            prefetchObserver.unobserve(vid);
+          }
+        } catch (e) {
+          // ignore
+        }
+      });
+    }, { rootMargin: '400px', threshold: 0 });
+
+    // Main play/pause observer
     const handleIntersection = (entries) => {
       entries.forEach(entry => {
         const vid = entry.target;
@@ -97,9 +115,12 @@ export default function Testimonials() {
     };
 
     const observer = new IntersectionObserver(handleIntersection, { threshold: [0, 0.25, 0.5, 0.75, 1] });
-    videoRefs.current.forEach(v => { if (v) observer.observe(v); });
+    videoRefs.current.forEach(v => { if (v) { prefetchObserver.observe(v); observer.observe(v); } });
 
-    return () => observer.disconnect();
+    return () => {
+      prefetchObserver.disconnect();
+      observer.disconnect();
+    };
   }, []);
 
   return (

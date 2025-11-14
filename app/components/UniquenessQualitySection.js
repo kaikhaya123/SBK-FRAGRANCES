@@ -10,6 +10,7 @@ function RevealImage({ src, alt, direction = 'vertical', offsetFrom = null, offs
   const [inView, setInView] = useState(false);
   const [progress, setProgress] = useState(0);
   const lockedRef = useRef(false);
+  const [prefetched, setPrefetched] = useState(false);
 
   // Compute progress (0..1) based on element position in viewport.
   function computeProgress() {
@@ -28,6 +29,17 @@ function RevealImage({ src, alt, direction = 'vertical', offsetFrom = null, offs
   useEffect(() => {
     const el = elRef.current;
     if (!el) return;
+
+    // Prefetch observer: start loading the media early when element is near the viewport
+    const prefetchObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setPrefetched(true);
+          prefetchObserver.unobserve(el);
+        }
+      });
+    }, { rootMargin: '400px', threshold: 0 });
+    prefetchObserver.observe(el);
 
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -64,6 +76,7 @@ function RevealImage({ src, alt, direction = 'vertical', offsetFrom = null, offs
 
     return () => {
       io.disconnect();
+      prefetchObserver.disconnect();
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
   }, [loop]);
@@ -116,6 +129,8 @@ function RevealImage({ src, alt, direction = 'vertical', offsetFrom = null, offs
           src={src}
           alt={alt}
           className="w-full h-full object-cover"
+          loading={prefetched ? 'eager' : 'lazy'}
+          priority={prefetched}
           // ensure image rendering stays high quality
           style={{
             imageRendering: 'auto',
