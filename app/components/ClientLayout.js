@@ -7,7 +7,6 @@ import Loading from './Loading';
 import { motion, AnimatePresence } from 'framer-motion';
 import CartNotification from './CartNotification';
 import { useEffect } from 'react';
-import dynamic from 'next/dynamic';
 
 // CacheManager is a small client-side UI for clearing SW caches/localStorage.
 const CacheManager = dynamic(() => import('./CacheManager'), { ssr: false });
