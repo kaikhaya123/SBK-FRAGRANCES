@@ -1,6 +1,6 @@
 "use client";
 import OptimizedImg from "./OptimizedImg";
-import BentoGallery from "./BentoGallery";
+import MasonryCaptionGrid from "./MasonryCaptionGrid";
 import React, { useRef, useState, useEffect } from "react";
 
 function VideoWithFallback({ src, poster, alt }) {
@@ -126,7 +126,17 @@ export default function Testimonials() {
         </div>
       {/* Image Testimonials Gallery */}
         <div className="mt-16 md:mt-24">
-          <BentoGallery images={imageTestimonials.map((t) => t.image)} />
+          {/* Masonry caption grid: gapless, preserves original proportions, mobile-friendly */}
+          <MasonryCaptionGrid
+            items={imageTestimonials.map((t, i) => ({
+              src: t.image,
+              alt: `Testimonial image ${i + 1}`,
+              title: t.title || '',
+              subtitle: t.subtitle || ''
+            }))}
+            columns={{ default: 1, sm: 2, md: 3, lg: 4 }}
+            overlay="hover"
+          />
         </div>
       {/* Elegant CTA Section */}
         <div className="text-center mt-16 md:mt-24">
