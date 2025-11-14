@@ -66,7 +66,7 @@ export default function OurPhilosophy() {
           <div className="w-full max-w-xl rounded-xl overflow-hidden shadow-2xl ring-1 ring-black/5 h-[520px] md:h-[640px]">
             <video
               ref={videoRef}
-              src="/videos/f31787fdf696c464405dbcda7cb2239d.mp4"
+              src="/videos/f31787fdf696c464405dbcda7cb2239d.webm"
               className="w-full h-full object-cover object-center"
               muted
               autoPlay
