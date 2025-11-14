@@ -9,7 +9,7 @@ const SEASONS = ['Spring', 'Summer', 'Autumn', 'Winter'];
 
 const SAMPLE_PRODUCTS = [
   // Summer collection as requested (55ml = R350 for all; Gentlemen 100ml = R600)
-  { id: 'gentlemen', name: 'Gentlemen', price: 350, sizes: { '55ml': 350, '100ml': 600 }, image: '/images/ssstik.io_1762256007905.jpeg', category: 'Aqua', features: ['Sea Salt','Driftwood'], season: 'Summer', stock: 9, description: 'Fresh aquatic scent for modern men' },
+  { id: 'gentlemen', name: 'Gentlemen', price: 350, sizes: { '55ml': 350, '100ml': 600 }, image: '/images/ssstik.io_1762256007905.webp', category: 'Aqua', features: ['Sea Salt','Driftwood'], season: 'Summer', stock: 9, description: 'Fresh aquatic scent for modern men' },
   { id: 'shemmiring-flowers', name: 'Shemmiring Flowers', price: 350, sizes: { '55ml': 350, '100ml': 595 }, image: '/images/Shemmiring Flowers.png', category: 'Warm', features: ['Amber','Sandalwood'], season: 'Summer', stock: 11, description: 'Warm floral with a sensual heart' },
   { id: 'nude', name: 'Nude', price: 350, sizes: { '55ml': 350, '100ml': 595 }, image: '/images/Nude.jpg', category: 'Fresh', features: ['Marine','Lily'], season: 'Summer', stock: 2, description: 'Light fresh body fragrance' },
   { id: 'blossom-love', name: 'Blossom Love', price: 350, sizes: { '55ml': 350, '100ml': 595 }, image: '/images/Blossom Love.jpg', category: 'Floral', features: ['Peach','Jasmine'], season: 'Summer', stock: 14, description: 'Fruity floral for sunny days' },

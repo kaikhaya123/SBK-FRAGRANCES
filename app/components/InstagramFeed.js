@@ -8,8 +8,7 @@ import OptimizedImg from "./OptimizedImg";
 const tiktokContent = [
   {
     type: 'video',
-    src: "/videos/ssstik.io_@sbk_fragrances_1762514013750.mp4",
-    thumbnail: "/images/webp/ssstik.io_1762337981863.webp",
+    src: "/videos/ssstik.mp4",
     alt: "Amber Nights testimonial",
     title: "Gentlemen Fragrance",
     views: "10.5K"

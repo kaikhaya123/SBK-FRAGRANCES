@@ -1,5 +1,5 @@
 const images = [
-  '/gallery1.jpg',
+  '/images/ssstik.io_1762189144483.jpeg',
   '/gallery2.jpg',
   '/gallery3.jpg',
   '/gallery4.jpg',

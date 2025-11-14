@@ -36,7 +36,7 @@ export default function About() {
           <div className="lg:col-span-2 bg-transparent rounded-xl overflow-hidden">
             <div className="relative bg-[#0b0b0b] rounded-xl shadow-lg p-8 flex flex-col md:flex-row gap-8">
               <div className="md:w-1/2 w-full rounded-lg overflow-hidden">
-                <img src="/images/ssstik.io_1762177591045.jpeg" alt="Featured" className="w-full h-full object-cover rounded-lg" style={{minHeight: 320}} />
+                <img src="/images/ssstik.io_1762177591045.webp" alt="Featured" className="w-full h-full object-cover rounded-lg" style={{minHeight: 320}} />
               </div>
               <div className="md:w-1/2 w-full flex flex-col justify-center">
                 <span className="white-[#d9a84d] font-cormorant text-sm uppercase tracking-widest mb-2">Our Legacy</span>
