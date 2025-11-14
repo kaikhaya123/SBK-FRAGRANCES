@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
@@ -423,25 +424,25 @@ export default function ResellerProgram() {
           </p>
 
           <div className="flex justify-center items-center mb-6 w-full">
-            <motion.a
-              href="mailto:hello@sbkfragrances.com"
-              aria-label="Contact us"
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              viewport={{ once: true }}
-              className="mx-auto w-max inline-flex items-center justify-center px-4 py-2 sm:px-8 sm:py-3 bg-black text-white rounded-full font-semibold shadow-lg hover:bg-black/90 transition-colors duration-300"
-            >
-              {/* Phone icon from public/icons/telephone.png */}
-              <span className="mr-3 flex-shrink-0" aria-hidden="true">
-                {getSrc('/icons/telephone.png') ? (
-                  <Image src={getSrc('/icons/telephone.png')} alt="" width={20} height={20} className="w-5 h-5 filter invert" />
-                ) : (
-                  <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 16.5v3a2.5 2.5 0 01-2.5 2.5C9.6 22 2 14.4 2 4.5 2 2 4 0 6.5 0h3A2.5 2.5 0 0112 2.5v3A2.5 2.5 0 019.5 8H6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                )}
-              </span>
-              <span>Contact Us</span>
-            </motion.a>
+            <Link href="/contact" aria-label="Contact us" legacyBehavior>
+              <motion.a
+                initial={{ opacity: 0, y: 8 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                viewport={{ once: true }}
+                className="mx-auto w-max inline-flex items-center justify-center px-4 py-2 sm:px-8 sm:py-3 bg-black text-white rounded-full font-semibold shadow-lg hover:bg-black/90 transition-colors duration-300"
+              >
+                {/* Phone icon from public/icons/telephone.png */}
+                <span className="mr-3 flex-shrink-0" aria-hidden="true">
+                  {getSrc('/icons/telephone.png') ? (
+                    <Image src={getSrc('/icons/telephone.png')} alt="" width={20} height={20} className="w-5 h-5 filter invert" />
+                  ) : (
+                    <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 16.5v3a2.5 2.5 0 01-2.5 2.5C9.6 22 2 14.4 2 4.5 2 2 4 0 6.5 0h3A2.5 2.5 0 0112 2.5v3A2.5 2.5 0 019.5 8H6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  )}
+                </span>
+                <span>Contact Us</span>
+              </motion.a>
+            </Link>
           </div>
 
           <p className="text-sm text-[#FAF9F6]/80">

@@ -112,6 +112,85 @@ export default function ClientLayout({ children }) {
     };
   }, []);
 
+  useEffect(() => {
+    // Development-only: guard against third-party scripts that call
+    // `document.querySelector(...).addEventListener(...)` when the
+    // selector doesn't exist. Instead of crashing, return a tiny proxy
+    // object with safe no-op handlers and a helpful console warning.
+    if (process.env.NODE_ENV === 'production') return;
+
+    const originalQuery = Document.prototype.querySelector;
+
+    function makeDummyFor(selector) {
+      const noop = () => {};
+      const dummy = new Proxy({}, {
+        get(_, prop) {
+          if (prop === 'addEventListener') return (...args) => {
+            // eslint-disable-next-line no-console
+            console.warn('[SAFE-QS] addEventListener called for missing selector', selector, args[0]);
+          };
+          if (prop === 'removeEventListener') return noop;
+          if (prop === 'classList') return { add: noop, remove: noop, contains: () => false };
+          if (prop === 'querySelector') return () => null;
+          if (prop === 'appendChild' || prop === 'remove' || prop === 'append') return noop;
+          return noop;
+        }
+      });
+      return dummy;
+    }
+
+    Document.prototype.querySelector = function (selector) {
+      try {
+        const res = originalQuery.call(this, selector);
+        if (res) return res;
+        return makeDummyFor(selector);
+      } catch (e) {
+        return originalQuery.call(this, selector);
+      }
+    };
+
+    return () => {
+      Document.prototype.querySelector = originalQuery;
+    };
+  }, []);
+
+  useEffect(() => {
+    // Development-only: guard Node.insertBefore to surface and avoid the
+    // "parameter 2 is not of type 'Node'" TypeError during dev when
+    // third-party/compiled code passes an invalid reference node.
+    if (process.env.NODE_ENV === 'production') return;
+
+    const origInsertBefore = Node.prototype.insertBefore;
+
+    function isNodeLike(x) {
+      return x === null || (x && typeof x.nodeType === 'number');
+    }
+
+    Node.prototype.insertBefore = function (newNode, referenceNode) {
+      try {
+        if (!isNodeLike(referenceNode)) {
+          // eslint-disable-next-line no-console
+          console.warn('[SAFE-INSERT] insertBefore called with invalid referenceNode:', referenceNode, new Error().stack);
+          // coerce to null so insertBefore behaves like appendChild
+          referenceNode = null;
+        }
+        return origInsertBefore.call(this, newNode, referenceNode);
+      } catch (err) {
+        // eslint-disable-next-line no-console
+        console.error('[SAFE-INSERT] insertBefore threw — attempting fallback:', err, { newNode, referenceNode });
+        try {
+          return origInsertBefore.call(this, newNode, null);
+        } catch (e) {
+          throw err;
+        }
+      }
+    };
+
+    return () => {
+      Node.prototype.insertBefore = origInsertBefore;
+    };
+  }, []);
+
   return (
     <AnimatePresence mode="wait">
       <motion.div

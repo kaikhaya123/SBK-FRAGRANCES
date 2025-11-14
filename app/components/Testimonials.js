@@ -64,7 +64,7 @@ const testimonials = [
   {
     name: "",
     quote: "The scent lasts all day. Especially the Gentlemen perfume!",
-    video: "/videos/Adobe Express - 3428863531774445170.mp4"
+    video: "/videos/WhatsApp Video 2025-11-14 at 11.00.02.mp4"
   },
   {
     name: "",

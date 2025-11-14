@@ -15,7 +15,7 @@ export default function NewsletterSignup() {
     <section
       className="relative bg-center bg-cover py-8 px-3 sm:py-10 sm:px-4 md:py-12 md:px-6 my-8 sm:my-10 md:my-12 overflow-hidden"
       style={{
-        backgroundImage: "url('/images/webp/front-view-men-perfume-branch-rotten-wood-dark-blue-background.webp')",
+        backgroundImage: "url('/images/front-view-men-perfume-branch-rotten-wood-dark-blue-background.webp')",
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center',

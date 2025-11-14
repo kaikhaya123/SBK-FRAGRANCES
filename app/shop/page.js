@@ -306,7 +306,7 @@ export default function ShopPage() {
               // try to infer diffusers by type or tag; fallback to 0
               const diffCount = allFragrances.filter(f => (f.type && f.type.toLowerCase().includes('diffuser')) || (f.tags && f.tags.includes('diffuser'))).length || 0;
               const cards = [
-                { key: 'men', title: 'For Him', subtitle: 'Bold. Sophisticated. Timeless.', img: '/images/download (1).jpg', stat: himCount, statLabel: 'Fragrances', cta: 'Explore Collection' },
+                { key: 'men', title: 'For Him', subtitle: 'Bold. Sophisticated. Timeless.', img: '/images/download (1) (1).jpg', stat: himCount, statLabel: 'Fragrances', cta: 'Explore Collection' },
                 { key: 'women', title: 'For Her', subtitle: 'Elegant. Mesmerizing. Unforgettable.', img: '/images/Using Aromatherapy to Create Memories _ Aromatherapy Associates.jpg', stat: herCount, statLabel: 'Fragrances', cta: 'Explore Collection' },
                 { key: 'diffusers', title: 'Defusers', subtitle: 'Fresh. Long-lasting. Popular.', img: '/images/Luxury Scent Car Diffuser - Our Way.jpg', stat: diffCount, statLabel: 'Items', cta: 'Explore Collection' }
               ];
