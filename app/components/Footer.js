@@ -36,21 +36,21 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <h3 className="font-semibold text-lg mb-4 text-gray-800">Shop</h3>
             <ul className="space-y-2.5 text-sm text-gray-600">
-              <li><a href="/shop" className="hover:text-gray-900 transition-colors">Shop All</a></li>
-              <li><a href="/collections" className="hover:text-gray-900 transition-colors">Collections</a></li>
-              <li><a href="/bestsellers" className="hover:text-gray-900 transition-colors">Best Sellers</a></li>
-              <li><a href="/about" className="hover:text-gray-900 transition-colors">About Us</a></li>
-              <li><a href="/faq" className="hover:text-gray-900 transition-colors">FAQ</a></li>
+              <li><Link href="/shop" legacyBehavior><a className="hover:text-gray-900 transition-colors">Shop All</a></Link></li>
+              <li><Link href="/collections" legacyBehavior><a className="hover:text-gray-900 transition-colors">Collections</a></Link></li>
+              <li><Link href="/bestsellers" legacyBehavior><a className="hover:text-gray-900 transition-colors">Best Sellers</a></Link></li>
+              <li><Link href="/about" legacyBehavior><a className="hover:text-gray-900 transition-colors">About Us</a></Link></li>
+              <li><Link href="/faq" legacyBehavior><a className="hover:text-gray-900 transition-colors">FAQ</a></Link></li>
             </ul>
           </div>
           <div className="lg:col-span-1">
             <h3 className="font-semibold text-lg mb-4 text-gray-800">Customer Care</h3>
             <ul className="space-y-2.5 text-sm text-gray-600">
-              <li><a href="/contact" className="hover:text-gray-900 transition-colors">Contact</a></li>
-              <li><a href="/support" className="hover:text-gray-900 transition-colors">Support</a></li>
-              <li><a href="/shipping" className="hover:text-gray-900 transition-colors">Shipping Info</a></li>
-              <li><a href="/returns" className="hover:text-gray-900 transition-colors">Returns</a></li>
-              <li><a href="/sitemap" className="hover:text-gray-900 transition-colors">Sitemap</a></li>
+              <li><Link href="/contact" legacyBehavior><a className="hover:text-gray-900 transition-colors">Contact</a></Link></li>
+              <li><Link href="/support" legacyBehavior><a className="hover:text-gray-900 transition-colors">Support</a></Link></li>
+              <li><Link href="/shipping" legacyBehavior><a className="hover:text-gray-900 transition-colors">Shipping Info</a></Link></li>
+              <li><Link href="/returns" legacyBehavior><a className="hover:text-gray-900 transition-colors">Returns</a></Link></li>
+              <li><Link href="/sitemap" legacyBehavior><a className="hover:text-gray-900 transition-colors">Sitemap</a></Link></li>
             </ul>
           </div>
           <div className="lg:col-span-1">
@@ -132,9 +132,9 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between text-xs text-gray-500">
             <div className="mb-4 md:mb-0 text-center md:text-left">&copy; {new Date().getFullYear()} SBK Fragrances. All rights reserved.</div>
             <div className="flex gap-6 justify-center md:justify-end text-sm">
-              <a href="/privacy-policy" className="hover:text-gray-900 transition-colors">Privacy Policy</a>
-              <a href="/terms" className="hover:text-gray-900 transition-colors">Terms</a>
-              <a href="/contact" className="hover:text-gray-900 transition-colors">Contact</a>
+              <Link href="/privacy-policy" legacyBehavior><a className="hover:text-gray-900 transition-colors">Privacy Policy</a></Link>
+              <Link href="/terms" legacyBehavior><a className="hover:text-gray-900 transition-colors">Terms</a></Link>
+              <Link href="/contact" legacyBehavior><a className="hover:text-gray-900 transition-colors">Contact</a></Link>
             </div>
           </div>
         </div>
