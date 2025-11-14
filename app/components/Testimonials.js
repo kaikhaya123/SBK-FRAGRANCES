@@ -1,5 +1,6 @@
 "use client";
 import OptimizedImg from "./OptimizedImg";
+import BentoGallery from "./BentoGallery";
 import React, { useRef, useState, useEffect } from "react";
 
 function VideoWithFallback({ src, poster, alt }) {
@@ -18,9 +19,19 @@ function VideoWithFallback({ src, poster, alt }) {
   }, [error]);
 
   if (error) {
+    // If no poster was provided, avoid rendering Next/Image with an empty src
+    if (!poster) {
+      return (
+        <div className="w-full h-full bg-gray-100 flex items-center justify-center text-gray-400">
+          <span className="text-sm">No preview available</span>
+        </div>
+      );
+    }
+
+    const posterSrc = poster.replace('.jpg', '.webp').replace('.jpeg', '.webp');
     return (
       <OptimizedImg
-        src={poster.replace('.jpg', '.webp').replace('.jpeg', '.webp')}
+        src={posterSrc}
         alt={alt}
         width={400}
         height={400}
@@ -48,26 +59,26 @@ const testimonials = [
   {
     name: "",
     quote: "Absolutely in love with the fragrance smell! Fast delivery and beautiful packaging.",
-    video: "/videos/3428863531774445170.mp4"
+    video: "/videos/3690166990828639792.mp4"
   },
   {
     name: "",
     quote: "The scent lasts all day. Especially the Gentlemen perfume!",
-    video: "/videos/3546983089663586688.mp4"
+    video: "/videos/Adobe Express - 3428863531774445170.mp4"
   },
   {
     name: "",
     quote: "Great service and expert advice. Found my new signature scent!",
-    video: "/videos/3690166990828639792.mp4"
+    video: "/videos/ssstik.mp4"
   }
 ];
 const imageTestimonials = [
-  { image: "/images/webp/ssstik.io_1762181265941.webp" },
-  { image: "/images/webp/ssstik.io_1762180691415.webp" },
-  { image: "/images/webp/ssstik.io_1762189144483.webp" },
-  { image: "/images/webp/ssstik.io_1762191817591.webp" },
-  { image: "/images/webp/ssstik.io_1762191439675_3.webp" },
-  { image: "/images/webp/ssstik.io_1762191179050_2.webp" }
+  { image: "/images/ssstik.io_1762180691415.jpeg" },
+  { image: "/images/ssstik.io_1762181265941.jpeg" },
+  { image: "/images/ssstik.io_1762191817591.jpeg" },
+  { image: "/images/ssstik.io_1762191179050_2.webp" },
+  { image: "/images/ssstik.io_1762191439675_3.jpeg" },
+  { image: "/images/ssstik.io_1762189144483.jpeg" }
 ];
 export default function Testimonials() {
 
@@ -98,7 +109,7 @@ export default function Testimonials() {
               {/* Video Container */}
               <div className="aspect-[9/16] relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"/>
-                <VideoWithFallback src={t.video} poster="/images/webp/ssstik.io_1762181265941.webp" alt={t.name + ' testimonial'} />
+                <VideoWithFallback src={t.video} poster="" alt={t.name + ' testimonial'} />
                 
                 {/* Play button removed to show only media (video or image fallback) */}
               </div>
@@ -115,23 +126,7 @@ export default function Testimonials() {
         </div>
       {/* Image Testimonials Gallery */}
         <div className="mt-16 md:mt-24">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
-            {imageTestimonials.map((t, idx) => (
-              <div 
-                key={idx} 
-                className="group relative aspect-square rounded-xl overflow-hidden transform transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"/>
-                <OptimizedImg
-                  src={t.image.replace('.jpeg', '.webp')}
-                  alt="Customer testimonial"
-                  width={400}
-                  height={400}
-                  className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
-                />
-              </div>
-            ))}
-          </div>
+          <BentoGallery images={imageTestimonials.map((t) => t.image)} />
         </div>
       {/* Elegant CTA Section */}
         <div className="text-center mt-16 md:mt-24">

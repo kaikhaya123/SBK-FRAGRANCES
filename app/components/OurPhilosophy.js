@@ -2,6 +2,7 @@
 import React, { useRef, useEffect } from 'react';
 import AnimatedSection from './AnimatedSection';
 import OptimizedImg from './OptimizedImg';
+import RevealPreloader from './RevealPreloader';
 
 export default function OurPhilosophy() {
   const videoRef = useRef(null);
@@ -66,7 +67,7 @@ export default function OurPhilosophy() {
           <div className="w-full max-w-xl rounded-xl overflow-hidden shadow-2xl ring-1 ring-black/5 h-[520px] md:h-[640px]">
             <video
               ref={videoRef}
-              src="/videos/f31787fdf696c464405dbcda7cb2239d.webm"
+              src="/videos/f31787fdf696c464405dbcda7cb2239d.mp4"
               className="w-full h-full object-cover object-center"
               muted
               autoPlay
@@ -85,9 +86,11 @@ export default function OurPhilosophy() {
 
         {/* Single rectangular image column matching the video's height; sharp edges */}
         <AnimatedSection animation="fadeIn" delay={0.5} className="md:col-span-1 flex justify-center items-start md:items-center">
-          <div className="w-full max-w-sm md:max-w-md h-[520px] md:h-[640px] overflow-hidden shadow-lg">
-            <OptimizedImg src={encodeURI('/images/Intelligent Visual Systems.jpg')} alt="Perfume still" width={1200} height={800} className="w-full h-full object-cover" />
-          </div>
+          <RevealPreloader columns={6} color={["#faf9f6", "#f6f0ea"]} stagger={0.1} className="w-full max-w-sm md:max-w-md h-[520px] md:h-[640px] shadow-lg">
+            <div className="w-full h-full overflow-hidden">
+              <OptimizedImg src={encodeURI('/images/Intelligent Visual Systems.jpg')} alt="Perfume still" width={1200} height={800} className="w-full h-full object-cover" />
+            </div>
+          </RevealPreloader>
         </AnimatedSection>
       </div>
     </section>
