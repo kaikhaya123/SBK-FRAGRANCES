@@ -48,6 +48,70 @@ export default function ClientLayout({ children }) {
     }
   }, []);
 
+  useEffect(() => {
+    // Instrument event listeners to detect long-running handlers that may cause high INP.
+    // This wraps addEventListener/removeEventListener for common interaction events and
+    // logs handlers that take longer than THRESHOLD_MS to execute.
+    const THRESHOLD_MS = 150;
+    const LISTENER_MAP = Symbol('listenerMap');
+
+    const originalAdd = EventTarget.prototype.addEventListener;
+    const originalRemove = EventTarget.prototype.removeEventListener;
+
+    function wrapListenerIfNeeded(target, type, listener) {
+      if (typeof listener !== 'function') return listener;
+      const interactiveEvents = new Set(['click', 'pointerdown', 'pointerup', 'touchstart', 'touchend', 'mousedown', 'mouseup']);
+      if (!interactiveEvents.has(type)) return listener;
+
+      const wrapped = function (...args) {
+        const start = performance.now();
+        try {
+          return listener.apply(this, args);
+        } finally {
+          const dur = performance.now() - start;
+          if (dur > THRESHOLD_MS) {
+            // eslint-disable-next-line no-console
+            console.warn('[INP-INSTR] Long event handler', { type, duration: Math.round(dur), target: this, fnName: listener.name || '<anonymous>' });
+          }
+        }
+      };
+
+      // store mapping so removeEventListener can find the wrapped function
+      if (!target[LISTENER_MAP]) target[LISTENER_MAP] = new Map();
+      target[LISTENER_MAP].set(listener, wrapped);
+      return wrapped;
+    }
+
+    EventTarget.prototype.addEventListener = function (type, listener, options) {
+      try {
+        const wrapped = wrapListenerIfNeeded(this, type, listener);
+        return originalAdd.call(this, type, wrapped, options);
+      } catch (e) {
+        return originalAdd.call(this, type, listener, options);
+      }
+    };
+
+    EventTarget.prototype.removeEventListener = function (type, listener, options) {
+      try {
+        const map = this[LISTENER_MAP];
+        const wrapped = map && map.get && map.get(listener);
+        if (wrapped) {
+          map.delete(listener);
+          return originalRemove.call(this, type, wrapped, options);
+        }
+        return originalRemove.call(this, type, listener, options);
+      } catch (e) {
+        return originalRemove.call(this, type, listener, options);
+      }
+    };
+
+    return () => {
+      // restore originals
+      EventTarget.prototype.addEventListener = originalAdd;
+      EventTarget.prototype.removeEventListener = originalRemove;
+    };
+  }, []);
+
   return (
     <AnimatePresence mode="wait">
       <motion.div
