@@ -15,13 +15,24 @@ const useMedia = (queries, values, defaultValue) => {
     
     setValue(get());
 
-    const handler = () => setValue(get());
-    
+    // debounce media query changes using requestAnimationFrame
+    let rafId = null;
+    const handler = () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        setValue(get());
+        rafId = null;
+      });
+    };
+
     const mediaQueryLists = queries.map(q => window.matchMedia(q));
-    
+
     mediaQueryLists.forEach(mql => mql.addEventListener('change', handler));
-    
-    return () => mediaQueryLists.forEach(mql => mql.removeEventListener('change', handler));
+
+    return () => {
+      mediaQueryLists.forEach(mql => mql.removeEventListener('change', handler));
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, [queries, values, defaultValue]);
 
   return value;

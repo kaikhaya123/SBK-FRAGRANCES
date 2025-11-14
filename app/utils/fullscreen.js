@@ -13,8 +13,21 @@ export function useFullscreen(elementRef) {
     };
 
     adjustHeight();
-    window.addEventListener('resize', adjustHeight);
-    return () => window.removeEventListener('resize', adjustHeight);
+    // debounce using requestAnimationFrame to avoid heavy synchronous work
+    let rafId = null;
+    const onResize = () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        adjustHeight();
+        rafId = null;
+      });
+    };
+
+    window.addEventListener('resize', onResize, { passive: true });
+    return () => {
+      window.removeEventListener('resize', onResize);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, [elementRef]);
 }
 
