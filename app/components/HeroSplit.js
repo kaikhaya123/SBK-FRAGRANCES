@@ -45,10 +45,12 @@ export default function HeroSplit() {
             src="/images/Floral Elegance_ My Way Perfume.png"
             alt="For Her"
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             priority
             className="object-cover object-center"
             style={{ transform: 'scale(1.05)' }}
           />
+          {/* sizes added to satisfy next/image when using `fill` */}
           <div className="absolute inset-0 bg-black/20" />
         </div>
         <motion.span
@@ -74,6 +76,7 @@ export default function HeroSplit() {
             src="/images/SBK Frangrance1.png"
             alt="For Him"
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             priority
             className="object-cover object-center"
             style={{ transform: 'scale(1.05)' }}
