@@ -7,8 +7,10 @@ import AnimatedSection from './AnimatedSection';
 function RevealImage({ src, alt, direction = 'vertical', offsetFrom = null, offsetAmount = 30, radius = 12, loop = false, className = '', feather = 8, duration = 420, easing = 'cubic-bezier(.2,.9,.18,1)' }) {
   const elRef = useRef(null);
   const rafRef = useRef(null);
+  const innerRef = useRef(null);
   const [inView, setInView] = useState(false);
-  const [progress, setProgress] = useState(0);
+  // keep progress in a ref to avoid React re-renders each frame
+  const progressRef = useRef(0);
   const lockedRef = useRef(false);
 
   // Compute progress (0..1) based on element position in viewport.
@@ -32,35 +34,92 @@ function RevealImage({ src, alt, direction = 'vertical', offsetFrom = null, offs
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         setInView(entry.isIntersecting);
-        if (!entry.isIntersecting && loop) {
-          // If looping, reset lock so reveal can run again when re-entering.
-          lockedRef.current = false;
+        if (entry.isIntersecting) {
+          // start updating while element is visible
+          startLoop();
+        } else {
+          if (loop) {
+            // allow replay by unlocking
+            lockedRef.current = false;
+          } else {
+            // stop RAF when not visible to save CPU
+            stopLoop();
+          }
         }
       });
     }, { threshold: [0, 0.01, 0.25, 0.5, 0.75, 1] });
 
     io.observe(el);
 
+    function startLoop() {
+      if (!rafRef.current) rafRef.current = requestAnimationFrame(tick);
+    }
+
+    function stopLoop() {
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
+    }
+
     function tick() {
+      // Only compute/update while in view or when loop is requested
+      if (!inView && !loop) {
+        rafRef.current = null;
+        return;
+      }
+
       const p = computeProgress();
       if (!loop && lockedRef.current) {
         // stop updating if locked after first full reveal
-        cancelAnimationFrame(rafRef.current);
+        stopLoop();
         return;
       }
-      setProgress((prev) => {
-        // smooth interpolation (slightly faster for crisper reveal)
-        const next = prev + (p - prev) * 0.18;
-        return Math.abs(next - prev) < 0.0005 ? p : next;
-      });
+
+      const prev = progressRef.current;
+      const next = prev + (p - prev) * 0.18;
+      progressRef.current = Math.abs(next - prev) < 0.0005 ? p : next;
+
+      // update DOM directly to avoid React re-renders
+      try {
+        const cur = progressRef.current;
+        const pctCur = Math.round(cur * 100);
+        const visibleEnd = pctCur;
+        const featherEnd = Math.min(100, visibleEnd + feather);
+        const dirStringLocal = direction === 'diagonal' ? '135deg' : (direction === 'horizontal' ? 'to right' : 'to bottom');
+        const maskLocal = `linear-gradient(${dirStringLocal}, rgba(0,0,0,1) 0%, rgba(0,0,0,1) ${visibleEnd}%, rgba(0,0,0,0) ${featherEnd}%)`;
+
+        const baseOffsetLocal = Math.round((1 - cur) * offsetAmount);
+        let translateLocal = '';
+        if (direction === 'vertical') {
+          const sign = offsetFrom === 'top' ? -1 : 1;
+          translateLocal = `translate3d(${0}px, ${sign * baseOffsetLocal}px, 0px)`;
+        } else if (direction === 'horizontal') {
+          const sign = offsetFrom === 'left' ? -1 : 1;
+          translateLocal = `translate3d(${sign * baseOffsetLocal}px, 0px, 0px)`;
+        } else {
+          const sign = offsetFrom === 'left' || offsetFrom === 'top' ? -1 : 1;
+          const diag = Math.round((1 - cur) * (offsetAmount / 1.2));
+          translateLocal = `translate3d(${sign * diag}px, ${sign * diag}px, 0px)`;
+        }
+
+        if (innerRef.current) {
+          innerRef.current.style.transform = translateLocal;
+          innerRef.current.style.maskImage = maskLocal;
+          innerRef.current.style.webkitMaskImage = maskLocal;
+        }
+      } catch (e) {
+        // swallow any rare errors updating styles
+      }
 
       if (!loop && p > 0.995) {
         lockedRef.current = true;
+        stopLoop();
+        return;
       }
+
       rafRef.current = requestAnimationFrame(tick);
     }
-
-    rafRef.current = requestAnimationFrame(tick);
 
     return () => {
       io.disconnect();
@@ -68,30 +127,29 @@ function RevealImage({ src, alt, direction = 'vertical', offsetFrom = null, offs
     };
   }, [loop]);
 
-  // Build mask gradient depending on direction and progress.
-  const pct = Math.round(progress * 100);
+  // Build initial mask/transform values from the current (ref) progress.
+  const curInit = progressRef.current || 0;
+  const pct = Math.round(curInit * 100);
   // feather size as percentage of reveal window (soft edge); can be tuned
   // `feather` prop accepts a percentage number (e.g., 4 = 4%).
 
-  // Determine mask direction string and translate sign based on offsetFrom
+  // Determine mask direction string and initial translate based on offsetFrom
   let dirString = 'to bottom';
-  let translate = '';
-  const baseOffset = Math.round((1 - progress) * offsetAmount);
+  let translateInit = '';
+  const baseOffsetInit = Math.round((1 - curInit) * offsetAmount);
   if (direction === 'vertical') {
     dirString = 'to bottom';
-    // if offsetFrom is 'top', start translated up (negative), otherwise down
     const sign = offsetFrom === 'top' ? -1 : 1;
-    translate = `translateY(${sign * baseOffset}px)`;
+    translateInit = `translate3d(0px, ${sign * baseOffsetInit}px, 0px)`;
   } else if (direction === 'horizontal') {
     dirString = 'to right';
     const sign = offsetFrom === 'left' ? -1 : 1;
-    translate = `translateX(${sign * baseOffset}px)`;
-  } else if (direction === 'diagonal') {
+    translateInit = `translate3d(${sign * baseOffsetInit}px, 0px, 0px)`;
+  } else {
     dirString = '135deg';
-    // diagonal nudge keeps same sign convention as horizontal/vertical
     const sign = offsetFrom === 'left' || offsetFrom === 'top' ? -1 : 1;
-    const diag = Math.round((1 - progress) * (offsetAmount / 1.2));
-    translate = `translate(${sign * diag}px, ${sign * diag}px)`;
+    const diagInit = Math.round((1 - curInit) * (offsetAmount / 1.2));
+    translateInit = `translate3d(${sign * diagInit}px, ${sign * diagInit}px, 0px)`;
   }
 
   // Simpler mask: fully opaque region grows with progress, with a soft feather edge
@@ -102,15 +160,14 @@ function RevealImage({ src, alt, direction = 'vertical', offsetFrom = null, offs
   const style = {
     maskImage: mask,
     WebkitMaskImage: mask,
-    // Use translate3d for GPU compositing to keep the image crisp during motion
-    transform: translate.replace('translate(', 'translate3d(').replace(')', ', 0px)'),
+    transform: translateInit,
     borderRadius: radius ? `${radius}px` : 0,
     transition: `border-radius 220ms ease`,
   };
 
   return (
     <div ref={elRef} className={`reveal-image relative overflow-hidden ${className}`} style={{ borderRadius: radius ? `${radius}px` : undefined }}>
-      <div style={{ willChange: 'transform, mask-image', ...style }}>
+      <div ref={innerRef} style={{ willChange: 'transform, mask-image', ...style }}>
         {/* Use OptimizedImg if available for next/image-like benefits */}
         <OptimizedImg
           src={src}
