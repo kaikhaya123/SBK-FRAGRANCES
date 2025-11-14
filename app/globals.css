@@ -335,6 +335,28 @@ html, body {
   overflow-y: auto;
 }
 
+/* Mobile friendly defaults */
+html { -webkit-text-size-adjust: 100%; }
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+/* Make images responsive by default when components use w-full h-full */
+img, .responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile container helper (tailwind is primary, but ensure safe padding) */
+.page-container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Prefer mobile-first typography scaling */
+h1, h2, h3, h4, p, li {
+  -webkit-font-smoothing: antialiased;
+}
+
 #__next {
   min-height: 100vh;
   display: flex;

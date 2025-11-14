@@ -37,7 +37,8 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${inter.variable} ${playfair.variable} ${cormorantGaramond.variable} h-full`}>
       <head>
         {/* Primary Meta Tags */}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        {/* Mobile-friendly viewport: allow pinch-zoom for accessibility */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content="SBK Fragrances" />
