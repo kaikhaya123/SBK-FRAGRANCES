@@ -161,7 +161,7 @@ export default function TiktokFeed() {
             href="https://www.tiktok.com/@sbk_fragrances"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 bg-white text-black rounded-full hover:bg-gray-100 transition-colors duration-300 group"
+            className="inline-flex items-center px-8 py-4 bg-black text-white rounded-full hover:bg-gray-100 transition-colors duration-300 group"
           >
             <span className="mr-3 text-lg font-medium">Follow @sbkfragrances</span>
             <span className="transform transition-transform duration-300 group-hover:translate-x-1">→</span>
