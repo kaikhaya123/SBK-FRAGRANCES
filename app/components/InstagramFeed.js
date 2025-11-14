@@ -31,24 +31,49 @@ const tiktokContent = [
 
 export default function TiktokFeed() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const videoRef = useRef(null);
+  // refs for multiple video elements
+  const videoRefs = useRef([]);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+    if (!window.IntersectionObserver) return;
+
     const handleIntersection = (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          video.play();
-        } else {
-          video.pause();
+        const vid = entry.target;
+        try {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+            // play when at least 50% visible
+            if (vid.paused) {
+              // ensure muted so autoplay is allowed
+              vid.muted = true;
+              const playPromise = vid.play();
+              if (playPromise && typeof playPromise.catch === 'function') {
+                playPromise.catch(() => {
+                  // ignore play errors (autoplay policies)
+                });
+              }
+            }
+          } else {
+            // pause when less than threshold
+            if (!vid.paused) vid.pause();
+          }
+        } catch (e) {
+          // ignore
         }
       });
     };
-    const observer = new window.IntersectionObserver(handleIntersection, { threshold: 0.5 });
-    observer.observe(video);
-    return () => observer.disconnect();
-  }, []);
+
+    const observer = new window.IntersectionObserver(handleIntersection, { threshold: [0, 0.25, 0.5, 0.75, 1] });
+
+    // observe each video ref that exists
+    videoRefs.current.forEach((v) => {
+      if (v) observer.observe(v);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [tiktokContent.length]);
 
   return (
     <section className="w-full py-20 md:py-32 bg-black relative overflow-hidden">
@@ -90,15 +115,15 @@ export default function TiktokFeed() {
               <div className="aspect-[9/16] relative overflow-hidden bg-gray-900 w-full">
                 {content.type === 'video' ? (
                     <video
-                      ref={index === 0 ? videoRef : null}
-                    src={content.src}
-                    className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-                    autoPlay
+                      ref={(el) => (videoRefs.current[index] = el)}
+                      src={content.src}
+                      className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                       loop
                       muted
                       playsInline
-                    loading="lazy"
-                  />
+                      // do not rely solely on autoPlay; we'll control playback via IntersectionObserver
+                      // autoPlay attribute is left out to avoid browser play promise rejections
+                    />
                 ) : (
                   <OptimizedImg
                     src={content.src}

@@ -3,20 +3,12 @@ import OptimizedImg from "./OptimizedImg";
 import MasonryCaptionGrid from "./MasonryCaptionGrid";
 import React, { useRef, useState, useEffect } from "react";
 
-function VideoWithFallback({ src, poster, alt }) {
+function VideoWithFallback({ src, poster, alt, externalRef = null }) {
   const [error, setError] = useState(false);
-  const videoRef = useRef(null);
+  const internalRef = useRef(null);
 
-  // Try to autoplay on mount
-  useEffect(() => {
-    const video = videoRef.current;
-    if (video && !error) {
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {});
-      }
-    }
-  }, [error]);
+  // Choose which ref to attach to the <video>
+  const videoRef = externalRef || internalRef;
 
   if (error) {
     // If no poster was provided, avoid rendering Next/Image with an empty src
@@ -43,12 +35,12 @@ function VideoWithFallback({ src, poster, alt }) {
     <video
       ref={videoRef}
       className="object-cover w-full h-full"
-      autoPlay
       loop
       muted
       playsInline
       poster={poster}
       onError={() => setError(true)}
+      // do not call autoplay here; playback will be controlled by the parent via IntersectionObserver
     >
       <source src={src} type="video/mp4" />
     </video>
@@ -81,6 +73,34 @@ const imageTestimonials = [
   { image: "/images/ssstik.io_1762189144483.jpeg" }
 ];
 export default function Testimonials() {
+  const videoRefs = useRef([]);
+
+  useEffect(() => {
+    if (!window.IntersectionObserver) return;
+
+    const handleIntersection = (entries) => {
+      entries.forEach(entry => {
+        const vid = entry.target;
+        try {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+            // ensure muted so autoplay is allowed
+            vid.muted = true;
+            const playPromise = vid.play();
+            if (playPromise && typeof playPromise.catch === 'function') playPromise.catch(() => {});
+          } else {
+            if (!vid.paused) vid.pause();
+          }
+        } catch (e) {
+          // ignore
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, { threshold: [0, 0.25, 0.5, 0.75, 1] });
+    videoRefs.current.forEach(v => { if (v) observer.observe(v); });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className="relative py-24 md:py-32 overflow-hidden">
@@ -109,7 +129,7 @@ export default function Testimonials() {
               {/* Video Container */}
               <div className="aspect-[9/16] relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"/>
-                <VideoWithFallback src={t.video} poster="" alt={t.name + ' testimonial'} />
+                <VideoWithFallback src={t.video} poster="" alt={t.name + ' testimonial'} externalRef={(el) => (videoRefs.current[idx] = el)} />
                 
                 {/* Play button removed to show only media (video or image fallback) */}
               </div>
