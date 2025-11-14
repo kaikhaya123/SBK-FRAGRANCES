@@ -38,7 +38,7 @@ function RevealImage({ src, alt, direction = 'vertical', offsetFrom = null, offs
           prefetchObserver.unobserve(el);
         }
       });
-    }, { rootMargin: '400px', threshold: 0 });
+    }, { rootMargin: '800px', threshold: 0 });
     prefetchObserver.observe(el);
 
     const io = new IntersectionObserver((entries) => {

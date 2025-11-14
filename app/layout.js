@@ -54,6 +54,13 @@ export default function RootLayout({ children }) {
         
         {/* Preload critical assets */}
         <link rel="preload" href="/images/hero-image.webp" as="image" type="image/webp" />
+        {/* Uniqueness section images */}
+        <link rel="preload" href="/images/Content%20for%20perfume%20brand.jpg" as="image" />
+        <link rel="preload" href="/images/Frau%20Tonis,%20Berlin%20_%20Parfum%20made%20in%20Berlin.jpg" as="image" />
+        <link rel="preload" href="/images/image_one.jpg" as="image" />
+        {/* Preload some testimonial videos (small initial range so edge starts fetching) */}
+        <link rel="preload" href="/videos/3690166990828639792.mp4" as="video" type="video/mp4" />
+        <link rel="preload" href="/videos/ssstik.mp4" as="video" type="video/mp4" />
         
         {/* PWA meta tags */}
         <meta name="application-name" content="SBK Fragrances" />

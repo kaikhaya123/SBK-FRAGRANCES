@@ -93,7 +93,7 @@ export default function Testimonials() {
           // ignore
         }
       });
-    }, { rootMargin: '400px', threshold: 0 });
+    }, { rootMargin: '800px', threshold: 0 });
 
     // Main play/pause observer
     const handleIntersection = (entries) => {
@@ -150,7 +150,7 @@ export default function Testimonials() {
               {/* Video Container */}
               <div className="aspect-[9/16] relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"/>
-                <VideoWithFallback src={t.video} poster="" alt={t.name + ' testimonial'} externalRef={(el) => (videoRefs.current[idx] = el)} />
+                <VideoWithFallback src={t.video} poster={imageTestimonials[idx] ? imageTestimonials[idx].image : ''} alt={t.name + ' testimonial'} externalRef={(el) => (videoRefs.current[idx] = el)} />
                 
                 {/* Play button removed to show only media (video or image fallback) */}
               </div>
