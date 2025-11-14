@@ -163,7 +163,7 @@ export default function CheckoutPage() {
                       <div key={item.id} className="flex items-center space-x-4 p-4 border-b last:border-b-0">
                         <div className="relative w-24 h-24">
                           <Image
-                            src={item.image}
+                            src={item.image || '/images/placeholder.jpg'}
                             alt={item.name}
                             fill
                             sizes="96px"

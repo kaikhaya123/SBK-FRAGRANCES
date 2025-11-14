@@ -51,7 +51,8 @@ export function CartProvider({ children }) {
         price: fragrance.price,
         size: selectedSize,
         quantity: 1,
-        image: fragrance.image,
+        // Normalize image path to avoid issues with spaces or special chars
+        image: fragrance.image ? encodeURI(fragrance.image) : '',
         type: fragrance.type
       }];
     });
