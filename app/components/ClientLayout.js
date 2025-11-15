@@ -8,8 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import CartNotification from './CartNotification';
 import { useEffect } from 'react';
 
-// CacheManager is a small client-side UI for clearing SW caches/localStorage.
-const CacheManager = dynamic(() => import('./CacheManager'), { ssr: false });
+// (CacheManager removed) lightweight dev UI removed to simplify client bundle.
 
 const Navbar = dynamic(() => import('./Navbar').then(mod => ({ default: mod.Navbar })), {
   loading: () => <div className="h-20" />,
@@ -226,8 +225,7 @@ export default function ClientLayout({ children }) {
           {children}
         </motion.main>
         {!isCheckout && <Footer />}
-        {/* Cache manager floating button (clears service worker caches, cache storage, optionally localStorage) */}
-        <CacheManager />
+        {/* CacheManager removed */}
       </motion.div>
     </AnimatePresence>
   );
