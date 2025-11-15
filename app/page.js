@@ -1,8 +1,9 @@
 'use client';
 
 import React from 'react';
-import InstagramFeed from './components/InstagramFeed';
+import InstagramFeed from './components/InstagramFeedFixed';
 import NewsletterSignup from './components/NewsletterSignup';
+import GallerySection from './components/GallerySection';
 import HeroSplit from './components/HeroSplit';
 import FeaturedCollections from './components/FeaturedCollections';
 import BestSellerShowcase from './components/BestSellerShowcase';
@@ -27,9 +28,10 @@ const sections = [
   { Component: OurStory, animation: 'scale', delay: 0.2 },
   { Component: ShopNowSection, animation: 'scale', delay: 0.2 },
   { Component: WhyChooseUs, animation: 'fade', delay: 0.3 },
-  { Component: Testimonials, animation: 'slideRight', delay: 0.2 },
   { Component: ResellerProgram, animation: 'fade', delay: 0.3 },
+  { Component: Testimonials, animation: 'slideRight', delay: 0.2 },
   { Component: InstagramFeed, animation: 'slideLeft', delay: 0.2 },
+  { Component: GallerySection, animation: 'fade', delay: 0.2 },
   { Component: NewsletterSignup, animation: 'fade', delay: 0.3 },
 ];
 

@@ -128,7 +128,6 @@ export default function Testimonials() {
       {/* Luxury Background Elements */}
       <div className="absolute inset-0 bg-[#faf9f6]">
         <div className="absolute inset-0 bg-gradient-to-b from-[#4d3222]/5 to-transparent"/>
-        <div className="absolute inset-0 bg-[url('/images/4138198.webp')] bg-repeat opacity-5"/>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -166,19 +165,7 @@ export default function Testimonials() {
           ))}
         </div>
       {/* Image Testimonials Gallery */}
-        <div className="mt-16 md:mt-24">
-          {/* Masonry caption grid: gapless, preserves original proportions, mobile-friendly */}
-          <MasonryCaptionGrid
-            items={imageTestimonials.map((t, i) => ({
-              src: t.image,
-              alt: `Testimonial image ${i + 1}`,
-              title: t.title || '',
-              subtitle: t.subtitle || ''
-            }))}
-            columns={{ default: 1, sm: 2, md: 3, lg: 4 }}
-            overlay="hover"
-          />
-        </div>
+        {/* Image testimonials gallery removed per request */}
       {/* Elegant CTA Section */}
         <div className="text-center mt-16 md:mt-24">
           <a
