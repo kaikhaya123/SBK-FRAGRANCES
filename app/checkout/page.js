@@ -130,9 +130,10 @@ export default function CheckoutPage() {
     <div className="min-h-screen bg-gradient-to-b from-[#FFF5F5] to-white">
       <div className="text-center pt-8 pb-6">
         <a href="/" className="inline-block" title="Return to Home">
-          <img 
-            src="/images/webp/Elegant_SBK_Fragrance_Logo_Design-removebg-preview.webp" 
-            alt="SBK Fragrance Logo" 
+          <img
+            src="/images/Elegant_SBK_Fragrance_Logo_Design-removebg-preview.png"
+            alt="SBK Fragrance Logo"
+            loading="eager"
             className="h-16 w-auto mx-auto"
           />
         </a>

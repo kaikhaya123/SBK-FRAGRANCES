@@ -1,7 +1,5 @@
 
 
-
-
 import React, { useRef, useEffect, useState } from "react";
 import OptimizedImg from "./OptimizedImg";
 
@@ -79,7 +77,7 @@ export default function TiktokFeed() {
     <section className="w-full py-20 md:py-32 bg-black relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[url('/images/pattern.png')] bg-repeat opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('/images/4138198.webp')] bg-repeat opacity-20"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -121,8 +119,6 @@ export default function TiktokFeed() {
                       loop
                       muted
                       playsInline
-                      // do not rely solely on autoPlay; we'll control playback via IntersectionObserver
-                      // autoPlay attribute is left out to avoid browser play promise rejections
                     />
                 ) : (
                   <OptimizedImg

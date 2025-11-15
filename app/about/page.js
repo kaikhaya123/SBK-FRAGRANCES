@@ -58,7 +58,7 @@ export default function About() {
       <section className="w-full max-w-6xl mx-auto flex flex-col md:flex-row items-stretch my-20 md:my-24 min-h-[380px] md:min-h-[440px] lg:min-h-[520px] p-0 px-4">
         <div className="md:w-1/2 w-full flex items-stretch">
           <img
-            src="/images/webp/Ayanda .webp"
+            src="/images/Ayanda .jpg"
             alt="Ayanda Ntsele, Founder of SBK Fragrance"
             className="w-full h-full object-cover object-center rounded-lg"
             style={{ minHeight: '320px', maxHeight: '520px' }}

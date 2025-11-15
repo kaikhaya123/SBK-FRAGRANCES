@@ -136,6 +136,16 @@ export default function ClientLayout({ children }) {
           if (prop === 'classList') return { add: noop, remove: noop, contains: () => false };
           if (prop === 'querySelector') return () => null;
           if (prop === 'appendChild' || prop === 'remove' || prop === 'append') return noop;
+          if (prop === 'insertBefore') return (...args) => {
+            // eslint-disable-next-line no-console
+            console.warn('[SAFE-QS] insertBefore called for missing selector parent', selector, args[0]);
+            return args[0];
+          };
+          if (prop === 'childNodes' || prop === 'children') return [];
+          if (prop === 'firstChild' || prop === 'lastChild') return null;
+          if (prop === 'parentNode') return null;
+          if (prop === 'nodeType') return undefined;
+          if (prop === 'ownerDocument') return typeof document !== 'undefined' ? document : null;
           return noop;
         }
       });

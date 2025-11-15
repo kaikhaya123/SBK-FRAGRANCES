@@ -1,4 +1,4 @@
-'use client';
+ 'use client';
 
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const MotionLink = motion(Link);
 import { useCart } from '../context/CartContext';
 import ProductCard from '../components/ProductCard';
+import { allFragrances } from '../data/fragrances';
 
 // List row for mobile / list view — uses local state for size selection
 function ListProductRow({ fragrance, onAdd }) {
@@ -58,49 +59,7 @@ function ListProductRow({ fragrance, onAdd }) {
   );
 }
 
-// Sample fragrance data (prices in South African Rand - ZAR)
-const allFragrances = [
-  // Men's Fragrances (25 items)
-  { id: 1, name: 'New West', category: 'men', price: 350.00, rating: 5, reviews: 128, image: '/images/New West.jpg', tags: ['woody', 'bold'], type: 'Eau de Parfum', topNotes: 'Bergamot, Pepper', bestseller: true, isNew: true, stock: 12 },
-  { id: 2, name: 'Lacoste White', category: 'men', price: 350.00, rating: 4, reviews: 95, image: '/images/Lacoste White.jpg', tags: ['aquatic', 'fresh'], type: 'Eau de Toilette', topNotes: 'Lemon, Sea Salt', stock: 8 },
-  { id: 3, name: 'Kaishiri Oud', category: 'men', price: 350.00, rating: 5, reviews: 156, image: '/images/Kaishiri.jpg', tags: ['spicy', 'warm'], type: 'Eau de Parfum', topNotes: 'Cardamom, Ginger', bestseller: true, limitedStock: true, stock: 3 },
-  { id: 4, name: 'Black Oud', category: 'men', price: 350.00, rating: 4, reviews: 87, image: '/images/blackOud.jpg', tags: ['aromatic', 'herbs'], type: 'Eau de Toilette', topNotes: 'Lavender, Sage', stock: 6 },
-  { id: 5, name: 'Oud Satin Mood', category: 'men', price: 350.00, rating: 5, reviews: 203, image: '/images/Oud Satin.jpg', tags: ['leather', 'dark'], type: 'Eau de Parfum', topNotes: 'Leather, Tobacco', bestseller: true, stock: 10 },
-  { id: 6, name: 'Barakkat Rouge', category: 'men', price: 350.00, rating: 4, reviews: 72, image: '/images/Baccat.jpg', tags: ['ginger', 'fresh'], type: 'Eau de Toilette', topNotes: 'Ginger, Orange', isNew: true, stock: 18 },
-  { id: 7, name: 'Royal Oud', category: 'men', price: 350.00, rating: 5, reviews: 241, image: '/images/Royal Oud.jpg', tags: ['oud', 'exotic'], type: 'Eau de Parfum', topNotes: 'Rose, Oud', bestseller: true, stock: 20 },
-  { id: 8, name: 'White Oud', category: 'men', price: 350.00, rating: 5, reviews: 187, image: '/images/WhiteOud.jpg', tags: ['fruity', 'vanilla'], type: 'Eau de Parfum', topNotes: 'Passion Fruit, Vanilla', bestseller: true, stock: 14 },
-  { id: 9, name: 'Shemmiring Flowers', category: 'men', price: 350.00, rating: 4, reviews: 134, image: '/images/Flowers.jpg', tags: ['tobacco', 'warm'], type: 'Eau de Toilette', topNotes: 'Tobacco, Cedar', stock: 11 },
-  { id: 10, name: 'Gentlemen', category: 'men', price: 350.00, rating: 5, reviews: 165, image: '/images/ssstik.io_1762256007905.jpeg', tags: ['aquatic', 'fresh'], type: 'Eau de Parfum', topNotes: 'Sea Salt, Driftwood', bestseller: true, stock: 9 },
-  { id: 11, name: 'Burberry', category: 'men', price: 350.00, rating: 4, reviews: 98, image: '/images/pexels-mart-production-8450121.jpg', tags: ['spicy', 'warm'], type: 'Eau de Toilette', topNotes: 'Clove, Cinnamon', limitedStock: true, stock: 5 },
-  { id: 12, name: 'Black Opium', category: 'men', price: 350.00, rating: 5, reviews: 219, image: '/images/Black Optium.jpg', tags: ['dark', 'sensual'], type: 'Eau de Parfum', topNotes: 'Dark Rose, Oud', bestseller: true, stock: 16 },
-  { id: 13, name: 'Issey Miyake', category: 'men', price: 350.00, rating: 4, reviews: 112, image: '/images/Issey .jpg', tags: ['aquatic', 'citrus'], type: 'Eau de Toilette', topNotes: 'Lemon, Mint', stock: 15 },
-  { id: 14, name: 'Versace Erose', category: 'men', price: 350.00, rating: 5, reviews: 145, image: '/images/Versace .jpg', tags: ['woody', 'amber'], type: 'Eau de Parfum', topNotes: 'Amber, Sandalwood', isNew: true, stock: 9 },
-  { id: 15, name: 'CK One ', category: 'men', price: 350.00, rating: 4, reviews: 88, image: '/images/CK Code.jpg', tags: ['woody', 'fresh'], type: 'Eau de Toilette', topNotes: 'Pine, Eucalyptus', stock: 22 },
-  { id: 16, name: 'Black Code', category: 'men', price: 350.00, rating: 5, reviews: 176, image: '/images/Black Code.jpg', tags: ['amber', 'warm'], type: 'Eau de Parfum', topNotes: 'Honey, Amber', bestseller: true, stock: 11 },
-  { id: 17, name: 'Black Xs ', category: 'men', price: 350.00, rating: 4, reviews: 107, image: '/images/Creed.jpg', tags: ['citrus', 'fresh'], type: 'Eau de Toilette', topNotes: 'Orange, Grapefruit', stock: 17 },
-  { id: 18, name: 'Diesel', category: 'men', price: 350.00, rating: 5, reviews: 192, image: '/images/Bul.jpg', tags: ['dark', 'woody'], type: 'Eau de Parfum', topNotes: 'Black Pepper, Vetiver', bestseller: true, limitedStock: true, stock: 4 },
-  { id: 19, name: 'YSL', category: 'men', price: 350.00, rating: 4, reviews: 99, image: '/images/YSL.jpg', tags: ['aquatic', 'fruity'], type: 'Eau de Toilette', topNotes: 'Mango, Sea Breeze', stock: 13 },
-  { id: 20, name: 'Interlude', category: 'men', price: 350.00, rating: 5, reviews: 158, image: '/images/Interlude.jpg', tags: ['amber', 'warm'], type: 'Eau de Parfum', topNotes: 'Saffron, Vanilla', isNew: true, bestseller: true, stock: 19 },
-  { id: 21, name: 'Invictus', category: 'men', price: 350.00, rating: 4, reviews: 84, image: '/images/Invitus.jpg', tags: ['fresh', 'cool'], type: 'Eau de Toilette', topNotes: 'Mint, Bergamot', stock: 20 },
-  { id: 22, name: 'Bulgari', category: 'men', price: 350.00, rating: 5, reviews: 201, image: '/images/pexels-karola-g-8361483.jpg', tags: ['woody', 'leather'], type: 'Eau de Parfum', topNotes: 'Oak, Leather', bestseller: true, stock: 8 },
-  { id: 23, name: 'Dunhill Desire', category: 'men', price: 350.00, rating: 5, reviews: 169, image: '/images/Dunhill.jpg', tags: ['dark', 'mysterious'], type: 'Eau de Parfum', topNotes: 'Black Musk, Iris', bestseller: true, limitedStock: true, stock: 6 },
-  { id: 24, name: 'Adventures Creed', category: 'men', price: 350.00, rating: 4, reviews: 115, image: '/images/Creed.jpg', tags: ['fresh', 'adventure'], type: 'Eau de Toilette', topNotes: 'Basil, Lemongrass', stock: 18 },
-  
-  // Women's Fragrances
-  { id: 26, name: 'Hypnotic Poison', category: 'women', price: 300.00, rating: 5, reviews: 241, image: '/images/Hynotic .jpg', tags: ['floral', 'romantic'], type: 'Eau de Parfum', topNotes: 'Rose, Peony', bestseller: true, isNew: true, stock: 20 },
-  { id: 27, name: 'Flower Bomb', category: 'women', price: 350.00, rating: 5, reviews: 187, image: '/images/Flower Bomb.jpg', tags: ['jasmine', 'vanilla'], type: 'Eau de Parfum', topNotes: 'Jasmine, Bergamot', bestseller: true, stock: 14 },
-  { id: 28, name: 'CK Downtown ', category: 'women', price: 350.00, rating: 4, reviews: 134, image: '/images/CK Downtown.jpg', tags: ['citrus', 'warm'], type: 'Eau de Toilette', topNotes: 'Orange, Grapefruit', stock: 11 },
-  { id: 29, name: 'Olympea', category: 'women', price: 300.00, rating: 5, reviews: 165, image: '/images/Olympie.jpg', tags: ['floral', 'exotic'], type: 'Eau de Parfum', topNotes: 'Orchid, Tuberose', bestseller: true, stock: 9 },
-  { id: 30, name: 'Nude', category: 'women', price: 350.00, rating: 4, reviews: 98, image: '/images/Nude.jpg', tags: ['marine', 'fresh'], type: 'Body Lotion', topNotes: 'Marine, Lily', limitedStock: true, stock: 2 },
-  { id: 31, name: 'La Vie Est Belle', category: 'women', price: 350.00, rating: 5, reviews: 142, image: '/images/La vile.jpg', tags: ['floral', 'velvety'], type: 'Eau de Parfum', topNotes: 'Peony, Vanilla', stock: 12 },
-  { id: 32, name: 'Channel No 5', category: 'women', price: 350.00, rating: 4, reviews: 88, image: '/images/Channel No 5.jpg', tags: ['citrus', 'fresh'], type: 'Eau de Toilette', topNotes: 'Orange, Bergamot', stock: 15 },
-  { id: 33, name: 'Ted Lupidus', category: 'women', price: 350.00, rating: 5, reviews: 176, image: '/images/Ted .jpg', tags: ['rose', 'sensual'], type: 'Eau de Parfum', topNotes: 'Rose, Amber', bestseller: true, stock: 9 },
-  { id: 34, name: 'Fantasy', category: 'women', price: 350.00, rating: 4, reviews: 64, image: '/images/Fantasy.jpg', tags: ['marine', 'soft'], type: 'Eau de Toilette', topNotes: 'Sea Salt, Lily', stock: 11 },
-  { id: 35, name: 'Blossom Love', category: 'women', price: 350.00, rating: 4, reviews: 101, image: '/images/Blossom Love.jpg', tags: ['fruity', 'floral'], type: 'Eau de Parfum', topNotes: 'Peach, Jasmine', stock: 14 },
-  { id: 36, name: 'Shemmiring Flowers', category: 'women', price: 350.00, rating: 5, reviews: 132, image: '/images/Shemmiring Flowers.png', tags: ['amber', 'warm'], type: 'Eau de Parfum', topNotes: 'Amber, Sandalwood', stock: 8 },
-  { id: 37, name: 'Black Optium', category: 'women', price: 350.00, rating: 4, reviews: 73, image: '/images/Black Optium.jpg', tags: ['vanilla', 'soft'], type: 'Eau de Parfum', topNotes: 'Vanilla, Musk', stock: 10 },
-  { id: 38, name: 'Burberry', category: 'women', price: 350.00, rating: 5, reviews: 159, image: '/images/Burberry.jpg', tags: ['floral', 'green'], type: 'Eau de Parfum', topNotes: 'Jasmine, Green Leaves', stock: 13 },
-];
+// `allFragrances` moved to shared module `app/data/fragrances.js`
 
 export default function ShopPage() {
   const { addToCart, notify } = useCart();

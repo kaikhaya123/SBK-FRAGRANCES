@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "generate:perspective-media": "node ./scripts/generate-perspective-media.js",
     "lint": "next lint",
     "test": "jest --passWithNoTests",
     "static": "next build && next export"

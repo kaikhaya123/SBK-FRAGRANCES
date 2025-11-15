@@ -1,35 +1,27 @@
-'use client';
+ 'use client';
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { allFragrances } from '../data/fragrances';
 
 const reviews = [
   {
     name: 'Aisha M.',
     location: 'Cape Town',
-    photo: '/images/testimonials/customer1.jpg',
     rating: 5,
     text: 'Absolutely in love with Amber Nights! The fragrance evokes memories of warm summer evenings, with a sophistication that lasts all day.',
-    purchasedItem: 'Amber Nights Eau de Parfum',
-    date: 'October 2025'
   },
   {
     name: 'Sipho K.',
     location: 'Johannesburg',
-    photo: '/images/testimonials/customer2.jpg',
     rating: 5,
     text: 'The attention to detail in both the fragrance and packaging is extraordinary. This isn\'t just a perfume, it\'s an experience that transforms your daily ritual.',
-    purchasedItem: 'Midnight Velvet Collection',
-    date: 'September 2025'
   },
   {
     name: 'Nomsa D.',
     location: 'Durban',
-    photo: '/images/testimonials/customer3.jpg',
     rating: 5,
     text: 'Found my signature scent after a wonderful consultation. The fragrance perfectly captures elegance and modernity.',
-    purchasedItem: 'Royal Oud Essence',
-    date: 'October 2025'
   },
 ];
 
@@ -55,7 +47,7 @@ export default function Reviews() {
         <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="absolute inset-0">
           <img
-            src="/images/elegant-skin-care-banner-design.jpg"
+            src="/images/elegant-skin-care-banner-design.webp"
             alt="Luxury Perfume Reviews"
             className="w-full h-full object-cover object-center"
           />
@@ -123,11 +115,6 @@ export default function Reviews() {
             >
               <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2">
                 <div className="aspect-w-16 aspect-h-9 bg-gray-100">
-                  <img
-                    src={review.photo}
-                    alt={review.name}
-                    className="w-full h-full object-cover"
-                  />
                 </div>
                 <div className="p-8">
                   <div className="flex items-center justify-between mb-4">
@@ -144,10 +131,7 @@ export default function Reviews() {
                     </div>
                   </div>
                   <p className="text-gray-600 mb-4 italic">"{review.text}"</p>
-                  <div className="pt-4 border-t border-gray-100">
-                    <p className="text-sm text-gray-500">Purchased: {review.purchasedItem}</p>
-                    <p className="text-sm text-gray-400 mt-1">{review.date}</p>
-                  </div>
+                  {/* purchase info removed */}
                 </div>
               </div>
             </motion.div>
@@ -193,9 +177,12 @@ export default function Reviews() {
                   required
                 >
                   <option value="">Select a product</option>
-                  <option value="amber-nights">Amber Nights Eau de Parfum</option>
-                  <option value="midnight-velvet">Midnight Velvet Collection</option>
-                  <option value="royal-oud">Royal Oud Essence</option>
+                  {allFragrances.map((f) => {
+                    const value = f.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+                    return (
+                      <option key={f.id} value={value}>{f.name}</option>
+                    );
+                  })}
                 </select>
               </div>
 

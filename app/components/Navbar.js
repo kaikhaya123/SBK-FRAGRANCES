@@ -39,7 +39,15 @@ export function Navbar() {
       {/* Logo fixed at top left */}
       <div className="absolute top-6 left-4 sm:left-8 z-50 select-none pointer-events-auto">
         <Link href="/" className="flex items-center">
-          <Image src="/images/Elegant_SBK_Fragrance_Logo_Design-removebg-preview.png" alt="SBK Fragrance Logo" width={80} height={80} className="h-12 sm:h-16 md:h-20 w-auto object-contain" />
+          <Image
+            src="/images/Elegant_SBK_Fragrance_Logo_Design-removebg-preview.png"
+            alt="SBK Fragrance Logo"
+            width={80}
+            height={80}
+            loading="eager"
+            priority
+            className="h-12 sm:h-16 md:h-20 w-auto object-contain"
+          />
         </Link>
       </div>
 

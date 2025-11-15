@@ -52,15 +52,161 @@ export default function RootLayout({ children }) {
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         
-        {/* Preload critical assets */}
-        <link rel="preload" href="/images/hero-image.webp" as="image" type="image/webp" />
-        {/* Uniqueness section images */}
-        <link rel="preload" href="/images/Content%20for%20perfume%20brand.jpg" as="image" />
-        <link rel="preload" href="/images/Frau%20Tonis,%20Berlin%20_%20Parfum%20made%20in%20Berlin.jpg" as="image" />
-        <link rel="preload" href="/images/image_one.jpg" as="image" />
-        {/* Preload some testimonial videos (small initial range so edge starts fetching) */}
-        <link rel="preload" href="/videos/3690166990828639792.mp4" as="video" type="video/mp4" />
-        <link rel="preload" href="/videos/ssstik.mp4" as="video" type="video/mp4" />
+        {/* Preload only truly critical assets to avoid unsupported/unused-preload warnings */}
+        <link rel="preload" href="/images/spa-still-life-with-beauty-products.jpg" as="image" type="image/jpeg" />
+
+        {/* NOTE: other large images and videos are not preloaded to avoid
+            "unsupported `as` value" and "preload but not used" dev warnings.
+            If specific pages require eager preloads, add them only on those pages. */}
+
+        {/* Development-only: early guard for missing selectors used by third-party
+            scripts (prevents `querySelector(...).addEventListener` TypeErrors).
+            This runs as soon as the head is parsed so injected scripts can't throw
+            before React mounts and our client-side guards run. */}
+        {process.env.NODE_ENV !== 'production' && (
+          <script dangerouslySetInnerHTML={{ __html: `
+            (function(){
+              try {
+                var original = Document.prototype.querySelector;
+                Document.prototype.querySelector = function(selector) {
+                  try {
+                    var res = original.call(this, selector);
+                    if (res) return res;
+
+                    // Record missing selector usage (stack trace and selector)
+                    try {
+                      window.__missingSelectors = window.__missingSelectors || [];
+                      window.__missingSelectors.push({ selector: selector, stack: (new Error()).stack, ts: Date.now() });
+                      if (window.localStorage) {
+                        try { window.localStorage.setItem('__missingSelectors', JSON.stringify(window.__missingSelectors.slice(-50))); } catch(e){}
+                      }
+                    } catch(e) {}
+
+                    var noop = function(){};
+                    return new Proxy({}, {
+                      get: function(_, prop) {
+                        if (prop === 'addEventListener') return function(){
+                          try {
+                            window.__missingAddEventListenerCalls = window.__missingAddEventListenerCalls || [];
+                            window.__missingAddEventListenerCalls.push({ selector: selector, args: Array.prototype.slice.call(arguments), stack: (new Error()).stack, ts: Date.now() });
+                            if (window.localStorage) {
+                              try { window.localStorage.setItem('__missingAddEventListenerCalls', JSON.stringify(window.__missingAddEventListenerCalls.slice(-50))); } catch(e){}
+                            }
+                          } catch(e){}
+                        };
+                        if (prop === 'removeEventListener') return noop;
+                        if (prop === 'classList') return { add: noop, remove: noop, contains: function(){ return false; } };
+                        if (prop === 'querySelector') return function(){ return null; };
+                        if (prop === 'appendChild' || prop === 'append' || prop === 'remove') return noop;
+                        if (prop === 'insertBefore') return function(){
+                          try {
+                            // record the call for diagnostics
+                            window.__missingInsertBeforeCalls = window.__missingInsertBeforeCalls || [];
+                            window.__missingInsertBeforeCalls.push({ selector: selector, args: Array.prototype.slice.call(arguments), stack: (new Error()).stack, ts: Date.now() });
+                            if (window.localStorage) {
+                              try { window.localStorage.setItem('__missingInsertBeforeCalls', JSON.stringify(window.__missingInsertBeforeCalls.slice(-50))); } catch(e){}
+                            }
+                          } catch(e){}
+                          return arguments[0];
+                        };
+                        if (prop === 'childNodes' || prop === 'children') return [];
+                        if (prop === 'firstChild' || prop === 'lastChild') return null;
+                        if (prop === 'parentNode') return null;
+                        if (prop === 'nodeType') return undefined;
+                        if (prop === 'ownerDocument') return typeof document !== 'undefined' ? document : null;
+                        return noop;
+                      }
+                    });
+                  } catch (e) {
+                    try { return original.call(this, selector); } catch (err) { return null; }
+                  }
+                };
+              } catch (err) {
+                // ignore if environment prevents patching
+              }
+            })();
+            // Early guard for Node.insertBefore to avoid "insertBefore is not a function"
+            (function(){
+              try {
+                var origInsertBefore = Node.prototype.insertBefore;
+                function isNodeLike(x) {
+                  return x === null || (x && typeof x.nodeType === 'number');
+                }
+                Node.prototype.insertBefore = function (newNode, referenceNode) {
+                  try {
+                    if (!isNodeLike(referenceNode)) {
+                      try {
+                        window.__missingInsertBeforeCalls = window.__missingInsertBeforeCalls || [];
+                        window.__missingInsertBeforeCalls.push({ args: Array.prototype.slice.call(arguments), stack: (new Error()).stack, ts: Date.now() });
+                        if (window.localStorage) {
+                          try { window.localStorage.setItem('__missingInsertBeforeCalls', JSON.stringify(window.__missingInsertBeforeCalls.slice(-50))); } catch(e){}
+                        }
+                      } catch(e){}
+                      referenceNode = null;
+                    }
+                    return origInsertBefore.call(this, newNode, referenceNode);
+                  } catch (err) {
+                    try { return origInsertBefore.call(this, newNode, null); } catch(e){ throw err; }
+                  }
+                };
+              } catch(err) {
+                // ignore
+              }
+            })();
+          ` }} />
+        )}
+
+        {/* Development-only: suppress known devtools/style-inject errors to reduce noise */}
+        {process.env.NODE_ENV !== 'production' && (
+          <script dangerouslySetInnerHTML={{ __html: `
+            (function(){
+              window.addEventListener('error', function (e) {
+                try {
+                  var msg = e && e.message ? e.message : '';
+                  var file = e && e.filename ? e.filename : '';
+                  if (msg.indexOf('insertBefore is not a function') !== -1 && (file.indexOf('devtool-style-inject') !== -1 || file.indexOf('devtools') !== -1)) {
+                    try {
+                      window.__suppressedDevtoolErrors = window.__suppressedDevtoolErrors || [];
+                      window.__suppressedDevtoolErrors.push({ message: msg, filename: file, stack: e.error && e.error.stack ? e.error.stack : (new Error()).stack, ts: Date.now() });
+                      if (window.localStorage) {
+                        try { window.localStorage.setItem('__suppressedDevtoolErrors', JSON.stringify(window.__suppressedDevtoolErrors.slice(-50))); } catch(err){}
+                      }
+                    } catch(_){ }
+                    e.stopImmediatePropagation && e.stopImmediatePropagation();
+                    e.preventDefault && e.preventDefault();
+                    return;
+                  }
+                } catch(err) {}
+              }, true);
+            })();
+          ` }} />
+        )}
+
+        {/* Suppress known third-party share-modal runtime error in dev until
+            upstream source can be located. This prevents noisy console errors
+            from interrupting debugging while we fix the root cause. */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function(){
+            window.addEventListener('error', function (e) {
+              try {
+                if (e && e.filename && e.filename.indexOf('share-modal.js') !== -1 && e.message && e.message.indexOf("Cannot read properties of null") !== -1) {
+                  try {
+                    window.__suppressedShareModalErrors = window.__suppressedShareModalErrors || [];
+                    window.__suppressedShareModalErrors.push({ message: e.message, filename: e.filename, stack: e.error && e.error.stack ? e.error.stack : (new Error()).stack, ts: Date.now() });
+                    if (window.localStorage) {
+                      try { window.localStorage.setItem('__suppressedShareModalErrors', JSON.stringify(window.__suppressedShareModalErrors.slice(-50))); } catch(err){}
+                    }
+                  } catch(_){}
+                  e.stopImmediatePropagation && e.stopImmediatePropagation();
+                  e.preventDefault && e.preventDefault();
+                  return;
+                }
+              } catch (err) {
+                // ignore any errors in the guard itself
+              }
+            }, true);
+          })();
+        ` }} />
         
         {/* PWA meta tags */}
         <meta name="application-name" content="SBK Fragrances" />

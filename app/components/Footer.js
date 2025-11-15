@@ -8,12 +8,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-10 pb-12">
           {/* Brand & tagline */}
           <div className="lg:col-span-1">
-            <div className="flex flex-col items-center text-center">
-              <img 
-                src="/images/Elegant_SBK_Fragrance_Logo_Design-removebg-preview.png" 
-                alt="SBK Fragrances Logo" 
-                className="h-28 w-28 object-contain mb-8" 
-                style={{maxWidth: '112px', maxHeight: '112px'}} 
+              <div className="flex flex-col items-center text-center">
+              <img
+                src="/images/Elegant_SBK_Fragrance_Logo_Design-removebg-preview.png"
+                alt="SBK Fragrances Logo"
+                loading="eager"
+                className="h-28 w-28 object-contain mb-8"
+                style={{maxWidth: '112px', maxHeight: '112px'}}
               />
               {/* Payment Methods */}
               <div className="flex items-center gap-8 mb-6">

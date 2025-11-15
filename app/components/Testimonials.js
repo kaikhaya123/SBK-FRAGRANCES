@@ -128,7 +128,7 @@ export default function Testimonials() {
       {/* Luxury Background Elements */}
       <div className="absolute inset-0 bg-[#faf9f6]">
         <div className="absolute inset-0 bg-gradient-to-b from-[#4d3222]/5 to-transparent"/>
-        <div className="absolute inset-0 bg-[url('/images/pattern.png')] bg-repeat opacity-5"/>
+        <div className="absolute inset-0 bg-[url('/images/4138198.webp')] bg-repeat opacity-5"/>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">

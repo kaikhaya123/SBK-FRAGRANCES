@@ -157,7 +157,7 @@ const sections = [
     button: "Learn more"
   },
   {
-    image: "/images/Frau Tonis, Berlin _ Parfum made in Berlin.jpg",
+    image: "/images/Minimalist product photography idea.jpg",
     title: "The Art of Premium Quality",
     text: "Our perfumes are meticulously created by hand in our laboratory, where passion meets precision. SBK Fragrances uses only the finest ingredients and time-honored techniques, resulting in exceptional quality and lasting impressions in every bottle.",
     button: "Learn more"

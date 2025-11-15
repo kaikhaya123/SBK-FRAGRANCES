@@ -254,7 +254,7 @@ export default function ResellerProgram() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
-                  className="w-full h-full"
+                  className="relative w-full h-full"
                 >
                   {getSrc(imageIndex[pkg.id] === 1 ? pkg.image2 : pkg.image) ? (
                     <Image
